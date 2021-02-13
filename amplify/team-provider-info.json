@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-parcheealpha-dev-181155-authRole",
+      "UnauthRoleArn": "arn:aws:iam::915213374970:role/amplify-parcheealpha-dev-181155-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::915213374970:role/amplify-parcheealpha-dev-181155-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-parcheealpha-dev-181155-deployment",
+      "UnauthRoleName": "amplify-parcheealpha-dev-181155-unauthRole",
+      "StackName": "amplify-parcheealpha-dev-181155",
+      "StackId": "arn:aws:cloudformation:eu-west-2:915213374970:stack/amplify-parcheealpha-dev-181155/cf2d9830-6d5d-11eb-8f80-069875bbffc4",
+      "AmplifyAppId": "d2xx4bxa7lco9h"
+    }
+  }
+}
