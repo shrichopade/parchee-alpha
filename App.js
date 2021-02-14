@@ -1,24 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
+//Default imports
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
+//Navigation
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+//Screens import
+import SignIn from './screens/common/SignIn';
+
+
+//Aws Amplify Imports
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
+
 Amplify.configure(config);
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const Stack = createStackNavigator();
+  
+export default class App extends React.Component {
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  render() {
+    return (  
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="SignIn">
+          <Stack.Screen name="SignIn" component={SignIn}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+}
