@@ -1,0 +1,14 @@
+export default [
+    {
+      key: 'a',
+      name: 'Omeprezol 20 mg'
+    },
+    {
+      key: 'b',
+      name: 'Ramipril 75 mg'
+    },
+    {
+      key: 'c',
+      name: 'insuline 20ml'
+    }   
+  ];
