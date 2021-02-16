@@ -57,7 +57,7 @@ const pages = {
   }
 };
 
-var current_page = pages.progress;
+var current_page = pages.active_prescription;
 
 export default class App extends React.Component {
 
