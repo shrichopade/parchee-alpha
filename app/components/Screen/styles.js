@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 10
+  },
+  footer: {
+    flex: 1
   }
 });
 

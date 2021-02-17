@@ -14,6 +14,9 @@ const Screen = (props) => {
       <View style={styles.body}>
         {props.page}
       </View>
+      <View style={styles.footer}>
+        {props.footer}
+      </View>
     </View>
   );
 

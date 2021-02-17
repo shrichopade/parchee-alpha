@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "parchee-alpha-app",
-    "slug": "parchee-alpha-app",
+    "name": "Parchee - Your Medical Assistant",
+    "slug": "Parchee - Your Medical Assistant",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
