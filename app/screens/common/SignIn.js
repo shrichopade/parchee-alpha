@@ -62,13 +62,15 @@ export default class SignIn extends React.Component {
                     secureTextEntry
                     textContentType="password"
                     />
-                <AppButton style={styles.appButtonStyle} title="Login" onPress={() => this.signIn()} />
+                <View style={styles.buttonContainer}>    
+                    <AppButton title="Login" onPress={() => this.signIn()} />
+                </View>
                 <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => navigation.navigate('ResetPasswd')}>
-                    <Text style={styles.forgotPasswordButtonText}>
-                        Forgot Password? Reset Password
-                    </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('ResetPasswd')}>
+                        <Text style={styles.forgotPasswordButtonText}>
+                            Forgot Password? Reset Password
+                        </Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
@@ -92,10 +94,6 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         marginVertical: 15,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    appButtonStyle: {
         justifyContent: 'center',
         alignItems: 'center'
     },
