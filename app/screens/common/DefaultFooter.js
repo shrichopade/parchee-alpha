@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import IconButton from '../../components/IconButton';
+import { Text } from 'native-base';
 
 export default class DefaultFooter extends React.Component {
 
 	render() {
 		return (
 			<View style={styles.tabs_container}>
-            </View>
+          <Text style={styles.footerText}>Copyright Parchee, all rights reserved</Text>
+      </View>
 		);
 	}
 }
@@ -21,6 +22,13 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-around',
       backgroundColor: '#4CAF50'
-      // backgroundColor: '#3e3e3e'
+    },
+    footerText: {
+      color: '#fff',
+      fontFamily: 'Arial',
+      fontSize: 10,
+      fontWeight: '400',
+      alignSelf: 'center',
+      marginVertical: 8
     }
   });

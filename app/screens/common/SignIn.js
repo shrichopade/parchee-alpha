@@ -66,20 +66,19 @@ export default class SignIn extends React.Component {
                     <AppButton title="Login" onPress={() => this.signIn()} />
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate('ResetPasswd')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
                         <Text style={styles.forgotPasswordButtonText}>
                             Forgot Password? Reset Password
                         </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
                         <Text style={styles.forgotPasswordButtonText}>
                             Don't have an account? Sign Up
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.footerText}>Copyright Parchee, all rights reserved</Text>
             </View>
         );
     }
@@ -96,14 +95,6 @@ const styles = StyleSheet.create({
         marginVertical: 15,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    footerText: {
-        color: '#202020',
-        fontFamily: 'Arial',
-        fontSize: 10,
-        fontWeight: '400',
-        alignSelf: 'center',
-        marginVertical: 8
     },
     forgotPasswordButtonText: {
         color: '#8B918D',
