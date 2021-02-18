@@ -10,5 +10,17 @@ export default [
     {
       key: 'c',
       name: 'Insuline 20ml'
-    }   
+    },   
+    {
+      key: 'd',
+      name: 'Vitamin B12'
+    },
+    {
+      key: 'e',
+      name: 'Metformin 75 mg'
+    },
+    {
+      key: 'f',
+      name: 'Ciplox D eye drops 1drop each eye'
+    } 
   ];
