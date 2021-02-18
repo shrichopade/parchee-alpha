@@ -6,7 +6,6 @@ import PatientFooter from './PatientFooter'
 import list_styles from '../../components/List/styles';
 import medication_data from '../../data/activeprescription';
 import { renderItem } from '../../lib/general';
-import PatientFooter from './PatientFooter';
 
 export default class PatientHome extends React.Component {
 
