@@ -12,6 +12,7 @@ export default class ConfirmSignUp extends React.Component {
         super();
         this.state = {
           passcode: '',
+          username: '',
           password: '',
           confirmPassword: ''
         }
@@ -37,6 +38,15 @@ export default class ConfirmSignUp extends React.Component {
                             keyboardType="phone-pad"
                             textContentType="oneTimeCode"
                             />
+                        <AppTextInput
+                            value={this.state.username}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'username')}
+                            leftIcon="email-open"
+                            placeholder="Enter email address"
+                            autoCapitalize="none"
+                            keyboardType="email-address"
+                            textContentType="emailAddress"
+                        />
                         <AppTextInput
                             value={this.state.password}
                             onChangeText={(val) => this.inputValueUpdate(val, 'password')}

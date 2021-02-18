@@ -14,8 +14,6 @@ export default class SignUp extends React.Component {
             givenNames: '',
             surname: '',
             mobileNumber: '',
-            username: '',
-            password: '',
             aadharCard: '',
             registrationNumber: ''
         }
@@ -50,15 +48,7 @@ export default class SignUp extends React.Component {
                             keyboardType="default"
                             textContentType="familyName"
                         />
-                        <AppTextInput
-                            value={this.state.username}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'username')}
-                            leftIcon="email-open"
-                            placeholder="Enter email address"
-                            autoCapitalize="none"
-                            keyboardType="email-address"
-                            textContentType="emailAddress"
-                        />
+                        
                         <AppTextInput
                             value={this.state.mobileNumber}
                             onChangeText={(val) => this.inputValueUpdate(val, 'mobileNumber')}
@@ -67,6 +57,24 @@ export default class SignUp extends React.Component {
                             autoCapitalize="none"
                             keyboardType="phone-pad"
                             textContentType="telephoneNumber"
+                        />
+                        <AppTextInput
+                            value={this.state.aadharCard}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'aadharCard')}
+                            leftIcon="file-code"
+                            placeholder="Enter Aadhar number"
+                            autoCapitalize="none"
+                            keyboardType="phone-pad"
+                            textContentType="creditCardNumber"
+                        />
+                        <AppTextInput
+                            value={this.state.registrationNumber}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'registrationNumber')}
+                            leftIcon="file-code"
+                            placeholder="Enter Doctor/Chemist Reg No"
+                            autoCapitalize="none"
+                            keyboardType="phone-pad"
+                            textContentType="creditCardNumber"
                         />
                         <View style={styles.buttonContainer}>    
                             <AppButton title="Register" 
