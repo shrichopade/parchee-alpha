@@ -6,9 +6,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from './app/screens/common/SignIn'
 import RequestOTP from './app/screens/common/RequestOTP'
 import ResetPassword from './app/screens/common/ResetPassword'
+import SignUp from './app/screens/common/SignUp'
 
 //Patient Pages
-import PatientHome from './app/screens/patient/PatientHome.js';
+import PatientHome from './app/screens/patient/PatientHome';
+import PatientProfileImage from './app/screens/patient/PatientProfileImage';
 
 //Aws Amplify Imports
 import Amplify from 'aws-amplify';
@@ -36,11 +38,11 @@ export default class App extends React.Component {
             title: ''
           }}
         >
-         
-          <Stack.Screen name="SignIn" component={SignIn} options={{title: 'Sign In'}} />
+          <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="RequestOTP" component={RequestOTP} options={{title: 'Reset Password'}} />
           <Stack.Screen name="ResetPassword" component={ResetPassword} options={{title: 'Reset Password'}} />
-          <Stack.Screen name="PatientHome" component={PatientHome} options={{title: 'Patient Home'}} />
+          <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Register/ Sign Up'}} />
+          <Stack.Screen name="PatientHome" component={PatientHome} options={{title: 'Patient Home', headerRight:()=> <PatientProfileImage/>}} />
         </Stack.Navigator>
       </NavigationContainer>
     );
