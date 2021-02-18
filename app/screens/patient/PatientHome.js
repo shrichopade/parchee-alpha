@@ -5,6 +5,7 @@ import pageStyles from '../common/PageStyle.js'
 import list_styles from '../../components/List/styles';
 import medication_data from '../../data/activeprescription';
 import { renderItem } from '../../lib/general';
+import PatientFooter from './PatientFooter';
 
 export default class PatientHome extends React.Component {
 
@@ -26,7 +27,7 @@ export default class PatientHome extends React.Component {
                         
                     </View>
                     <View style={pageStyles.footer}>
-
+                        <PatientFooter navigation={this.props.navigation}/>
                     </View>
                 </View>
             </SafeAreaView>
