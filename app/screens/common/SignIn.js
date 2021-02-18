@@ -82,11 +82,11 @@ export default class SignIn extends React.Component {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.buttonParallel}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('SignIn')}>
                                 <Image source={require('../../../assets/images/google.png')} 
                                     style={styles.imageButton} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('SignIn')}>
                                 <Image source={require('../../../assets/images/facebook.png')} 
                                     style={styles.imageButton} />
                             </TouchableOpacity>
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     },
     forgotPasswordButtonText: {
         color: '#0000EE',
+        fontFamily: 'Arial',
         fontSize: 16,
         fontWeight: '600'
     },
