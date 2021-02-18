@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 //Common Pages
 import SignIn from './app/screens/common/SignIn'
 import RequestOTP from './app/screens/common/RequestOTP'
+import ResetPassword from './app/screens/common/ResetPassword'
 
 //Patient Pages
 import ActivePrescription from './app/screens/ActivePrescription';
@@ -38,6 +39,7 @@ export default class App extends React.Component {
          
           <Stack.Screen name="SignIn" component={SignIn} options={{title: 'Sign In'}} />
           <Stack.Screen name="RequestOTP" component={RequestOTP} options={{title: 'Reset Password'}} />
+          <Stack.Screen name="ResetPassword" component={ResetPassword} options={{title: 'Reset Password'}} />
         </Stack.Navigator>
       </NavigationContainer>
     );

@@ -69,18 +69,26 @@ export default class SignIn extends React.Component {
                         <View style={styles.buttonContainer}>    
                             <AppButton title="Login" onPress={() => this.signIn()} />
                         </View>
-                        <View style={styles.buttonContainer}>
+                        <View style={styles.buttonParallel}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
                                 <Text style={styles.forgotPasswordButtonText}>
-                                    Forgot Password? Reset Password
+                                    Reset Password
+                                </Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
+                                <Text style={styles.forgotPasswordButtonText}>
+                                    Sign Up
                                 </Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.buttonContainer}>
+                        <View style={styles.buttonParallel}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
+                                <Image source={require('../../../assets/images/google.png')} 
+                                    style={styles.imageButton} />
+                            </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
-                                <Text style={styles.forgotPasswordButtonText}>
-                                    Don't have an account? Sign Up
-                                </Text>
+                                <Image source={require('../../../assets/images/facebook.png')} 
+                                    style={styles.imageButton} />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -98,16 +106,28 @@ const styles = StyleSheet.create({
         width: 350,
         height: 150,
         alignSelf: 'center',
-        marginVertical: 30
+        marginVertical: 20
     },
     buttonContainer: {
         marginVertical: 15,
         justifyContent: 'center',
         alignItems: 'center'
     },
+    buttonParallel: {
+        marginVertical: 10,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
     forgotPasswordButtonText: {
-        color: '#8B918D',
+        color: '#0000EE',
         fontSize: 16,
         fontWeight: '600'
+    },
+    imageButton:{
+        width: 180,
+        height: 40,
+        alignSelf: 'center',
+        marginVertical: 10
     },
 });
