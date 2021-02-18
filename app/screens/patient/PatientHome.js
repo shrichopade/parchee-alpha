@@ -5,7 +5,9 @@ import pageStyles from '../common/PageStyle.js'
 import PatientFooter from './PatientFooter'
 import list_styles from '../../components/List/styles';
 import medication_data from '../../data/activeprescription';
-import { renderItem } from '../../lib/general';
+import appointment_data from '../../data/patientappointments';
+import order_data from '../../data/patientorders';
+import { renderItem,renderItemAppointment,renderItemOrders } from '../../lib/general';
 
 export default class PatientHome extends React.Component {
 
@@ -18,12 +20,13 @@ export default class PatientHome extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={list_styles.list_item_header}>Morning</Text>
+                        <Text style={list_styles.list_item_header}>Medication</Text>
                         <FlatList data={medication_data} renderItem={renderItem} />
-                        <Text style={list_styles.list_item_header}>Afternoon</Text>
-                        <FlatList data={medication_data} renderItem={renderItem} />
-                        <Text style={list_styles.list_item_header}>Night</Text>
-                        <FlatList data={medication_data} renderItem={renderItem} /> 
+                        <Text style={list_styles.list_item_header}>Appointments</Text>
+                        <FlatList data={appointment_data} renderItem={renderItemAppointment} />
+                        <Text style={list_styles.list_item_header}>Orders</Text>
+                        <FlatList data={order_data} renderItem={renderItemOrders} /> 
+                        
                     </View>
                     <View style={pageStyles.footer}>
                         <PatientFooter navigation={this.props.navigation}/>

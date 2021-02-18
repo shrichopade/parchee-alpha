@@ -3,10 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 //Common Pages
-import SignIn from './app/screens/common/SignIn'
-import RequestOTP from './app/screens/common/RequestOTP'
-import ResetPassword from './app/screens/common/ResetPassword'
-import SignUp from './app/screens/common/SignUp'
+import SignIn from './app/screens/common/SignIn';
+import RequestOTP from './app/screens/common/RequestOTP';
+import ResetPassword from './app/screens/common/ResetPassword';
+import SignUp from './app/screens/common/SignUp';
 
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';

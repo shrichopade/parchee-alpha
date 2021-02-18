@@ -9,6 +9,6 @@ export default [
     },
     {
       key: 'c',
-      name: 'insuline 20ml'
+      name: 'Insuline 20ml'
     }   
   ];

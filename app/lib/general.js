@@ -21,4 +21,23 @@ function renderPickerItems(data) {
   });
 }
 
-export { renderItem, renderPickerItems };
+function renderItemAppointment({item}) {
+  return (
+    <TouchableHighlight underlayColor="#ccc" onPress={() => {
+      console.log('pressed!');
+    }} style={styles.list_item}>
+      <Text key={item.key}>{item.doctor} {item.date}</Text>
+    </TouchableHighlight>
+  );
+}
+
+function renderItemOrders({item}) {
+  return (
+    <TouchableHighlight underlayColor="#ccc" onPress={() => {
+      console.log('pressed!');
+    }} style={styles.list_item}>
+      <Text key={item.key}>{item.date} {item.chemist}</Text>
+    </TouchableHighlight>
+  );
+}
+export { renderItem, renderPickerItems,renderItemAppointment,renderItemOrders };
