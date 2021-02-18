@@ -7,13 +7,7 @@ import SignIn from './app/screens/common/SignIn';
 import RequestOTP from './app/screens/common/RequestOTP';
 import ResetPassword from './app/screens/common/ResetPassword';
 import SignUp from './app/screens/common/SignUp';
-=======
-import SignIn from './app/screens/common/SignIn'
-import RequestOTP from './app/screens/common/RequestOTP'
-import ResetPassword from './app/screens/common/ResetPassword'
-import SignUp from './app/screens/common/SignUp'
-import ConfirmSignUp from './app/screens/common/ConfirmSignUp'
->>>>>>> eceb45dad35e315fd2361027c56966f3da633c9d
+import ConfirmSignUp from './app/screens/common/ConfirmSignUp';
 
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';
