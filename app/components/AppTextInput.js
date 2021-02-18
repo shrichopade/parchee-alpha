@@ -25,9 +25,9 @@ export default function AppTextInput({ leftIcon, ...otherProps }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f9f9f9',
-    borderRadius: 25,
+    borderRadius: 10,
     flexDirection: 'row',
-    padding: 15,
+    padding: 10,
     marginVertical: 10
   },
   icon: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    fontSize: 18,
+    fontSize: 16,
     color: '#101010'
   }
 });

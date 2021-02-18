@@ -12,16 +12,16 @@ export default function AppButton({ title, onPress }) {
 const styles = StyleSheet.create({
   button: {
     marginVertical: 10,
-    borderRadius: 25,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 15,
-    width: '80%',
+    padding: 10,
+    width: '40%',
     backgroundColor: '#4CAF50'
   },
   buttonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
     textTransform: 'uppercase'
   }

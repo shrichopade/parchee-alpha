@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Text } from 'native-base';
 
+import pageStyles from './PageStyle.js'
 import AppButton from '../../components/AppButton';
 import AppTextInput from '../../components/AppTextInput';
+import DefaultFooter from './DefaultFooter'
 
 export default class SignIn extends React.Component {
 
@@ -40,46 +42,53 @@ export default class SignIn extends React.Component {
 
     render() {
         return (
-            <View>
-                <Image source={require('../../../assets/images/parchee-logo.png')} 
-                    style={styles.imageTitle} />
-                <AppTextInput
-                    value={this.state.username}
-                    onChangeText={(val) => this.inputValueUpdate(val, 'username')}
-                    leftIcon="email-open"
-                    placeholder="Enter username"
-                    autoCapitalize="none"
-                    keyboardType="email-address"
-                    textContentType="emailAddress"
-                    />
-                <AppTextInput
-                    value={this.state.password}
-                    onChangeText={(val) => this.inputValueUpdate(val, 'password')}
-                    leftIcon="lock"
-                    placeholder="Enter password"
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    secureTextEntry
-                    textContentType="password"
-                    />
-                <View style={styles.buttonContainer}>    
-                    <AppButton title="Login" onPress={() => this.signIn()} />
+            <SafeAreaView  style={pageStyles.container}>
+                <View style={pageStyles.screen}>
+                    <View style={pageStyles.body}>
+                        <Image source={require('../../../assets/images/parchee-logo.png')} 
+                            style={styles.imageTitle} />
+                        <AppTextInput
+                            value={this.state.username}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'username')}
+                            leftIcon="email-open"
+                            placeholder="Enter username"
+                            autoCapitalize="none"
+                            keyboardType="email-address"
+                            textContentType="emailAddress"
+                            />
+                        <AppTextInput
+                            value={this.state.password}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'password')}
+                            leftIcon="lock"
+                            placeholder="Enter password"
+                            autoCapitalize="none"
+                            autoCorrect={false}
+                            secureTextEntry
+                            textContentType="password"
+                            />
+                        <View style={styles.buttonContainer}>    
+                            <AppButton title="Login" onPress={() => this.signIn()} />
+                        </View>
+                        <View style={styles.buttonContainer}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
+                                <Text style={styles.forgotPasswordButtonText}>
+                                    Forgot Password? Reset Password
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.buttonContainer}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
+                                <Text style={styles.forgotPasswordButtonText}>
+                                    Don't have an account? Sign Up
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={pageStyles.footer}>
+                        <DefaultFooter navigation={this.props.navigation}/>
+                    </View>
                 </View>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
-                        <Text style={styles.forgotPasswordButtonText}>
-                            Forgot Password? Reset Password
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
-                        <Text style={styles.forgotPasswordButtonText}>
-                            Don't have an account? Sign Up
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+            </SafeAreaView>
         );
     }
 }
@@ -89,7 +98,7 @@ const styles = StyleSheet.create({
         width: 350,
         height: 150,
         alignSelf: 'center',
-        marginVertical: 8
+        marginVertical: 30
     },
     buttonContainer: {
         marginVertical: 15,

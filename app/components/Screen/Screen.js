@@ -8,9 +8,9 @@ const Screen = (props) => {
 
   return (
     <View style={styles.screen}>
-      <Header text={props.title}>
-        <IconButton icon={props.icon} size={25} is_header={props.has_header_button} />
-      </Header>
+      {/*} <Header text={props.title}>
+              <IconButton icon={props.icon} size={25} is_header={props.has_header_button} />
+            </Header> */}
       <View style={styles.body}>
         {props.page}
       </View>
