@@ -8,7 +8,7 @@ import RequestOTP from './app/screens/common/RequestOTP'
 import ResetPassword from './app/screens/common/ResetPassword'
 
 //Patient Pages
-import ActivePrescription from './app/screens/ActivePrescription';
+import PatientHome from './app/screens/patient/PatientHome.js';
 
 //Aws Amplify Imports
 import Amplify from 'aws-amplify';
@@ -40,6 +40,7 @@ export default class App extends React.Component {
           <Stack.Screen name="SignIn" component={SignIn} options={{title: 'Sign In'}} />
           <Stack.Screen name="RequestOTP" component={RequestOTP} options={{title: 'Reset Password'}} />
           <Stack.Screen name="ResetPassword" component={ResetPassword} options={{title: 'Reset Password'}} />
+          <Stack.Screen name="PatientHome" component={PatientHome} options={{title: 'Patient Home'}} />
         </Stack.Navigator>
       </NavigationContainer>
     );
