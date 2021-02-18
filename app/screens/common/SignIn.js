@@ -51,7 +51,7 @@ export default class SignIn extends React.Component {
                             value={this.state.username}
                             onChangeText={(val) => this.inputValueUpdate(val, 'username')}
                             leftIcon="email-open"
-                            placeholder="Enter username"
+                            placeholder="Enter email address"
                             autoCapitalize="none"
                             keyboardType="email-address"
                             textContentType="emailAddress"
