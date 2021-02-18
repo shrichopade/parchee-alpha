@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, View,Text, FlatList, StyleSheet } from 'react-native';
 
 import pageStyles from '../common/PageStyle.js'
-import PatientFooter from './ChemistFooter'
+import ChemistFooter from './ChemistFooter'
 import list_styles from '../../components/List/styles';
 import medication_data from '../../data/activeprescription';
 import { renderItem } from '../../lib/general';
@@ -21,7 +21,7 @@ export default class ChemistHome extends React.Component {
                         
                     </View>
                     <View style={pageStyles.footer}>
-                        <PatientFooter navigation={this.props.navigation}/>
+                        <ChemistFooter navigation={this.props.navigation}/>
                     </View>
                 </View>
             </SafeAreaView>
