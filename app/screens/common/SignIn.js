@@ -67,7 +67,7 @@ export default class SignIn extends React.Component {
                             textContentType="password"
                             />
                         <View style={styles.buttonContainer}>    
-                            <AppButton title="Login" onPress={() => this.signIn()} />
+                            <AppButton title="Sign In" onPress={() => this.signIn()} />
                         </View>
                         <View style={styles.buttonParallel}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('RequestOTP')}>
