@@ -6,7 +6,7 @@ import AppButton from '../../components/AppButton';
 import AppTextInput from '../../components/AppTextInput';
 import DefaultFooter from './DefaultFooter'
 
-export default class ResetPassword extends React.Component {
+export default class ConfirmSignUp extends React.Component {
 
     constructor() {
         super();
@@ -58,7 +58,7 @@ export default class ResetPassword extends React.Component {
                             textContentType="password"
                             />
                         <View style={styles.buttonContainer}>    
-                            <AppButton title="Reset Password" 
+                            <AppButton title="Register" 
                                 onPress={() => this.props.navigation.navigate('SignIn')} />
                         </View>
                     </View>

@@ -7,6 +7,7 @@ import SignIn from './app/screens/common/SignIn'
 import RequestOTP from './app/screens/common/RequestOTP'
 import ResetPassword from './app/screens/common/ResetPassword'
 import SignUp from './app/screens/common/SignUp'
+import ConfirmSignUp from './app/screens/common/ConfirmSignUp'
 
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';
@@ -50,7 +51,8 @@ export default class App extends React.Component {
           <Stack.Screen name="RequestOTP" component={RequestOTP} options={{title: 'Reset Password'}} />
           <Stack.Screen name="ResetPassword" component={ResetPassword} options={{title: 'Reset Password'}} />
           <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Register/ Sign Up'}} />
-          
+          <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUp} options={{title: 'Confirm Sign Up'}} />
+
           <Stack.Screen name="PatientHome" component={PatientHome} options={{title: 'Patient Home', headerRight:()=> <PatientProfileImage/>}} />
           
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{title: 'Doctor Home', headerRight:()=> <DoctorProfileImage/>}} />
