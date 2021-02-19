@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { RadioButton, Text, Checkbox  } from 'react-native-paper';
 
 import pageStyles from './PageStyle.js'
 import AppButton from '../../components/AppButton';
@@ -13,9 +14,12 @@ export default class SignUp extends React.Component {
         this.state = {
             givenNames: '',
             surname: '',
+            gender: 'M',
             mobileNumber: '',
             aadharCard: '',
-            registrationNumber: ''
+            yourStatus: 'P',
+            registrationNumber: '',
+            checked: 'unchecked'
         }
     }
 
@@ -48,7 +52,14 @@ export default class SignUp extends React.Component {
                             keyboardType="default"
                             textContentType="familyName"
                         />
-                        
+                        <RadioButton.Group onValueChange={(val) => this.inputValueUpdate(val, 'gender')} value={this.state.gender}>
+                            <View style={styles.buttonParallel}>
+                                <RadioButton value="M" />
+                                <Text style={styles.radioText}>Male</Text>
+                                <RadioButton value="F" />
+                                <Text style={styles.radioText}>Female</Text>
+                            </View>
+                        </RadioButton.Group>                        
                         <AppTextInput
                             value={this.state.mobileNumber}
                             onChangeText={(val) => this.inputValueUpdate(val, 'mobileNumber')}
@@ -67,6 +78,16 @@ export default class SignUp extends React.Component {
                             keyboardType="phone-pad"
                             textContentType="creditCardNumber"
                         />
+                        <RadioButton.Group onValueChange={(val) => this.inputValueUpdate(val, 'yourStatus')} value={this.state.yourStatus}>
+                            <View style={styles.buttonParallel}>
+                                <RadioButton value="P" />
+                                <Text style={styles.radioText}>Patient</Text>
+                                <RadioButton value="D" />
+                                <Text style={styles.radioText}>Doctor</Text>
+                                <RadioButton value="C" />
+                                <Text style={styles.radioText}>Chemist</Text>
+                            </View>
+                        </RadioButton.Group>
                         <AppTextInput
                             value={this.state.registrationNumber}
                             onChangeText={(val) => this.inputValueUpdate(val, 'registrationNumber')}
@@ -76,8 +97,17 @@ export default class SignUp extends React.Component {
                             keyboardType="phone-pad"
                             textContentType="creditCardNumber"
                         />
+                        <View style={styles.buttonParallel}>
+                            <Checkbox
+                                status={this.state.checked ? 'checked' : 'unchecked'}
+                                onPress={() => {
+                                    setChecked(!this.state.checked);
+                                }}
+                            />
+                            <Text style={styles.radioText}>Accept Terms and Conditions</Text>
+                        </View>
                         <View style={styles.buttonContainer}>    
-                            <AppButton title="Register" 
+                            <AppButton title="Confirm" 
                                 onPress={() => this.props.navigation.navigate('ConfirmSignUp')} />
                         </View>
                     </View>
@@ -95,5 +125,14 @@ const styles = StyleSheet.create({
         marginVertical: 15,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    buttonParallel: {
+        flex: 0,
+        flexDirection: 'row',
+    },
+    radioText: {
+        fontFamily: 'Arial',
+        fontSize: 17,
+        color: '#808080'
     }
 });
