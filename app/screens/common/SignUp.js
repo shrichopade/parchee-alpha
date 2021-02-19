@@ -101,7 +101,7 @@ export default class SignUp extends React.Component {
                             <Checkbox
                                 status={this.state.checked ? 'checked' : 'unchecked'}
                                 onPress={() => {
-                                    setChecked(!this.state.checked);
+                                    inputValueUpdate(!this.state.checked);
                                 }}
                             />
                             <Text style={styles.radioText}>Accept Terms and Conditions</Text>
@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     radioText: {
-        fontFamily: 'Arial',
-        fontSize: 17,
+        fontFamily: 'Arial, Verdana',
+        fontSize: 15,
         color: '#808080'
     }
 });
