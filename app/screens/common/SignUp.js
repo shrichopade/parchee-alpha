@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { TextInputMask } from 'react-native-masked-text'
 import { RadioButton, Text, Checkbox  } from 'react-native-paper';
 
 import pageStyles from './PageStyle.js'
@@ -15,6 +16,7 @@ export default class SignUp extends React.Component {
             givenNames: '',
             surname: '',
             gender: 'M',
+            dateOfBirth: '',
             mobileNumber: '',
             aadharCard: '',
             yourStatus: 'P',
@@ -59,7 +61,15 @@ export default class SignUp extends React.Component {
                                 <RadioButton value="F" />
                                 <Text style={styles.radioText}>Female</Text>
                             </View>
-                        </RadioButton.Group>                        
+                        </RadioButton.Group>
+                        <TextInputMask
+                            type={'datetime'}
+                            leftIcon="file-code"
+                            options={{format: 'DD/MM/YYYY'}}
+                            value={this.state.dateOfBirth}
+                            placeholder="Enter Date of Birth"
+                            onChangeText={(val) => this.inputValueUpdate(val, 'dateOfBirth')}
+                        />                        
                         <AppTextInput
                             value={this.state.mobileNumber}
                             onChangeText={(val) => this.inputValueUpdate(val, 'mobileNumber')}
