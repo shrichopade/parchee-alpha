@@ -23,8 +23,11 @@ export default class ChemistHome extends React.Component {
           >
             <Text key={item.key}>
                 <View style={styles.itemContainer}>
-                    <Image source={item.status_image} resizeMode='contain'
-                            style={styles.statusImage} />
+                    <View style={styles.nameContainer}>
+                        <Image source={item.status_image} resizeMode='contain'
+                                style={styles.statusImage} />
+                        <Text style={styles.statusText}>{item.status}</Text>
+                    </View>
                     <View style={styles.nameContainer}>
                         <Text style={styles.patientText}>{item.patient}</Text>
                         <Text style={styles.doctorText}>{item.doctor}</Text>
@@ -94,6 +97,14 @@ const styles = StyleSheet.create({
         marginRight: 5,
         alignSelf: 'center'
     },
+    statusText: {
+        fontFamily: 'Arial',
+        fontSize: 10,
+        fontWeight: '400',
+        marginLeft: 5,
+        marginRight: 5,
+        alignSelf: 'center'
+    },
     moreImage: {
         width: 40,
         height: 40,
@@ -113,7 +124,7 @@ const styles = StyleSheet.create({
     dueDateText: {
         fontFamily: 'Arial',
         fontSize: 14,
-        fontWeight: '600',
+        fontWeight: '400',
         marginLeft: 15,
         marginRight: 5
     },
