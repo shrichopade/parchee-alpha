@@ -7,7 +7,7 @@ const DoctorProfileImage = () => {
         <View style={{flexDirection: 'row'}}>
           <Image
             source={
-              require('../../../assets/images/patientprofile.png')
+              require('../../../assets/images/drprofile.png')
             }
             style={{
               width: 40,

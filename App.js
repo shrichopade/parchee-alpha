@@ -47,7 +47,7 @@ export default class App extends React.Component {
             title: ''
           }}
         >
-          <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="SignIn" component={SignIn}  options={{headerStatusBarHeight: 0}}/>
           <Stack.Screen name="RequestOTP" component={RequestOTP} options={{title: 'Reset Password'}} />
           <Stack.Screen name="ResetPassword" component={ResetPassword} options={{title: 'Reset Password'}} />
           <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Register/ Sign Up'}} />
@@ -57,10 +57,11 @@ export default class App extends React.Component {
           
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{title: 'Doctor Home', headerRight:()=> <DoctorProfileImage/>}} />
 
-          <Stack.Screen name="ChemistHome" component={ChemistHome} options={{title: 'Chemist Home', headerRight:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
   
         </Stack.Navigator>
       </NavigationContainer>
     );
-  }
+  } 
 }
+ 
