@@ -21,8 +21,8 @@ export default class ChemistHome extends React.Component {
                 console.log('pressed!');
             }} style={styles.listItem}
           >
-            <Text key={item.key}>
-                <View style={styles.itemContainer}>
+            {/* <Text key={item.key}> */}
+                <View key={item.key} style={styles.itemContainer}>
                     <View style={styles.nameContainer}>
                         <Image source={item.status_image} resizeMode='contain'
                                 style={styles.statusImage} />
@@ -36,7 +36,7 @@ export default class ChemistHome extends React.Component {
                     <Image source={require('../../../assets/images/show-more.png')} 
                         style={styles.moreImage} />
                 </View>
-            </Text>
+            {/* </Text> */}
           </TouchableHighlight>
         );
     }
@@ -61,10 +61,14 @@ export default class ChemistHome extends React.Component {
 
 const styles = StyleSheet.create({
     nameContainer: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end'
     },
     itemContainer: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end'
     },
     listItemHeader: {
         padding: 10,

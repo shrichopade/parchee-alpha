@@ -6,13 +6,21 @@ const styles = StyleSheet.create({
   },
   nameContainer: {
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'flex-end'
   },
   
-  itemContainer: {
+  itemContainer: {      
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      alignItems: 'flex-end'
   },
+    
+  itemContainer1: {      
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end'
+},
   list_item_header: {
         padding: 10,
         fontSize: 20,
@@ -57,7 +65,10 @@ const styles = StyleSheet.create({
       height: 40,
       borderRadius: 40 / 2,
       marginLeft: 15,
-      marginRight: 5
+      marginRight: 5,
+      alignItems: 'flex-end',
+      alignSelf: 'flex-end',
+      flexDirection: 'row'
       
   },
   doctorText: {
@@ -67,6 +78,7 @@ const styles = StyleSheet.create({
       marginLeft: 15,
       marginRight: 5,
       marginBottom: 5
+      
   },
   dueDateText: {
       fontFamily: 'Arial',
