@@ -1,41 +1,93 @@
 import React from 'react';
 import { SafeAreaView, View, Text, FlatList, Image,
     TouchableHighlight, StyleSheet } from 'react-native';
+import { Button } from 'native-base';
+import { Checkbox  } from 'react-native-paper';
 
 import pageStyles from '../common/PageStyle.js'
 import ChemistFooter from './ChemistFooter'
-import order_data from './data/OldOrdersData';
+import order_metadata from './data/OrderMetaData';
+import order_details_data from './data/OrderDetailsData';
 
 export default class OrderDetails extends React.Component {
 
     constructor() {
         super();
+        this.state = {
+            checked: 'checked'
+        }
     }
 
-    renderOrder = ({item}) => {
+    inputValueUpdate = (val, prop) => {
+        const state = this.state;
+        state[prop] = val;
+        this.setState(state);
+    }
+
+    renderOrderMetadata = ({item}) => {
         return (
-          <TouchableHighlight underlayColor="#ccc" onPress={() => {
+            <TouchableHighlight underlayColor="#ccc" onPress={() => {
                 console.log('pressed!');
-            }} style={styles.listItem}
-          >
-            <View key={item.key} style={styles.rootContainer}>
-                <View style={styles.itemContainer}>
-                    <View style={styles.nameContainer}>
-                        <Image source={item.status_image} resizeMode='contain'
-                                style={styles.statusImage} />
-                        <Text style={styles.statusText}>{item.status}</Text>
+                }} style={styles.metadataItems}
+            >
+                <View key={item.key} style={styles.rootContainer}>
+                    <View style={styles.itemContainer}>
+                        <View style={styles.nameContainer}>
+                            <Text style={styles.labelTextLevel1}>{item.patient}</Text>
+                            <Text style={styles.labelTextLevel2}>{item.patient_mobile}</Text>
+                        </View>
+                        <View style={styles.nameContainer}>
+                            <Text style={styles.labelTextLevel1}>{item.doctor}</Text>
+                            <Text style={styles.labelTextLevel2}>{item.doctor_mobile}</Text>
+                        </View>
+                        <View style={styles.nameContainer}>
+                            <Text style={styles.labelTextLevel1}>D: {item.due_date}</Text>
+                            <Text style={styles.labelTextLevel2}>O: {item.order_date}</Text>
+                        </View>
                     </View>
-                    <View style={styles.nameContainer}>
-                        <Text style={styles.patientText}>Patient : {item.patient}</Text>
-                        <Text style={styles.doctorText}>Doctor : {item.doctor}</Text>
-                        <Text style={styles.dueDateText}>Due Date: {item.due_date}</Text>
+                    <View>
+                        <Text style={styles.labelTextLevel1}>Address: {item.delivery_address}</Text>
                     </View>
                 </View>
-                <Image source={require('../../../assets/images/show-more.png')} 
-                        style={styles.moreImage} />
-            </View>
-          </TouchableHighlight>
-        );
+            </TouchableHighlight>
+        )
+    }
+
+    renderOrderDetails = ({item}) => {
+        return(
+            <TouchableHighlight underlayColor="#ccc" onPress={() => {
+                console.log('pressed!');
+                }} style={styles.orderDetailsItems}
+            >
+                <View key={item.key} style={styles.rootContainerDetails}>
+                    <View style={styles.itemContainer}>
+                        <View style={styles.nameContainer}>
+                            <Image source={item.item_image} resizeMode='contain'
+                                    style={styles.statusImage} />
+                            <Text style={styles.statusText}>{item.item_type}</Text>
+                        </View>
+                        <View style={styles.nameContainer}>
+                            <Text style={styles.labelTextLevel1}>{item.item_name}</Text>
+                            <Text style={styles.labelTextLevel2}>{item.item_strength}</Text>
+                        </View>
+                    </View>
+                    <View style={styles.itemContainer}>
+                        <View style={styles.quantityContainer}>
+                                <Text style={styles.labelTextLevel0}>{item.item_quantity}</Text>
+                        </View>
+                        <View style={styles.nameContainer}>
+                                <Checkbox
+                                    status={this.state.checked ? 'checked' : 'unchecked'}
+                                    onPress={() => {
+                                        this.inputValueUpdate(!this.state.checked);
+                                    }}
+                                />
+                                <Text style={styles.labelTextLevel2}>Dispensed</Text>
+                        </View>
+                    </View>
+                </View>
+            </TouchableHighlight>
+        )
     }
 
     render() {
@@ -44,8 +96,24 @@ export default class OrderDetails extends React.Component {
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
                         <Text style={styles.listItemHeader}>ORDER DETAILS</Text>
-                        <FlatList data={order_data.filter(renderOrder => renderOrder !== null)} 
-                            renderItem={this.renderOrder}/>                  
+                        <FlatList data={order_metadata.filter(renderOrderMetadata => renderOrderMetadata !== null)} 
+                            renderItem={this.renderOrderMetadata}/>   
+                        <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
+                            renderItem={this.renderOrderDetails}/>     
+                        <View style={styles.buttonContainer}>    
+                            <Button danger style={styles.buttonStyle} title="Cancel" 
+                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                <Text style={styles.buttonText}>Cancel</Text>
+                            </Button>
+                            <Button warning style={styles.buttonStyle} title="Hold" 
+                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                <Text style={styles.buttonText}>Hold</Text>
+                            </Button>
+                            <Button success style={styles.buttonStyle} title="Submit" 
+                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                <Text style={styles.buttonText}>Submit</Text>
+                            </Button>
+                        </View>
                     </View>
                     <View style={pageStyles.footer}>
                         <ChemistFooter navigation={this.props.navigation}/>
@@ -58,16 +126,25 @@ export default class OrderDetails extends React.Component {
 
 const styles = StyleSheet.create({
     rootContainer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    },
+    rootContainerDetails: {
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
     itemContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     nameContainer: {
         flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+    },
+    quantityContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignSelf: 'flex-start',
+        marginRight: 30,
     },
     listItemHeader: {
         padding: 10,
@@ -77,16 +154,50 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         backgroundColor: '#93cf96'
     },
-    listItem: {
+    metadataItems: {
       padding: 10,
       backgroundColor: '#C8E7C9',
-      borderBottomWidth: 5,
+      borderBottomWidth: 25,
       borderBottomColor: '#f3f3f3'
     },
+    orderDetailsItems: {
+        padding: 10,
+        backgroundColor: '#E4F3E4',
+        borderBottomWidth: 5,
+        borderBottomColor: '#f3f3f3'
+    },
+    labelTextLevel1: {
+        fontFamily: 'Arial',
+        fontSize: 16,
+        fontWeight: '600',
+        marginLeft: 15,
+        marginRight: 5,
+        marginVertical: 3,
+        marginBottom: 3
+    },
+    labelTextLevel0: {
+        fontFamily: 'Arial',
+        fontSize: 22,
+        fontWeight: '800',
+        marginLeft: 15,
+        marginRight: 5,
+        marginVertical: 10,
+        marginBottom: 10,
+        color: "#FF3333",
+    },
+    labelTextLevel2: {
+        fontFamily: 'Arial',
+        fontSize: 14,
+        fontWeight: '400',
+        marginLeft: 15,
+        marginRight: 10,
+        marginVertical: 3,
+        marginBottom: 3
+    },
     statusImage: {
-        width: 50,
-        height: 50,
-        borderRadius: 50 / 2,
+        width: 30,
+        height: 30,
+        borderRadius: 30 / 2,
         marginLeft: 5,
         marginRight: 5,
         alignSelf: 'center'
@@ -99,36 +210,22 @@ const styles = StyleSheet.create({
         marginRight: 5,
         alignSelf: 'center'
     },
-    patientText: {
-        fontFamily: 'Arial',
-        fontSize: 18,
-        fontWeight: '600',
-        marginLeft: 15,
-        marginRight: 5,
-        marginVertical: 3,
-        marginBottom: 5
+    buttonContainer: {
+        flexDirection: 'row',
+        marginVertical: 5,
+        justifyContent: 'space-evenly'
     },
-    doctorText: {
-        fontFamily: 'Arial',
+    buttonStyle: {
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 5,
+        width: '25%',
+    },
+    buttonText: {
+        color: 'white',
         fontSize: 16,
-        fontWeight: '500',
-        marginLeft: 15,
-        marginRight: 5,
-        marginBottom: 5,
-    },
-    dueDateText: {
-        fontFamily: 'Arial',
-        fontSize: 14,
-        fontWeight: '400',
-        marginLeft: 15,
-        marginRight: 5
-    },
-    moreImage: {
-        width: 40,
-        height: 40,
-        borderRadius: 40 / 2,
-        marginLeft: 15,
-        marginRight: 5,
-        alignSelf: 'center'
+        fontWeight: '600',
+        textTransform: 'uppercase'
     },
 });
