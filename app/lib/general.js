@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableHighlight, Picker } from 'react-native';
+import { Text, View,TouchableHighlight, Image, Picker } from 'react-native';
 import styles from './styles';
 
 function renderItem({item}) {
@@ -10,6 +10,15 @@ function renderItem({item}) {
         <Text key={item.key}>{item.name}</Text>
       </TouchableHighlight>
     );
+}
+function renderPrescription({item}) {
+  return (
+    <TouchableHighlight underlayColor="#ccc" onPress={() => {
+      console.log('pressed!');
+    }} style={styles.list_item}>
+      <Text key={item.key}>{item.name}</Text>
+    </TouchableHighlight>
+  );
 }
 
 function renderPickerItems(data) {
@@ -31,7 +40,7 @@ function renderItemAppointment({item}) {
   );
 }
 
-function renderItemOrders({item}) {
+{/*function renderItemOrders({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
       console.log('pressed!');
@@ -39,5 +48,31 @@ function renderItemOrders({item}) {
       <Text key={item.key}>{item.date} {item.chemist}</Text>
     </TouchableHighlight>
   );
+} */}
+function renderItemOrders({item}) {
+  return (
+    <TouchableHighlight underlayColor="#ccc" onPress={() => {
+          console.log('pressed!');
+      }} style={styles.listItem}
+    >
+      <Text key={item.key}>
+          <View style={styles.itemContainer}>
+              <View style={styles.nameContainer}>
+                  <Image source={item.status_image} resizeMode='contain'
+                          style={styles.statusImage} />
+                  <Text style={styles.statusText}>{item.status}</Text>
+              </View>
+              <View style={styles.nameContainer}>
+                  <Text style={styles.patientText}>{item.patient}</Text>
+                  <Text style={styles.doctorText}>{item.doctor}</Text>
+                  <Text style={styles.dueDateText}>{item.due_date}</Text>
+              </View>
+              <Image source={require('../../assets/images/show-more.png')} 
+                  style={styles.moreImage} />
+          </View>
+      </Text>
+    </TouchableHighlight>
+  );
 }
-export { renderItem, renderPickerItems,renderItemAppointment,renderItemOrders };
+
+export { renderItem, renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription };

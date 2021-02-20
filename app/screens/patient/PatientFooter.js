@@ -9,7 +9,7 @@ export default class PatientFooter extends React.Component {
 			<View style={styles.tabs_container}>
               <IconButton icon="event-note" />
               <IconButton icon="qr-code-2" />
-              <IconButton icon="camera-alt" />
+              <IconButton icon="file-upload" />
               <IconButton icon="logout" />
             </View>
 		);

@@ -1,14 +1,18 @@
 export default [
-    {
-      key: 'a',
-      order: '132456',
-      chemist: 'Mahalaxmi Medical, Kothrud',
-      date: '10/01/2021'
-    },
-    {
-      key: 'b',
-      order: '152456',
-      chemist: 'Mahalaxmi Medical, Kothrud',
-      date: '10/02/2021'
-    }   
+  {
+    key: "ORD001",
+    status_image: require("../../assets/images/pending.png"),
+    status: 'Pending',
+    patient: "Nalini Sathe",
+    doctor: "Dr R Joshi",
+    due_date: "15/03/2021"
+  },
+  {
+      key: "ORD005",
+      status_image: require("../../assets/images/complete.png"),
+      status: 'Pending',
+      patient: "Madhuri Dixit",
+      doctor: "Dr K Nene",
+      due_date: "02/03/2021"
+  }     
   ];
