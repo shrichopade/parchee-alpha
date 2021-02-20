@@ -12,7 +12,7 @@ export default [
         status_image: require("../../../assets/images/pending.png"),
         status: 'Pending',
         patient: "Madhuri Dixit",
-        doctor: "Dr K Nene",
+        doctor: "Dr Ram Nene",
         due_date: "02/03/2021"
     },
     {

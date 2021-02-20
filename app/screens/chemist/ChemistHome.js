@@ -21,22 +21,22 @@ export default class ChemistHome extends React.Component {
                 console.log('pressed!');
             }} style={styles.listItem}
           >
-            {/* <Text key={item.key}> */}
-                <View key={item.key} style={styles.itemContainer}>
+            <View key={item.key} style={styles.rootContainer}>
+                <View style={styles.itemContainer}>
                     <View style={styles.nameContainer}>
                         <Image source={item.status_image} resizeMode='contain'
                                 style={styles.statusImage} />
                         <Text style={styles.statusText}>{item.status}</Text>
                     </View>
                     <View style={styles.nameContainer}>
-                        <Text style={styles.patientText}>{item.patient}</Text>
-                        <Text style={styles.doctorText}>{item.doctor}</Text>
-                        <Text style={styles.dueDateText}>{item.due_date}</Text>
+                        <Text style={styles.patientText}>Patient : {item.patient}</Text>
+                        <Text style={styles.doctorText}>Doctor : {item.doctor}</Text>
+                        <Text style={styles.dueDateText}>Due Date: {item.due_date}</Text>
                     </View>
-                    <Image source={require('../../../assets/images/show-more.png')} 
-                        style={styles.moreImage} />
                 </View>
-            {/* </Text> */}
+                <Image source={require('../../../assets/images/show-more.png')} 
+                        style={styles.moreImage} />
+            </View>
           </TouchableHighlight>
         );
     }
@@ -46,7 +46,7 @@ export default class ChemistHome extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.listItemHeader}>Your Orders...</Text>
+                        <Text style={styles.listItemHeader}>PRESCRIPTION ORDERS</Text>
                         <FlatList data={order_data.filter(renderOrder => renderOrder !== null)} 
                             renderItem={this.renderOrder}/>                  
                     </View>
@@ -60,15 +60,17 @@ export default class ChemistHome extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    rootContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    itemContainer: {
+        flexDirection: 'row'
+    },
     nameContainer: {
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'flex-end'
-    },
-    itemContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end'
+        alignItems: 'flex-start'
     },
     listItemHeader: {
         padding: 10,
@@ -83,15 +85,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#C8E7C9',
       borderBottomWidth: 5,
       borderBottomColor: '#f3f3f3'
-    },
-    patientText: {
-        fontFamily: 'Arial',
-        fontSize: 18,
-        fontWeight: '800',
-        marginLeft: 15,
-        marginRight: 5,
-        marginVertical: 3,
-        marginBottom: 5,
     },
     statusImage: {
         width: 50,
@@ -109,18 +102,19 @@ const styles = StyleSheet.create({
         marginRight: 5,
         alignSelf: 'center'
     },
-    moreImage: {
-        width: 40,
-        height: 40,
-        borderRadius: 40 / 2,
+    patientText: {
+        fontFamily: 'Arial',
+        fontSize: 18,
+        fontWeight: '600',
         marginLeft: 15,
         marginRight: 5,
-        alignSelf: 'center'
+        marginVertical: 3,
+        marginBottom: 5
     },
     doctorText: {
         fontFamily: 'Arial',
         fontSize: 16,
-        fontWeight: '600',
+        fontWeight: '500',
         marginLeft: 15,
         marginRight: 5,
         marginBottom: 5,
@@ -131,5 +125,13 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         marginLeft: 15,
         marginRight: 5
+    },
+    moreImage: {
+        width: 40,
+        height: 40,
+        borderRadius: 40 / 2,
+        marginLeft: 15,
+        marginRight: 5,
+        alignSelf: 'center'
     },
 });
