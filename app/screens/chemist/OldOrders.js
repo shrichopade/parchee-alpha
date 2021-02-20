@@ -26,9 +26,9 @@ export default class OldOrders extends React.Component {
                         <Text style={styles.statusText}>{item.status}</Text>
                     </View>
                     <View style={styles.nameContainer}>
-                        <Text style={styles.patientText}>Patient : {item.patient}</Text>
-                        <Text style={styles.doctorText}>Doctor : {item.doctor}</Text>
-                        <Text style={styles.dueDateText}>Due Date: {item.due_date}</Text>
+                        <Text style={styles.patientText}>{item.patient}</Text>
+                        <Text style={styles.doctorText}>{item.doctor}</Text>
+                        <Text style={styles.dueDateText}>{item.due_date}</Text>
                     </View>
                 </View>
                 <Image source={require('../../../assets/images/show-more.png')} 
