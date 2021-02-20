@@ -25,7 +25,8 @@ const ChemistProfileImage = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginBottom: 20
+    marginBottom: 20,
+    width: '100%'
   },
   nameContainer: {
     flexDirection: 'row',

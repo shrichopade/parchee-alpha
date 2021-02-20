@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import IconButton from '../../components/IconButton';
 import { Text  } from 'react-native-paper';
+import { Button, Icon } from 'native-base';
 
 export default class ChemistFooter extends React.Component {
 
@@ -9,8 +10,11 @@ export default class ChemistFooter extends React.Component {
 		return (
 			  <View style={styles.tabs_container}>
           <View>
-            <IconButton icon="event-note" />
-            <Text style={styles.buttonText}>Note</Text>
+            <Button  style={styles.buttonStyle} 
+              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              <Icon name="apps" />
+            </Button>
+            <Text style={styles.buttonText}>Old Orders</Text>
           </View>
           <View>  
             <IconButton icon="qr-code-2" />
@@ -39,10 +43,13 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around',
       backgroundColor: '#4CAF50'
     },
+    buttonStyle:{
+      backgroundColor: '#4CAF50'
+    },
     buttonText: {
       fontFamily: 'Arial',
       fontSize: 12,
       alignSelf: 'center',
       color: '#fff'
     }
-  });
+});

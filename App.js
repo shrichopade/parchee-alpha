@@ -20,6 +20,8 @@ import DoctorProfileImage from './app/screens/doctor/DoctorProfileImage';
 //Chemist Pages
 import ChemistHome from './app/screens/chemist/ChemistHome';
 import ChemistProfileImage from './app/screens/chemist/ChemistProfileImage';
+import OrderDetails from './app/screens/chemist/OrderDetails';
+import OldOrders from './app/screens/chemist/OldOrders';
 
 //Aws Amplify Imports
 import Amplify from 'aws-amplify';
@@ -58,7 +60,8 @@ export default class App extends React.Component {
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{title: 'Doctor Home', headerRight:()=> <DoctorProfileImage/>}} />
 
           <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
-  
+          <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="OldOrders" component={OldOrders} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
         </Stack.Navigator>
       </NavigationContainer>
     );
