@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text, View,TouchableHighlight, Image, Picker } from 'react-native';
+import { Text, Icon, View,TouchableHighlight, Image, Picker } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import styles from './styles';
+import IconButton from '../components/IconButton';
 
 function renderItem({item}) {
     return (
@@ -98,8 +100,8 @@ function renderPrescriptionItem({item}) {
                     <Text style={styles.doctorText}>{item.doctor}</Text>
                   </View>
                   <View style={styles.itemContainer}>
-                      <Image source={require('../../assets/images/show-more.png')} 
-                      style={styles.moreImage} />
+                      <Image source={require('../../assets/images/show-more.png')}                       
+                      style={styles.moreImage} /> 
                   </View>
               </View>
           </View>
