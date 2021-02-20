@@ -1,7 +1,7 @@
 export default [
     {
         key: "ORD011",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Ashok Saraf",
         doctor: "Doctor : Dr N Berde",
@@ -9,7 +9,7 @@ export default [
     },
     {
         key: "ORD012",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Sachin Pilgaonkar",
         doctor: "Doctor : Dr Rahul Burve",
@@ -17,7 +17,7 @@ export default [
     },
     {
         key: "ORD013",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Ashwini Sutar",
         doctor: "Doctor : Dr Mahesh Kothare",
@@ -25,7 +25,7 @@ export default [
     },
     {
         key: "ORD014",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Nita Thosar",
         doctor: "Doctor : Dr S Tendulkar",
@@ -33,7 +33,7 @@ export default [
     },
     {
         key: "ORD015",
-        status_image: require("../../../assets/images/cancel.png"),
+        status_image: require("../../../../assets/images/cancel.png"),
         status: 'Cancelled',
         patient: "Patient : Rahul Dravid",
         doctor: "Doctor : Dr Sunil Gavaskar",
@@ -41,7 +41,7 @@ export default [
     },
     {
         key: "ORD016",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Kuldeep Yadar",
         doctor: "Doctor : Dr Y Chahal",
@@ -49,7 +49,7 @@ export default [
     },
     {
         key: "ORD017",
-        status_image: require("../../../assets/images/cancel.png"),
+        status_image: require("../../../../assets/images/cancel.png"),
         status: 'Cancelled',
         patient: "Patient : Virat Kohli",
         doctor: "Doctor : Dr K L Rahul",
@@ -57,7 +57,7 @@ export default [
     },
     {
         key: "ORD018",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Ajinkya Rahane",
         doctor: "Doctor : Dr Mahesh Kothare",
@@ -65,7 +65,7 @@ export default [
     },
     {
         key: "ORD019",
-        status_image: require("../../../assets/images/complete.png"),
+        status_image: require("../../../../assets/images/complete.png"),
         status: 'Complete',
         patient: "Patient : Nita Thosar",
         doctor: "Doctor : Dr S Tendulkar",
@@ -73,7 +73,7 @@ export default [
     },
     {
         key: "ORD020",
-        status_image: require("../../../assets/images/cancel.png"),
+        status_image: require("../../../../assets/images/cancel.png"),
         status: 'Cancelled',
         patient: "Patient : Rohit Sharma",
         doctor: "Doctor : Dr Sunil Gavaskar",

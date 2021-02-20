@@ -1,15 +1,15 @@
 export default [
     {
         key: "ORD001",
-        status_image: require("../../../assets/images/pending.png"),
+        status_image: require("../../../../assets/images/pending.png"),
         status: 'Pending',
         patient: "Patient : Nalini Sathe",
-        doctor: "Doctor : Dr R Joshi",
+        doctor: "Doctor : Dr Rahul Joshi",
         due_date: "Due on: 25/02/2021"
     },
     {
         key: "ORD005",
-        status_image: require("../../../assets/images/pending.png"),
+        status_image: require("../../../../assets/images/pending.png"),
         status: 'Pending',
         patient: "Patient : Madhuri Dixit",
         doctor: "Doctor : Dr Ram Nene",
@@ -17,7 +17,7 @@ export default [
     },
     {
         key: "ORD003",
-        status_image: require("../../../assets/images/pending.png"),
+        status_image: require("../../../../assets/images/pending.png"),
         status: 'Pending',
         patient: "Patient : Rajesh Patil",
         doctor: "Doctor : Dr A Damdhere",
@@ -25,7 +25,7 @@ export default [
     },
     {
         key: "ORD004",
-        status_image: require("../../../assets/images/pending.png"),
+        status_image: require("../../../../assets/images/pending.png"),
         status: 'Pending',
         patient: "Patient : Sunita Kapoor",
         doctor: "Doctor : Dr S Phadke",
@@ -33,7 +33,7 @@ export default [
     },
     {
         key: "ORD002",
-        status_image: require("../../../assets/images/pause.png"),
+        status_image: require("../../../../assets/images/pause.png"),
         status: 'Hold',
         patient: "Patient : Sandip Thakare",
         doctor: "Doctor : Dr M Kulkarni",

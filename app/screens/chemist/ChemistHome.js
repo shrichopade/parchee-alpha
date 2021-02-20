@@ -4,7 +4,7 @@ import { SafeAreaView, View, Text, FlatList, Image,
 
 import pageStyles from '../common/PageStyle.js'
 import ChemistFooter from './ChemistFooter'
-import order_data from './OrderData';
+import order_data from './data/OrderData';
 
 
 export default class ChemistHome extends React.Component {
@@ -16,7 +16,7 @@ export default class ChemistHome extends React.Component {
     renderOrder = ({item}) => {
         return (
           <TouchableHighlight underlayColor="#ccc" onPress={() => {
-                console.log('pressed!');
+                this.props.navigation.navigate('OrderDetails')
             }} style={styles.listItem}
           >
             <View key={item.key} style={styles.rootContainer}>

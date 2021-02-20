@@ -4,7 +4,7 @@ import { SafeAreaView, View, Text, FlatList, Image,
 
 import pageStyles from '../common/PageStyle.js'
 import ChemistFooter from './ChemistFooter'
-import order_data from './OldOrdersData';
+import order_data from './data/OldOrdersData';
 
 export default class OldOrders extends React.Component {
 

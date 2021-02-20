@@ -4,7 +4,7 @@ import { SafeAreaView, View, Text, FlatList, Image,
 
 import pageStyles from '../common/PageStyle.js'
 import ChemistFooter from './ChemistFooter'
-import order_data from './OldOrdersData';
+import order_data from './data/OldOrdersData';
 
 export default class OrderDetails extends React.Component {
 
@@ -43,7 +43,7 @@ export default class OrderDetails extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.listItemHeader}>ARCHIVED ORDERS</Text>
+                        <Text style={styles.listItemHeader}>ORDER DETAILS</Text>
                         <FlatList data={order_data.filter(renderOrder => renderOrder !== null)} 
                             renderItem={this.renderOrder}/>                  
                     </View>
