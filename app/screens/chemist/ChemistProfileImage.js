@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   profileImage: {
-    width: 40,
-    height: 40,
-    borderRadius: 40 / 2,
+    width: 50,
+    height: 50,
+    borderRadius: 50 / 2,
     marginLeft: 15,
   },
   nameText: {
