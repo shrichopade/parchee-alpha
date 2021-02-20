@@ -5,10 +5,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   nameContainer: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   },
+  
   itemContainer: {
       flexDirection: 'row',
+      justifyContent: 'space-between'
   },
   list_item_header: {
         padding: 10,
@@ -31,31 +34,31 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 5,
     marginVertical: 3,
-    marginBottom: 5,
+    marginBottom: 5
   },
   statusImage: {
       width: 50,
       height: 50,
       borderRadius: 50 / 2,
       marginLeft: 5,
-      marginRight: 5,
-      alignSelf: 'center'
+      marginRight: 5
+      
   },
   statusText: {
       fontFamily: 'Arial',
       fontSize: 10,
       fontWeight: '400',
       marginLeft: 5,
-      marginRight: 5,
-      alignSelf: 'center'
+      marginRight: 5
+      
   },
   moreImage: {
       width: 40,
       height: 40,
       borderRadius: 40 / 2,
       marginLeft: 15,
-      marginRight: 5,
-      alignSelf: 'center'
+      marginRight: 5
+      
   },
   doctorText: {
       fontFamily: 'Arial',
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
       fontWeight: '600',
       marginLeft: 15,
       marginRight: 5,
-      marginBottom: 5,
+      marginBottom: 5
   },
   dueDateText: {
       fontFamily: 'Arial',

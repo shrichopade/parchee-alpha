@@ -10,9 +10,9 @@ const IconButton = (props) => {
   let icon_size = props.size ? props.size : 35;
 
   return (
-    <TouchableHighlight style={styles.icon_button} underlayColor="#ccc" onPress={() => {
-      console.log(icon_name +'icon_name pressed!');
-    }}>
+    <TouchableHighlight style={styles.icon_button} underlayColor="#ccc"onPress={() => {
+      console.log(icon.name + 'pressed!');
+  }} >
       <MaterialIcons name={icon_name} size={icon_size} color={color} />
     </TouchableHighlight>
   );

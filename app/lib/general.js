@@ -53,26 +53,59 @@ function renderItemOrders({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
           console.log('pressed!');
-      }} style={styles.listItem}
+      }} style={styles.list_item}
     >
       <Text key={item.key}>
           <View style={styles.itemContainer}>
-              <View style={styles.nameContainer}>
-                  <Image source={item.status_image} resizeMode='contain'
-                          style={styles.statusImage} />
-                  <Text style={styles.statusText}>{item.status}</Text>
+              <View style={styles.itemContainer}>
+                  <View style={styles.nameContainer}>
+                      <Image source={item.status_image} resizeMode='contain'
+                              style={styles.statusImage} />
+                      <Text style={styles.statusText}>{item.status}</Text>
+                  </View>
+                  <View style={styles.nameContainer1}>
+                    <Text style={styles.patientText}>{item.patient}</Text>
+                    <Text style={styles.doctorText}>{item.doctor}</Text>
+                    <Text style={styles.dueDateText}>{item.due_date}</Text>
+                  </View>
+                  <View style={styles.itemContainer}>
+                      <Image source={require('../../assets/images/show-more.png')} 
+                      style={styles.moreImage} />
+                  </View>
               </View>
-              <View style={styles.nameContainer}>
-                  <Text style={styles.patientText}>{item.patient}</Text>
-                  <Text style={styles.doctorText}>{item.doctor}</Text>
-                  <Text style={styles.dueDateText}>{item.due_date}</Text>
-              </View>
-              <Image source={require('../../assets/images/show-more.png')} 
-                  style={styles.moreImage} />
           </View>
       </Text>
     </TouchableHighlight>
   );
 }
 
-export { renderItem, renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription };
+function renderPrescriptionItem({item}) {
+  return (
+    <TouchableHighlight underlayColor="#ccc" onPress={() => {
+          console.log('pressed!');
+      }} style={styles.list_item}
+    >
+      <Text key={item.key}>
+          <View style={styles.itemContainer}>
+              <View style={styles.itemContainer}>
+                  <View style={styles.nameContainer}>
+                      <Image source={item.image} resizeMode='contain'
+                              style={styles.statusImage} />                      
+                  </View>
+                  <View style={styles.nameContainer1}>
+                    <Text style={styles.patientText}>{item.name}</Text>
+                    <Text style={styles.doctorText}>{item.dosage}</Text>
+                    <Text style={styles.doctorText}>{item.doctor}</Text>
+                  </View>
+                  <View style={styles.itemContainer}>
+                      <Image source={require('../../assets/images/show-more.png')} 
+                      style={styles.moreImage} />
+                  </View>
+              </View>
+          </View>
+      </Text>
+    </TouchableHighlight>
+  );
+}
+
+export { renderItem, renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription,renderPrescriptionItem };
