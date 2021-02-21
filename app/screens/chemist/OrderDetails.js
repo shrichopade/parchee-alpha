@@ -82,7 +82,7 @@ export default class OrderDetails extends React.Component {
                                         this.inputValueUpdate(!this.state.checked);
                                     }}
                                 />
-                                <Text style={styles.labelTextLevel2}>Dispensed</Text>
+                                <Text style={styles.statusText}>Dispensed</Text>
                         </View>
                     </View>
                 </View>
@@ -95,24 +95,26 @@ export default class OrderDetails extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.listItemHeader}>ORDER DETAILS</Text>
-                        <FlatList data={order_metadata.filter(renderOrderMetadata => renderOrderMetadata !== null)} 
-                            renderItem={this.renderOrderMetadata}/>   
-                        <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
-                            renderItem={this.renderOrderDetails}/>     
-                        <View style={styles.buttonContainer}>    
-                            <Button danger style={styles.buttonStyle} title="Cancel" 
-                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                <Text style={styles.buttonText}>Cancel</Text>
-                            </Button>
-                            <Button warning style={styles.buttonStyle} title="Hold" 
-                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                <Text style={styles.buttonText}>Hold</Text>
-                            </Button>
-                            <Button success style={styles.buttonStyle} title="Submit" 
-                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                <Text style={styles.buttonText}>Submit</Text>
-                            </Button>
+                        <View  style={pageStyles.rootContainer}>
+                            <Text style={styles.listItemHeader}>ORDER DETAILS</Text>
+                            <FlatList data={order_metadata.filter(renderOrderMetadata => renderOrderMetadata !== null)} 
+                                renderItem={this.renderOrderMetadata}/>   
+                            <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
+                                renderItem={this.renderOrderDetails}/>     
+                            <View style={styles.buttonContainer}>    
+                                <Button danger style={styles.buttonStyle} title="Cancel" 
+                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                    <Text style={styles.buttonText}>Cancel</Text>
+                                </Button>
+                                <Button warning style={styles.buttonStyle} title="Hold" 
+                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                    <Text style={styles.buttonText}>Hold</Text>
+                                </Button>
+                                <Button success style={styles.buttonStyle} title="Submit" 
+                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                    <Text style={styles.buttonText}>Submit</Text>
+                                </Button>
+                            </View>
                         </View>
                     </View>
                     <View style={pageStyles.footer}>
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
     },
     rootContainerDetails: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     itemContainer: {
         flexDirection: 'row',
@@ -157,11 +159,11 @@ const styles = StyleSheet.create({
     metadataItems: {
       padding: 10,
       backgroundColor: '#C8E7C9',
-      borderBottomWidth: 25,
+      borderBottomWidth: 5,
       borderBottomColor: '#f3f3f3'
     },
     orderDetailsItems: {
-        padding: 10,
+        padding: 5,
         backgroundColor: '#E4F3E4',
         borderBottomWidth: 5,
         borderBottomColor: '#f3f3f3'
@@ -204,7 +206,7 @@ const styles = StyleSheet.create({
     },
     statusText: {
         fontFamily: 'Arial',
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: '400',
         marginLeft: 5,
         marginRight: 5,

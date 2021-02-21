@@ -30,5 +30,6 @@ export default [
         item_image: require("../../../../assets/images/tablet.png"),
         item_type: 'Tablet',
         item_quantity: '30',
-    }
+    },
+    
 ]
