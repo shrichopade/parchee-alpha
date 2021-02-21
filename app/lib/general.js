@@ -5,6 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import styles from './styles';
 import IconButton from '../components/IconButton';
 
+
 function renderItem({item}) {
     return (
       <TouchableHighlight underlayColor="#ccc" onPress={() => {
@@ -36,7 +37,7 @@ function renderPickerItems(data) {
 function renderItemAppointment({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
-      console.log('pressed!');}} style={styles.list_item}>
+      console.log('appointment pressed pressed!');}} style={styles.list_item}>
       
           <View key={item.key} style={styles.itemContainer}>             
                   {/* <View style={styles.itemContainer}> */}
@@ -67,8 +68,8 @@ function renderItemAppointment({item}) {
 } */}
 function renderItemOrders({item}) {
   return (
-    <TouchableHighlight underlayColor="#ccc" onPress={() => {
-          console.log('pressed!');  }} style={styles.list_item}    >
+    // <TouchableHighlight underlayColor="#ccc" onPress={() => { 
+          // console.log('pressed!');  }} style={styles.list_item}    >
       
               <View key={item.key} style={styles.itemContainer}>
                   <View style={styles.nameContainer}>
@@ -87,14 +88,14 @@ function renderItemOrders({item}) {
                   </View>
               </View>
          
-    </TouchableHighlight>
+    // </TouchableHighlight>
   );
 }
 
 function renderPrescriptionItem({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
-          console.log('pressed!');
+          console.log('Pre pressed!');
       }} style={styles.list_item}>
       {/* <Text key={item.key}> */}
           <View key={item.key} style={styles.itemContainer}>
@@ -119,7 +120,7 @@ function renderPrescriptionItem({item}) {
 function renderCapturedPrescriptionItem({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
-          console.log('pressed!');
+          console.log('cap pre pressed!');
       }} style={styles.list_item}>
       {/* <Text key={item.key}> */}
           <View key={item.key} style={styles.itemContainer}>
@@ -144,7 +145,7 @@ function renderCapturedPrescriptionItem({item}) {
 function renderItemTrial({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
-          console.log('pressed!');
+          console.log('item trial pressed!');
       }} style={styles.list_item}
     >
       {/* <Text key={item.key}> */}
