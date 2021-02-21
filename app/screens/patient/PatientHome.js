@@ -103,7 +103,7 @@ export default class PatientHome extends React.Component {
                         <FlatList data={appointment_data} renderItem={this.renderItemAppointment} /> 
                         <Text style={list_styles.list_item_header}>Orders</Text>
                         <TouchableHighlight underlayColor="#ccc" onPress={() => { 
-          console.log('new pressed!'); this.props.navigation.navigate('PatientOrderDetails')  }} >  
+          console.log('new pressed!'); this.props.navigation.navigate('PatientOrderDetails')  }} style={styles.list_item}>
                         <FlatList data={order_data} renderItem={this.renderItemOrders} navigation={this.props.navigation} /> 
                         </TouchableHighlight>
                     </View>
