@@ -5,7 +5,7 @@ import PatientFooter from '../PatientFooter';
 import { Icon,CheckBox } from 'native-base';
 import medication_data from '../../../data/capturedprescription';
 import list_styles from '../../../components/List/styles';
-import { renderPrescriptionItem, } from '../../../lib/general';
+import { renderPrescriptionItem,renderCapturedPrescriptionItem } from '../../../lib/general';
 
 
 // import styles from "./styles";
@@ -53,7 +53,7 @@ export default class ConfirmPrescription extends Component {
                 {`Step ${currentStep} of ${totalSteps}`}
             </Text>
             <Text style={list_styles.list_item_header}>Captured Prescription</Text>
-            <FlatList data={medication_data} renderItem={renderPrescriptionItem} />
+            <FlatList data={medication_data} renderItem={renderCapturedPrescriptionItem} />
             <View style={styles.btnContainer}>
               <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
                         <Image

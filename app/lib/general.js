@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, Icon, View,TouchableHighlight, Image, Picker } from 'react-native';
+import { Text, Icon, View,TouchableHighlight, Image, Picker, } from 'react-native';
+import {CheckBox} from 'native-base';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './styles';
 import IconButton from '../components/IconButton';
@@ -115,6 +116,30 @@ function renderPrescriptionItem({item}) {
   );
 }
 
+function renderCapturedPrescriptionItem({item}) {
+  return (
+    <TouchableHighlight underlayColor="#ccc" onPress={() => {
+          console.log('pressed!');
+      }} style={styles.list_item}>
+      {/* <Text key={item.key}> */}
+          <View key={item.key} style={styles.itemContainer}>
+              <View style={styles.itemContainer}>
+                  <View style={styles.nameContainer}>
+                      <Image source={item.image} resizeMode='contain'
+                              style={styles.statusImage} />                      
+                  </View>
+                  <View style={styles.nameContainer1}>
+                    <Text style={styles.patientText}>{item.name}</Text>
+                    <Text style={styles.doctorText}>{item.dosage}</Text>
+                    <Text style={styles.doctorText}>{item.doctor}</Text>
+                  </View>                  
+              </View>
+              <CheckBox checked={true} color="green" />
+          </View>
+      {/* </Text> */}
+    </TouchableHighlight>
+  );
+}
 
 function renderItemTrial({item}) {
   return (
@@ -141,4 +166,4 @@ function renderItemTrial({item}) {
   );
 }
 
-export { renderItem, renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription,renderPrescriptionItem,renderItemTrial };
+export { renderItem,renderCapturedPrescriptionItem, renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription,renderPrescriptionItem,renderItemTrial };
