@@ -36,18 +36,20 @@ function renderItemAppointment({item}) {
   return (
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
       console.log('pressed!');}} style={styles.list_item}>
-      <Text key={item.key}>
-          <View style={styles.itemContainer}>
-              <View style={styles.itemContainer}>
-                  <View style={styles.itemContainer}>
-                      <IconButton icon="calendar-today" /> 
-                    <Text style={styles.patientText}>{item.date}</Text>
+      
+          <View key={item.key} style={styles.itemContainer}>             
+                  {/* <View style={styles.itemContainer}> */}
+                    <IconButton icon="calendar-today" /> 
+                    <View style={styles.nameContainer}>
+                      <Text style={styles.patientText}>{item.date}</Text>
+                      <Text style={styles.patientText}>{item.time}</Text>
+                    </View>
                     <Text style={styles.patientText}>{item.doctor}</Text> 
                     <Text style={styles.patientText}>{item.location}</Text> 
-                  </View>                  
-              </View>
+                  {/* </View>                   */}
+              
           </View>
-      </Text>     
+    
       
     </TouchableHighlight>
   );
@@ -73,7 +75,7 @@ function renderItemOrders({item}) {
                               style={styles.statusImage} />
                       <Text style={styles.statusText}>{item.status}</Text>
                   </View>
-                  <View style={styles.nameContainer1}>
+                  <View style={styles.nameContainer}>
                     <Text style={styles.patientText}>{item.patient}</Text>
                     <Text style={styles.doctorText}>{item.doctor}</Text>
                     <Text style={styles.dueDateText}>{item.due_date}</Text>
@@ -93,8 +95,8 @@ function renderPrescriptionItem({item}) {
     <TouchableHighlight underlayColor="#ccc" onPress={() => {
           console.log('pressed!');
       }} style={styles.list_item}>
-      <Text key={item.key}>
-          <View style={styles.itemContainer}>
+      {/* <Text key={item.key}> */}
+          <View key={item.key} style={styles.itemContainer}>
               <View style={styles.itemContainer}>
                   <View style={styles.nameContainer}>
                       <Image source={item.image} resizeMode='contain'
@@ -108,7 +110,7 @@ function renderPrescriptionItem({item}) {
                  
               </View>
           </View>
-      </Text>
+      {/* </Text> */}
     </TouchableHighlight>
   );
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { SafeAreaView, View, Text, FlatList, Image,
     TouchableHighlight, StyleSheet } from 'react-native';
 
-import pageStyles from '../common/PageStyle.js'
-import ChemistFooter from './ChemistFooter'
+import pageStyles from '../common/PageStyle.js';
+import ChemistFooter from './ChemistFooter';
 import order_data from './data/OrderData';
 
 

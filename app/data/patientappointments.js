@@ -1,13 +1,15 @@
 export default [
     {
       key: 'a',
-      date: '25/02/2021 11:30 AM',
+      date: '25/02/2021',
+      time: '11:30 AM',
       doctor: 'Dr Pote', 
       location: 'Joshi Hospital'   
     },
     {
       key: 'b',
-      date: '31/03/2021 3:30 PM',         
+      date: '31/03/2021',
+      time: '3:30 PM',         
       doctor: 'Dr Joshi',
       location: 'Kothrud Clinic'
     }   

@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-import { Image, View, TouchableOpacity, FlatList, Text,StyleSheet,SafeAreaView,Body, ListItem } from "react-native";
+import { Image, View, TouchableOpacity, TextInput, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
 import PatientFooter from '../PatientFooter';
-import { Icon,CheckBox } from 'native-base';
-import medication_data from '../../../data/capturedprescription';
-import list_styles from '../../../components/List/styles';
-import { renderPrescriptionItem, } from '../../../lib/general';
-
+import { Icon } from 'native-base';
 
 // import styles from "./styles";
 
-export default class ConfirmPrescription extends Component {
+export default class UploadPrescription1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,8 +48,11 @@ export default class ConfirmPrescription extends Component {
             <Text style={styles.currentStepText}>
                 {`Step ${currentStep} of ${totalSteps}`}
             </Text>
-            <Text style={list_styles.list_item_header}>Captured Prescription</Text>
-            <FlatList data={medication_data} renderItem={renderPrescriptionItem} />
+            <Image
+                          source={require("../../../../assets/images/prescription1.png")}
+                          style={styles.btnImage1}
+                          resizeMode="cover"
+                        />
             <View style={styles.btnContainer}>
               <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
                         <Image

@@ -12,6 +12,7 @@ import ConfirmSignUp from './app/screens/common/ConfirmSignUp';
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';
 import PatientProfileImage from './app/screens/patient/PatientProfileImage';
+import UploadPrescription from './app/screens/patient/UploadPrescription';
 
 //Doctor Pages
 import DoctorHome from './app/screens/doctor/DoctorHome';
@@ -57,7 +58,7 @@ export default class App extends React.Component {
           <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUp} options={{title: 'Confirm Sign Up'}} />
 
           <Stack.Screen name="PatientHome" component={PatientHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <PatientProfileImage/>}} />
-          
+          <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{title: 'Upload Prescription', headerRight:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <DoctorProfileImage/>}} />
 
           <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />

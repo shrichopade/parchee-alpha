@@ -1,46 +1,39 @@
 import React from 'react';
-import { Text } from 'native-base';
-import {View, Image, StyleSheet } from 'react-native';
+
+import {View, Image,StyleSheet, Text} from 'react-native';
 
 const PatientProfileImage = () => {
     return (
-        <View style={styles.container}>
-          <Image
-            source={
-              require('../../../assets/images/patientprofile.png')
-            }
-            style={styles.profileImage}
-          />
-          <View>
-            <Text style={styles.nameText}>Nalini Sathe</Text>
-            <View style={styles.nameContainer}>
-              <Image source={require('../../../assets/images/mobile.png')} style={styles.mobileImage} />
-              <Text style={styles.subText}>9765678012</Text>
-            </View>
-          </View>
-        </View>
+      <View style={styles.container}>
+      <Image
+        source={
+          require('../../../assets/images/patientprofile.png')
+        }
+        style={styles.profileImage}
+      />     
+      <Text style={styles.nameText}>Neha Khare</Text>             
+    </View>
       );
 };
-
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     marginBottom: 20,
-    width: '100%'
+    alignItems: 'center'
   },
   nameContainer: {
     flexDirection: 'row',
   },
   profileImage: {
-    width: 50,
-    height: 50,
+    width: 30,
+    height: 30,
     borderRadius: 50 / 2,
     marginLeft: 15,
   },
   nameText: {
     fontFamily: 'Arial',
-    fontSize: 18,
-    fontWeight: '800',
+    fontSize: 12,
+    fontWeight: '200',
     color: '#fff',
     marginLeft: 15,
     marginRight: 10,
@@ -68,5 +61,4 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
 });
-
 export default PatientProfileImage;

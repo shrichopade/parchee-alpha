@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   nameContainer: {
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'flex-end'
+    alignItems: 'flex-start'
   },
   
   itemContainer: {      
@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end'
 },
   list_item_header: {
-        padding: 10,
-        fontSize: 20,
-        marginTop: 10,
-        marginBottom: 10,
-        fontWeight: 'bold',
-        backgroundColor: '#93cf96'
+    padding: 10,
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    fontWeight: 'bold',
+    backgroundColor: '#93cf96'
   },
   list_item: {
     padding: 20,
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
   },
   patientText: {
     fontFamily: 'Arial',
-    fontSize: 18,
-    fontWeight: '800',
-    marginLeft: 15,
-    marginRight: 5,
-    marginVertical: 3,
-    marginBottom: 5
+        fontSize: 18,
+        fontWeight: '600',
+        marginLeft: 15,
+        marginRight: 5,
+        marginVertical: 3,
+        marginBottom: 5
   },
   statusImage: {
       width: 50,
@@ -72,20 +72,19 @@ const styles = StyleSheet.create({
       
   },
   doctorText: {
-      fontFamily: 'Arial',
-      fontSize: 16,
-      fontWeight: '600',
-      marginLeft: 15,
-      marginRight: 5,
-      marginBottom: 5
-      
+    fontFamily: 'Arial',
+    fontSize: 16,
+    fontWeight: '500',
+    marginLeft: 15,
+    marginRight: 5,
+    marginBottom: 5,
   },
   dueDateText: {
-      fontFamily: 'Arial',
-      fontSize: 14,
-      fontWeight: '400',
-      marginLeft: 15,
-      marginRight: 5
+    fontFamily: 'Arial',
+    fontSize: 14,
+    fontWeight: '400',
+    marginLeft: 15,
+    marginRight: 5
   },
 
 });

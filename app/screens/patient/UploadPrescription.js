@@ -1,21 +1,23 @@
+import React, { Component } from 'react';
+import { View } from 'react-native';
 import AnimatedMultistep from "react-native-animated-multistep";
 
 /* Define the steps  */
 
 import CapturePrescription from "./UploadPrescription/CapturePrescription";
-import UploadPrescription from "./UploadPrescription/UploadPrescription";
+import UploadPrescription1 from "./UploadPrescription/UploadPrescription1";
 import ConfirmPrescription from "./UploadPrescription/ConfirmPrescription";
 // import Step4 from "./steps/step4";
 
 const allSteps = [
-  { name: "step 1", component: CapturePrescription },
-  { name: "step 2", component: UploadPrescription },
+  { name: "Capture Prescription", component: CapturePrescription },
+  { name: "Upload Prescription", component: UploadPrescription1 },
 //   { name: "step 3", component: Step3 },
-  { name: "step 4", component: ConfirmPrescription }
+  { name: "Confirm Prescription", component: ConfirmPrescription }
 ];
 
 /* Define your class */
-export default class App extends Component {
+export default class UploadPrescription extends Component {
   /* define the method to be called when you go on next step */
 
   onNext = () => {

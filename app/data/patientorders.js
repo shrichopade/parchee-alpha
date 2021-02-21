@@ -10,7 +10,7 @@ export default [
   {
       key: "ORD005",
       status_image: require("../../assets/images/complete.png"),
-      status: 'Pending',
+      status: 'Complete',
       patient: "Madhuri Dixit",
       doctor: "Dr K Nene",
       due_date: "02/03/2021"

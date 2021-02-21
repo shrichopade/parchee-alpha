@@ -16,7 +16,10 @@ export default StyleSheet.create({
   },
   list_item_header: {
     padding: 10,
-    fontSize: 17,
-    fontWeight: 'bold'
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    fontWeight: 'bold',
+    backgroundColor: '#93cf96'
   }
 });
