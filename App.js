@@ -45,6 +45,7 @@ export default class App extends React.Component {
             headerTitleStyle: {
               fontWeight: 'bold',
             },
+            headerTitleAlign: 'center',
             headerBackTitleVisible: false,
             title: ''
           }}
@@ -55,13 +56,13 @@ export default class App extends React.Component {
           <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Register/ Sign Up'}} />
           <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUp} options={{title: 'Confirm Sign Up'}} />
 
-          <Stack.Screen name="PatientHome" component={PatientHome} options={{title: 'Patient Home', headerRight:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientHome" component={PatientHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <PatientProfileImage/>}} />
           
-          <Stack.Screen name="DoctorHome" component={DoctorHome} options={{title: 'Doctor Home', headerRight:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <DoctorProfileImage/>}} />
 
-          <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
-          <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
-          <Stack.Screen name="OldOrders" component={OldOrders} options={{headerStatusBarHeight: 50, headerRight:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="OldOrders" component={OldOrders} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
         </Stack.Navigator>
       </NavigationContainer>
     );

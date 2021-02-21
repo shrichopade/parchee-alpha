@@ -26,10 +26,7 @@ export default class OrderDetails extends React.Component {
 
     renderOrderMetadata = ({item}) => {
         return (
-            <TouchableHighlight underlayColor="#ccc" onPress={() => {
-                console.log('pressed!');
-                }} style={styles.metadataItems}
-            >
+            <TouchableHighlight underlayColor="#ccc" style={styles.metadataItems}>
                 <View key={item.key} style={styles.rootContainer}>
                     <View style={styles.itemContainer}>
                         <View style={styles.nameContainer}>
@@ -55,10 +52,7 @@ export default class OrderDetails extends React.Component {
 
     renderOrderDetails = ({item}) => {
         return(
-            <TouchableHighlight underlayColor="#ccc" onPress={() => {
-                console.log('pressed!');
-                }} style={styles.orderDetailsItems}
-            >
+            <TouchableHighlight underlayColor="#ccc" style={styles.orderDetailsItems}>
                 <View key={item.key} style={styles.rootContainerDetails}>
                     <View style={styles.itemContainer}>
                         <View style={styles.nameContainer}>
