@@ -54,7 +54,7 @@ export default class PatientHome extends React.Component {
                     <View style={styles.itemContainer}>
                         <View style={styles.nameContainer}>
                             <Image source={item.image} resizeMode='contain'
-                                    style={styles.statusImage} />                      
+                                    style={styles.statusImage1} />                      
                         </View>
                         <View style={styles.nameContainer1}>
                           <Text style={styles.patientText}>{item.name}</Text>

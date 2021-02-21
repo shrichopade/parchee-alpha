@@ -52,6 +52,14 @@ const styles = StyleSheet.create({
       marginRight: 5
       
   },
+  statusImage1: {
+    width: 80,
+    height: 80,
+    borderRadius: 50 / 2,
+    marginLeft: 5,
+    marginRight: 5
+    
+},
   statusText: {
       fontFamily: 'Arial',
       fontSize: 10,
