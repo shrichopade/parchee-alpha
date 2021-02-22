@@ -21,7 +21,7 @@ import DoctorProfileImage from './app/screens/doctor/DoctorProfileImage';
 
 //Chemist Pages
 import ChemistHome from './app/screens/chemist/ChemistHome';
-import ChemistProfileImage from './app/screens/chemist/ChemistProfileImage';
+import ChemistProfileImage from './app/screens/chemist/profile/ChemistProfileImage';
 import OrderDetails from './app/screens/chemist/OrderDetails';
 import OldOrders from './app/screens/chemist/OldOrders';
 import OldOrderDetails from './app/screens/chemist/OldOrderDetails';

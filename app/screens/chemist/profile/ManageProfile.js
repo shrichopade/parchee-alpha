@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 
 import pageStyles from '../../common/PageStyle.js';
 import AppButton from '../../../components/AppButton';
@@ -17,10 +17,6 @@ export default class ManageProfile extends React.Component {
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
                         <Text style={styles.pageTitle}>MANAGE PROFILE</Text>
-                        <AppButton title="Manage Personal Info" onPress={this.props.navigation.navigate('ChemistManagePersonalInfo')} />
-                        <AppButton title="Change Password" onPress={this.props.navigation.navigate('ChemistChangePassword')} />
-                        <AppButton title="Manage Settings" onPress={this.props.navigation.navigate('ChemistManageSettings')} />
-                        <AppButton title="Log out" onPress={this.props.navigation.navigate('SignIn')} />
                     </View>
                     <View style={pageStyles.footer}>
                         <ChemistFooter navigation={this.props.navigation}/>

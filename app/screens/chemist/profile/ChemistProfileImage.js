@@ -1,24 +1,26 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Text } from 'native-base';
 import {View, Image, StyleSheet,TouchableHighlight } from 'react-native';
 
 const ChemistProfileImage = () => {
+  const navigation = useNavigation();
     return (
        <TouchableHighlight underlayColor="#ccc" onPress={() => {
-              
+            navigation.navigate('ChemistManageProfile')
           }} style={styles.listItem}
         >
           <View style={styles.container}>
             <Image
               source={
-                require('../../../assets/images/chemistprofile.png')
+                require('../../../../assets/images/chemistprofile.png')
               }
               style={styles.profileImage}
             />
             <View>
               <Text style={styles.nameText}>Suresh Medicals</Text>
               <View style={styles.nameContainer}>
-                <Image source={require('../../../assets/images/mobile.png')} style={styles.mobileImage} />
+                <Image source={require('../../../../assets/images/mobile.png')} style={styles.mobileImage} />
                 <Text style={styles.subText}>9876545563</Text>
               </View>
             </View>
