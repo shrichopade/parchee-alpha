@@ -1,24 +1,29 @@
 import React from 'react';
 import { Text } from 'native-base';
-import {View, Image, StyleSheet } from 'react-native';
+import {View, Image, StyleSheet,TouchableHighlight } from 'react-native';
 
 const ChemistProfileImage = () => {
     return (
-        <View style={styles.container}>
-          <Image
-            source={
-              require('../../../assets/images/chemistprofile.png')
-            }
-            style={styles.profileImage}
-          />
-          <View>
-            <Text style={styles.nameText}>Suresh Medicals</Text>
-            <View style={styles.nameContainer}>
-              <Image source={require('../../../assets/images/mobile.png')} style={styles.mobileImage} />
-              <Text style={styles.subText}>9876545563</Text>
+       <TouchableHighlight underlayColor="#ccc" onPress={() => {
+              
+          }} style={styles.listItem}
+        >
+          <View style={styles.container}>
+            <Image
+              source={
+                require('../../../assets/images/chemistprofile.png')
+              }
+              style={styles.profileImage}
+            />
+            <View>
+              <Text style={styles.nameText}>Suresh Medicals</Text>
+              <View style={styles.nameContainer}>
+                <Image source={require('../../../assets/images/mobile.png')} style={styles.mobileImage} />
+                <Text style={styles.subText}>9876545563</Text>
+              </View>
             </View>
           </View>
-        </View>
+        </TouchableHighlight>
       );
 };
 
