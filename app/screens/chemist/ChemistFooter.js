@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import IconButton from '../../components/IconButton';
 import { Text  } from 'react-native-paper';
 import { Button, Icon } from 'native-base';
 
@@ -12,21 +11,30 @@ export default class ChemistFooter extends React.Component {
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
-              <Icon name="apps" />
+              <Icon name="keypad" />
             </Button>
             <Text style={styles.buttonText}>Old Orders</Text>
           </View>
           <View>  
-            <IconButton icon="qr-code-2" />
-            <Text style={styles.buttonText}>Note</Text>
+            <Button  style={styles.buttonStyle} 
+              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              <Icon name="film" />
+            </Button>
+            <Text style={styles.buttonText}>QR Code</Text>
           </View>
           <View>
-            <IconButton icon="camera-alt" />
-            <Text style={styles.buttonText}>Note</Text>
+            <Button  style={styles.buttonStyle} 
+              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              <Icon name="camera" />
+            </Button>
+            <Text style={styles.buttonText}>Photo</Text>
           </View>
           <View>
-            <IconButton icon="logout" />
-            <Text style={styles.buttonText}>Note</Text>
+            <Button  style={styles.buttonStyle} 
+              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              <Icon name="grid" />
+            </Button>            
+            <Text style={styles.buttonText}>Repeat Orders</Text>
           </View>
         </View>
 		);
