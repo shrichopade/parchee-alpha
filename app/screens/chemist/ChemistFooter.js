@@ -8,13 +8,6 @@ export default class ChemistFooter extends React.Component {
 	render() {
 		return (
 			  <View style={styles.tabs_container}>
-          <View>
-            <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
-              <Icon name="keypad" />
-            </Button>
-            <Text style={styles.buttonText}>Old Orders</Text>
-          </View>
           <View>  
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
@@ -25,13 +18,20 @@ export default class ChemistFooter extends React.Component {
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
-              <Icon name="camera" />
+              <Icon name="flame" />
             </Button>
-            <Text style={styles.buttonText}>Photo</Text>
+            <Text style={styles.buttonText}>Current Orders</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
+              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              <Icon name="keypad" />
+            </Button>
+            <Text style={styles.buttonText}>Archived Orders</Text>
+          </View>
+          <View>
+            <Button  style={styles.buttonStyle} 
+              vertical onPress={() => this.props.navigation.navigate('UpcomingOrders')}>
               <Icon name="grid" />
             </Button>            
             <Text style={styles.buttonText}>Repeat Orders</Text>

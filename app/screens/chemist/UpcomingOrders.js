@@ -2,11 +2,12 @@ import React from 'react';
 import { SafeAreaView, View, Text, FlatList, Image,
     TouchableHighlight, StyleSheet } from 'react-native';
 
-import pageStyles from '../common/PageStyle.js'
-import ChemistFooter from './ChemistFooter'
-import order_data from './data/OldOrdersData';
+import pageStyles from '../common/PageStyle.js';
+import ChemistFooter from './ChemistFooter';
+import order_data from './data/UpcomingOrderData';
 
-export default class OldOrders extends React.Component {
+
+export default class UpcomingOrders extends React.Component {
 
     constructor() {
         super();
@@ -15,7 +16,7 @@ export default class OldOrders extends React.Component {
     renderOrder = ({item}) => {
         return (
           <TouchableHighlight underlayColor="#ccc" onPress={() => {
-                this.props.navigation.navigate('OldOrderDetails')
+                this.props.navigation.navigate('RepeatOrderDetails')
             }} style={styles.listItem}
           >
             <View key={item.key} style={styles.rootContainer}>
@@ -43,7 +44,7 @@ export default class OldOrders extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.listItemHeader}>ARCHIVED ORDERS</Text>
+                        <Text style={styles.listItemHeader}>UPCOMING REPEAT ORDERS</Text>
                         <FlatList data={order_data.filter(renderOrder => renderOrder !== null)} 
                             renderItem={this.renderOrder}/>                  
                     </View>
@@ -75,11 +76,11 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         fontWeight: 'bold',
-        backgroundColor: '#a1a1a1'
+        backgroundColor: '#DDA65E'
     },
     listItem: {
       padding: 10,
-      backgroundColor: '#d2d2d2',
+      backgroundColor: '#E3B77E',
       borderBottomWidth: 5,
       borderBottomColor: '#f3f3f3'
     },

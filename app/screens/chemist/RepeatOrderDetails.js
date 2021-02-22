@@ -6,10 +6,10 @@ import { Checkbox  } from 'react-native-paper';
 
 import pageStyles from '../common/PageStyle.js'
 import ChemistFooter from './ChemistFooter'
-import order_metadata from './data/OrderMetaData';
+import order_metadata from './data/RepeatOrderMetaData';
 import order_details_data from './data/OrderDetailsData';
 
-export default class OrderDetails extends React.Component {
+export default class RepeatOrderDetails extends React.Component {
 
     constructor() {
         super();
@@ -95,20 +95,6 @@ export default class OrderDetails extends React.Component {
                                 renderItem={this.renderOrderMetadata}/>   
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
                                 renderItem={this.renderOrderDetails}/>     
-                            <View style={styles.buttonContainer}>    
-                                <Button danger style={styles.buttonStyle} title="Cancel" 
-                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                    <Text style={styles.buttonText}>Cancel</Text>
-                                </Button>
-                                <Button warning style={styles.buttonStyle} title="Hold" 
-                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                    <Text style={styles.buttonText}>Hold</Text>
-                                </Button>
-                                <Button success style={styles.buttonStyle} title="Submit" 
-                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                    <Text style={styles.buttonText}>Submit</Text>
-                                </Button>
-                            </View>
                         </View>
                     </View>
                     <View style={pageStyles.footer}>
@@ -148,17 +134,17 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         fontWeight: 'bold',
-        backgroundColor: '#93cf96'
+        backgroundColor: '#DDA65E'
     },
     metadataItems: {
       padding: 10,
-      backgroundColor: '#C8E7C9',
+      backgroundColor: '#E3B77E',
       borderBottomWidth: 5,
       borderBottomColor: '#f3f3f3'
     },
     orderDetailsItems: {
         padding: 5,
-        backgroundColor: '#E4F3E4',
+        backgroundColor: '#F1DBBE',
         borderBottomWidth: 5,
         borderBottomColor: '#f3f3f3'
     },

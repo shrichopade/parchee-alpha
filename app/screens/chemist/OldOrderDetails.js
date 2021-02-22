@@ -95,20 +95,6 @@ export default class OrderDetails extends React.Component {
                                 renderItem={this.renderOrderMetadata}/>   
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
                                 renderItem={this.renderOrderDetails}/>     
-                            <View style={styles.buttonContainer}>    
-                                <Button danger style={styles.buttonStyle} title="Cancel" 
-                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                    <Text style={styles.buttonText}>Cancel</Text>
-                                </Button>
-                                <Button warning style={styles.buttonStyle} title="Hold" 
-                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                    <Text style={styles.buttonText}>Hold</Text>
-                                </Button>
-                                <Button success style={styles.buttonStyle} title="Submit" 
-                                    onPress={() => this.props.navigation.navigate('ChemistHome')}>
-                                    <Text style={styles.buttonText}>Submit</Text>
-                                </Button>
-                            </View>
                         </View>
                     </View>
                     <View style={pageStyles.footer}>
@@ -148,17 +134,17 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         fontWeight: 'bold',
-        backgroundColor: '#93cf96'
+        backgroundColor: '#a1a1a1'
     },
     metadataItems: {
       padding: 10,
-      backgroundColor: '#C8E7C9',
+      backgroundColor: '#d2d2d2',
       borderBottomWidth: 5,
       borderBottomColor: '#f3f3f3'
     },
     orderDetailsItems: {
         padding: 5,
-        backgroundColor: '#E4F3E4',
+        backgroundColor: '#e1e1e1',
         borderBottomWidth: 5,
         borderBottomColor: '#f3f3f3'
     },

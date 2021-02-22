@@ -24,6 +24,11 @@ import ChemistHome from './app/screens/chemist/ChemistHome';
 import ChemistProfileImage from './app/screens/chemist/ChemistProfileImage';
 import OrderDetails from './app/screens/chemist/OrderDetails';
 import OldOrders from './app/screens/chemist/OldOrders';
+import OldOrderDetails from './app/screens/chemist/OldOrderDetails';
+import UpcomingOrders from './app/screens/chemist/UpcomingOrders';
+import RepeatOrderDetails from './app/screens/chemist/RepeatOrderDetails';
+
+
 
 //Aws Amplify Imports
 import Amplify from 'aws-amplify';
@@ -68,6 +73,9 @@ export default class App extends React.Component {
           <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OldOrders" component={OldOrders} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="OldOrderDetails" component={OldOrderDetails} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="UpcomingOrders" component={UpcomingOrders} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="RepeatOrderDetails" component={RepeatOrderDetails} options={{headerStatusBarHeight: 50, headerTitle:()=> <ChemistProfileImage/>}} />
         </Stack.Navigator>
       </NavigationContainer>
     );
