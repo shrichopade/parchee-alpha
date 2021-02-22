@@ -10,28 +10,28 @@ export default class DoctorFooter extends React.Component {
 			  <View style={styles.tabs_container}>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="medkit" />
             </Button>
             <Text style={styles.buttonText}>Prescribe</Text>
           </View>
           <View>  
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="film" />
             </Button>
             <Text style={styles.buttonText}>Scan QR</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="eye" />
             </Button>
             <Text style={styles.buttonText}>Refer</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="bookmarks" />
             </Button>            
             <Text style={styles.buttonText}>Sick Note</Text>

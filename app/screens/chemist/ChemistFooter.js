@@ -17,21 +17,21 @@ export default class ChemistFooter extends React.Component {
           </View>
           <View>  
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
               <Icon name="film" />
             </Button>
             <Text style={styles.buttonText}>QR Code</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
               <Icon name="camera" />
             </Button>
             <Text style={styles.buttonText}>Photo</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
               <Icon name="grid" />
             </Button>            
             <Text style={styles.buttonText}>Repeat Orders</Text>
