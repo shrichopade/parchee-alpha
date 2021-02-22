@@ -24,17 +24,17 @@ export default class ChemistFooter extends React.Component {
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
-              <Icon name="keypad" />
-            </Button>
-            <Text style={styles.buttonText}>Archived Orders</Text>
-          </View>
-          <View>
-            <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('UpcomingOrders')}>
               <Icon name="grid" />
             </Button>            
             <Text style={styles.buttonText}>Repeat Orders</Text>
+          </View>
+          <View>
+            <Button  style={styles.buttonStyle} 
+              vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
+              <Icon name="keypad" />
+            </Button>
+            <Text style={styles.buttonText}>Archived Orders</Text>
           </View>
         </View>
 		);
