@@ -13,15 +13,14 @@ export default class ManagePersonalInfo extends React.Component {
     constructor() {
         super();
         this.state = {
-            givenNames: '',
-            surname: '',
-            gender: 'M',
-            dateOfBirth: '',
-            mobileNumber: '',
+            givenName: 'Suresh Ramlal',
+            surname: 'Pathak',
+            username: 'suresh.pathak@gmail.com',
+            mobileNumber: '9875645563',
             aadharCard: '',
-            yourStatus: 'P',
+            pharmacy: '',
             registrationNumber: '',
-            checked: 'unchecked'
+            Address: ''
         }
     }
 
@@ -55,18 +54,19 @@ export default class ManagePersonalInfo extends React.Component {
                             keyboardType="default"
                             textContentType="familyName"
                         />
-                        <AppDateTextMask
-                            type={'datetime'}
-                            leftIcon="file-code"
-                            options={{format: 'DD/MM/YYYY'}}
-                            value={this.state.dateOfBirth}
-                            placeholder="Enter Date of Birth (DD/MM/YYYY)"
-                            onChangeText={(val) => this.inputValueUpdate(val, 'dateOfBirth')}
-                        />                        
+                        <AppTextInput
+                            value={this.state.username}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'username')}
+                            leftIcon="email-open"
+                            placeholder="Enter email address"
+                            autoCapitalize="none"
+                            keyboardType="email-address"
+                            textContentType="emailAddress"
+                        />                      
                         <AppTextInput
                             value={this.state.mobileNumber}
                             onChangeText={(val) => this.inputValueUpdate(val, 'mobileNumber')}
-                            leftIcon="file-code"
+                            leftIcon="phone"
                             placeholder="Enter mobile number"
                             autoCapitalize="none"
                             keyboardType="phone-pad"
@@ -75,11 +75,38 @@ export default class ManagePersonalInfo extends React.Component {
                         <AppTextInput
                             value={this.state.aadharCard}
                             onChangeText={(val) => this.inputValueUpdate(val, 'aadharCard')}
-                            leftIcon="file-code"
+                            leftIcon="identifier"
                             placeholder="Enter Aadhar number"
                             autoCapitalize="none"
                             keyboardType="phone-pad"
                             textContentType="creditCardNumber"
+                        />
+                        <AppTextInput
+                            value={this.state.pharmacy}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'pharmacy')}
+                            leftIcon="shopping"
+                            placeholder="Enter Pharmacy Name"
+                            autoCapitalize="words"
+                            keyboardType="default"
+                            textContentType="familyName"
+                        />
+                        <AppTextInput
+                            value={this.state.registrationNumber}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'registrationNumber')}
+                            leftIcon="cash-register"
+                            placeholder="Enter Registration number"
+                            autoCapitalize="none"
+                            keyboardType="phone-pad"
+                            textContentType="creditCardNumber"
+                        />
+                        <AppTextInput
+                            value={this.state.address}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'address')}
+                            leftIcon="city"
+                            placeholder="Enter Address"
+                            autoCapitalize="words"
+                            keyboardType="default"
+                            textContentType="familyName"
                         />
                         <Button success style={styles.buttonStyle} title="Submit" 
                             onPress={() => this.props.navigation.navigate('ChemistConfirmChanges')}>
