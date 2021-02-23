@@ -31,6 +31,7 @@ import ChemistManageProfile from './app/screens/chemist/profile/ManageProfile';
 import ChemistManagePersonalInfo from './app/screens/chemist/profile/ManagePersonalInfo';
 import ChemistChangePassword from './app/screens/chemist/profile/ChangePassword';
 import ChemistManageSettings from './app/screens/chemist/profile/ManageSettings';
+import ChemistConfirmChanges from './app/screens/chemist/profile/ConfirmChanges';
 
 
 //Aws Amplify Imports
@@ -84,6 +85,7 @@ export default class App extends React.Component {
           <Stack.Screen name="ChemistManagePersonalInfo" component={ChemistManagePersonalInfo} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="ChemistChangePassword" component={ChemistChangePassword} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="ChemistManageSettings" component={ChemistManageSettings} options={{headerTitle:()=> <ChemistProfileImage/>}} />
+          <Stack.Screen name="ChemistConfirmChanges" component={ChemistConfirmChanges} options={{headerTitle:()=> <ChemistProfileImage/>}} />
 
         </Stack.Navigator>
       </NavigationContainer>

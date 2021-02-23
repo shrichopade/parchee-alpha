@@ -4,11 +4,21 @@ import { Button } from 'native-base';
 
 import pageStyles from '../../common/PageStyle.js';
 import ChemistFooter from '../ChemistFooter';
+import AppTextInput from '../../../components/AppTextInput';
 
-export default class ManageSettings extends React.Component {
+export default class ConfirmChanges extends React.Component {
 
     constructor() {
         super();
+        this.state = {
+          passcode: '',
+        }
+    }
+
+    inputValueUpdate = (val, prop) => {
+        const state = this.state;
+        state[prop] = val;
+        this.setState(state);
     }
 
     render() {
@@ -16,9 +26,18 @@ export default class ManageSettings extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.pageTitle}>MANAGE SETTINGS</Text>
+                        <Text style={styles.pageTitle}>CONFIRM CHANGES</Text>
+                        <AppTextInput
+                            value={this.state.passcode}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'passcode')}
+                            leftIcon="file-code"
+                            placeholder="Enter passcode"
+                            autoCapitalize="none"
+                            keyboardType="phone-pad"
+                            textContentType="oneTimeCode"
+                            />
                         <Button success style={styles.buttonStyle} title="Submit" 
-                            onPress={() => this.props.navigation.navigate('ChemistConfirmChanges')}>
+                            onPress={() => this.props.navigation.navigate('ChemistHome')}>
                             <Text style={styles.buttonText}>Submit</Text>
                         </Button>
                     </View>

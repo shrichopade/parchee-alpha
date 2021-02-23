@@ -17,19 +17,23 @@ export default class ManageProfile extends React.Component {
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
                         <Text style={styles.pageTitle}>MANAGE PROFILE</Text>
-                        <Button success iconLeft style={styles.buttonStyle}>
+                        <Button success iconLeft style={styles.buttonStyle}
+                            onPress={() => this.props.navigation.navigate('ChemistManagePersonalInfo')}>
                             <Icon name='person' />
                             <Text style={styles.buttonText}>Manage Personal Info</Text>
                         </Button>
-                        <Button warning iconLeft style={styles.buttonStyle}>
+                        <Button warning iconLeft style={styles.buttonStyle}
+                            onPress={() => this.props.navigation.navigate('ChemistChangePassword')}>
                             <Icon name='keypad' />
                             <Text style={styles.buttonText}>Change Password</Text>
                         </Button>
-                        <Button primary iconLeft style={styles.buttonStyle}>
+                        <Button primary iconLeft style={styles.buttonStyle}
+                            onPress={() => this.props.navigation.navigate('ChemistManageSettings')}>
                             <Icon name='settings' />
                             <Text style={styles.buttonText}>Manage Settings</Text>
                         </Button>
-                        <Button danger iconLeft style={styles.buttonStyle}>
+                        <Button danger iconLeft style={styles.buttonStyle}
+                            onPress={() => this.props.navigation.navigate('SignIn')}>
                             <Icon name='navigate' />
                             <Text style={styles.buttonText}>Log out</Text>
                         </Button>
