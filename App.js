@@ -17,7 +17,12 @@ import PatientOrderDetails from './app/screens/patient/PatientOrderDetails';
 
 //Doctor Pages
 import DoctorHome from './app/screens/doctor/DoctorHome';
-import DoctorProfileImage from './app/screens/doctor/DoctorProfileImage';
+import DoctorProfileImage from './app/screens/doctor/profile/DoctorProfileImage';
+import DoctorManageProfile from './app/screens/doctor/profile/ManageProfile';
+import DoctorManagePersonalInfo from './app/screens/doctor/profile/ManagePersonalInfo';
+import DoctorChangePassword from './app/screens/doctor/profile/ChangePassword';
+import DoctorManageSettings from './app/screens/doctor/profile/ManageSettings';
+import DoctorConfirmChanges from './app/screens/doctor/profile/ConfirmChanges';
 
 //Chemist Pages
 import ChemistHome from './app/screens/chemist/ChemistHome';
@@ -73,7 +78,12 @@ export default class App extends React.Component {
           <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{title: 'Patient Order Details', headerRight:()=> <PatientProfileImage/>}} />
           
           
-          <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerStatusBarHeight: 50, headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorManageProfile" component={DoctorManageProfile} options={{headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorManagePersonalInfo" component={DoctorManagePersonalInfo} options={{headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorChangePassword" component={DoctorChangePassword} options={{headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorManageSettings" component={DoctorManageSettings} options={{headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorConfirmChanges" component={DoctorConfirmChanges} options={{headerTitle:()=> <DoctorProfileImage/>}} />  
 
           <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerTitle:()=> <ChemistProfileImage />}} />
           <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerTitle:()=> <ChemistProfileImage/>}} />

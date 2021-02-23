@@ -1,24 +1,31 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Text } from 'native-base';
-import {View, Image, StyleSheet } from 'react-native';
+import {View, Image, StyleSheet,TouchableHighlight } from 'react-native';
 
 const DoctorProfileImage = () => {
+  const navigation = useNavigation();
     return (
-        <View style={styles.container}>
-          <Image
-            source={
-              require('../../../assets/images/drprofile.png')
-            }
-            style={styles.profileImage}
-          />
-          <View>
-            <Text style={styles.nameText}>Dr Rahul Joshi</Text>
-            <View style={styles.nameContainer}>
-              <Image source={require('../../../assets/images/mobile.png')} style={styles.mobileImage} />
-              <Text style={styles.subText}>9876543267</Text>
+       <TouchableHighlight underlayColor="#ccc" onPress={() => {
+            navigation.navigate('DoctorManageProfile')
+          }} style={styles.listItem}
+        >
+          <View style={styles.container}>
+            <Image
+              source={
+                require('../../../../assets/images/drprofile.png')
+              }
+              style={styles.profileImage}
+            />
+            <View>
+              <Text style={styles.nameText}>Dr Sudhir Phadke</Text>
+              <View style={styles.nameContainer}>
+                <Image source={require('../../../../assets/images/mobile.png')} style={styles.mobileImage} />
+                <Text style={styles.subText}>8776589765</Text>
+              </View>
             </View>
           </View>
-        </View>
+        </TouchableHighlight>
       );
 };
 
