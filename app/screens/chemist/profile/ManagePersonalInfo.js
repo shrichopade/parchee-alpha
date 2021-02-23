@@ -6,7 +6,6 @@ import { RadioButton, Text, Checkbox  } from 'react-native-paper';
 import pageStyles from '../../common/PageStyle.js';
 import ChemistFooter from '../ChemistFooter';
 import AppTextInput from '../../../components/AppTextInput';
-import AppDateTextMask from '../../../components/AppDateTextMask';
 
 export default class ManagePersonalInfo extends React.Component {
 
@@ -35,25 +34,7 @@ export default class ManagePersonalInfo extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.pageTitle}>MANAGE PERSONAL INFORMATION</Text>
-                        <AppTextInput
-                            value={this.state.givenName}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'givenName')}
-                            leftIcon="face"
-                            placeholder="Enter First names"
-                            autoCapitalize="words"
-                            keyboardType="default"
-                            textContentType="givenName"
-                        />
-                        <AppTextInput
-                            value={this.state.surname}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'surname')}
-                            leftIcon="face"
-                            placeholder="Enter Surname"
-                            autoCapitalize="words"
-                            keyboardType="default"
-                            textContentType="familyName"
-                        />
+                        <Text style={styles.pageTitle}>PERSONAL INFO - Suresh Pathak</Text>
                         <AppTextInput
                             value={this.state.username}
                             onChangeText={(val) => this.inputValueUpdate(val, 'username')}

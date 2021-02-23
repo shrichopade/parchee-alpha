@@ -94,7 +94,11 @@ export default class RepeatOrderDetails extends React.Component {
                             <FlatList data={order_metadata.filter(renderOrderMetadata => renderOrderMetadata !== null)} 
                                 renderItem={this.renderOrderMetadata}/>   
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
-                                renderItem={this.renderOrderDetails}/>     
+                                renderItem={this.renderOrderDetails}/>  
+                            <Button primary style={styles.buttonStyle} title="Submit" 
+                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                <Text style={styles.buttonText}>Back</Text>
+                            </Button>   
                         </View>
                     </View>
                     <View style={pageStyles.footer}>
@@ -201,6 +205,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
         padding: 5,
         width: '20%'
     },

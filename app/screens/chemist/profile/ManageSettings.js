@@ -1,14 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
-import { Button } from 'native-base';
+import { Button, Picker, Item, Icon  } from 'native-base';
 
 import pageStyles from '../../common/PageStyle.js';
 import ChemistFooter from '../ChemistFooter';
 
 export default class ManageSettings extends React.Component {
 
+
     constructor() {
         super();
+        this.state = {
+          passcode: '',
+          selectedValue: 'java'
+        }
+    }
+
+    inputValueUpdate = (val, prop) => {
+        const state = this.state;
+        state[prop] = val;
+        this.setState(state);
     }
 
     render() {
@@ -17,6 +28,56 @@ export default class ManageSettings extends React.Component {
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
                         <Text style={styles.pageTitle}>MANAGE SETTINGS</Text>
+                        <View style={styles.nameValueContainer}>
+                            <Text style={styles.labelText}>New Order Notifications on:</Text>
+                            <Item picker>
+                                <Picker style={styles.dropdownStyle}
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="arrow-down" />}
+                                    style={{ width: undefined }}
+                                    placeholder="Select"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                >
+                                    <Picker.Item label="Both" value="both" />
+                                    <Picker.Item label="Mobile" value="mobile" />
+                                    <Picker.Item label="Email" value="email" />
+                                </Picker>
+                            </Item>
+                        </View>
+                        <View style={styles.nameValueContainer}>
+                            <Text style={styles.labelText}>Other Notifications on:</Text>
+                            <Item picker>
+                                <Picker style={styles.dropdownStyle}
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="arrow-down" />}
+                                    style={{ width: undefined }}
+                                    placeholder="Select"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                >
+                                    <Picker.Item label="Both" value="both" />
+                                    <Picker.Item label="Mobile" value="mobile" />
+                                    <Picker.Item label="Email" value="email" />
+                                </Picker>
+                            </Item>
+                        </View>
+                        <View style={styles.nameValueContainer}>
+                            <Text style={styles.labelText}>Receipt Acknowledgement:</Text>
+                            <Item picker>
+                                <Picker style={styles.dropdownStyle}
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="arrow-down" />}
+                                    style={{ width: undefined }}
+                                    placeholder="Select"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                >
+                                    <Picker.Item label="Yes" value="yes" />
+                                    <Picker.Item label="No" value="no" />
+                                </Picker>
+                            </Item>
+                        </View>
                         <Button success style={styles.buttonStyle} title="Submit" 
                             onPress={() => this.props.navigation.navigate('ChemistConfirmChanges')}>
                             <Text style={styles.buttonText}>Submit</Text>
@@ -55,4 +116,27 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         textTransform: 'uppercase'
     },
+    nameValueContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start'
+    },
+    labelText: {
+        fontFamily: 'Arial',
+        fontSize: 14,
+        fontWeight: '600',
+        marginLeft: 15,
+        marginRight: 10,
+        marginVertical: 10,
+        marginBottom: 10
+    },
+    dropdownStyle: {
+        height: 30, 
+        width: '98%',
+        alignSelf: 'center',
+        marginVertical: 0,
+        marginBottom: 10,
+        marginLeft: 15,
+        marginRight: 10,
+    }
 });
