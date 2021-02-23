@@ -58,15 +58,17 @@ const styles = StyleSheet.create({
     },
     buttonStyle: {
         borderRadius: 10,
+        alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 5,
         marginBottom: 15,
-        width: '30%'
+        marginTop: 10,
+        width: '80%'
     },
     buttonText: {
         color: 'white',
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: '600',
         textTransform: 'uppercase'
     },
