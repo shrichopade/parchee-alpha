@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import { Button, Icon } from 'native-base';
 
 import pageStyles from '../../common/PageStyle.js';
-import AppButton from '../../../components/AppButton';
 import ChemistFooter from '../ChemistFooter';
 
 export default class ManageProfile extends React.Component {
@@ -17,6 +17,22 @@ export default class ManageProfile extends React.Component {
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
                         <Text style={styles.pageTitle}>MANAGE PROFILE</Text>
+                        <Button success iconLeft style={styles.buttonStyle}>
+                            <Icon name='person' />
+                            <Text style={styles.buttonText}>Manage Personal Info</Text>
+                        </Button>
+                        <Button warning iconLeft style={styles.buttonStyle}>
+                            <Icon name='keypad' />
+                            <Text style={styles.buttonText}>Change Password</Text>
+                        </Button>
+                        <Button primary iconLeft style={styles.buttonStyle}>
+                            <Icon name='settings' />
+                            <Text style={styles.buttonText}>Manage Settings</Text>
+                        </Button>
+                        <Button danger iconLeft style={styles.buttonStyle}>
+                            <Icon name='navigate' />
+                            <Text style={styles.buttonText}>Log out</Text>
+                        </Button>
                     </View>
                     <View style={pageStyles.footer}>
                         <ChemistFooter navigation={this.props.navigation}/>
@@ -35,5 +51,19 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         fontWeight: 'bold',
         backgroundColor: '#93cf96'
+    },
+    buttonStyle: {
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 5,
+        marginBottom: 15,
+        width: '30%'
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 14,
+        fontWeight: '600',
+        textTransform: 'uppercase'
     },
 });
