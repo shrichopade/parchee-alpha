@@ -11,10 +11,16 @@ import ConfirmSignUp from './app/screens/common/ConfirmSignUp';
 
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';
-import PatientProfileImage from './app/screens/patient/PatientProfileImage';
 import UploadPrescription from './app/screens/patient/UploadPrescription';
 import PatientOrderDetails from './app/screens/patient/PatientOrderDetails';
 import SendtoChemist from './app/screens/patient/SendtoChemist';
+import PatientProfileImage from './app/screens/patient/profile/PatientProfileImage';
+import PatientManageProfile from './app/screens/patient/profile/ManageProfile';
+import PatientManagePersonalInfo from './app/screens/patient/profile/ManagePersonalInfo';
+import PatientChangePassword from './app/screens/patient/profile/ChangePassword';
+import PatientManageSettings from './app/screens/patient/profile/ManageSettings';
+import PatientConfirmChanges from './app/screens/patient/profile/ConfirmChanges';
+
 //Doctor Pages
 import DoctorHome from './app/screens/doctor/DoctorHome';
 import DoctorProfileImage from './app/screens/doctor/profile/DoctorProfileImage';
@@ -74,9 +80,14 @@ export default class App extends React.Component {
           <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUp} options={{title: 'Confirm Sign Up'}} />
 
           <Stack.Screen name="PatientHome" component={PatientHome} options={{headerTitle:()=> <PatientProfileImage/>}} />
-          <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{title: 'Upload Prescription', headerRight:()=> <PatientProfileImage/>}} />
-          <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{title: 'Patient Order Details', headerRight:()=> <PatientProfileImage/>}} />
-          <Stack.Screen name="SendtoChemist" component={SendtoChemist} options={{title: 'Send to Chemist', headerRight:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="SendtoChemist" component={SendtoChemist} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientManageProfile" component={PatientManageProfile} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientManagePersonalInfo" component={PatientManagePersonalInfo} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientChangePassword" component={PatientChangePassword} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientManageSettings" component={PatientManageSettings} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientConfirmChanges" component={PatientConfirmChanges} options={{headerTitle:()=> <PatientProfileImage/>}} />
           
           
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerTitle:()=> <DoctorProfileImage/>}} />
