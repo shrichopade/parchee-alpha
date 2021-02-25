@@ -3,6 +3,7 @@ import { Image, View, TouchableOpacity, TextInput, Text,StyleSheet,SafeAreaView 
 import pageStyles from '../../common/PageStyle.js';
 import PatientFooter from '../PatientFooter';
 import { Icon, Item,Picker } from 'native-base';
+import list_styles from '../../../components/List/styles';
 
 // import styles from "./styles";
 
@@ -45,10 +46,8 @@ export default class SelectChemist extends Component {
         <View style={pageStyles.screen}>
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
-              <Text style={styles.currentStepText}>
-                  {`Step ${currentStep} of ${totalSteps}`}
-              </Text>
-              <Text style={styles.currentStepText}> 'Chemist' </Text> 
+              
+              <Text style={list_styles.list_item_header}>Select Chemist - {`Step ${currentStep} of ${totalSteps}`}</Text>
               <Item picker>
                                 <Picker style={styles.dropdownStyle}
                                     mode="dropdown"

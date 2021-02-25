@@ -3,6 +3,7 @@ import { Image, View, TouchableOpacity, TextInput, Text,StyleSheet,SafeAreaView 
 import pageStyles from '../../common/PageStyle.js';
 import PatientFooter from '../PatientFooter';
 import { Icon } from 'native-base';
+import list_styles from '../../../components/List/styles';
 
 // import styles from "./styles";
 
@@ -45,10 +46,7 @@ export default class CapturePrescription extends Component {
         <View style={pageStyles.screen}>
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
-              <Text style={styles.currentStepText}>
-                  {`Step ${currentStep} of ${totalSteps}`}
-              </Text>
-              <Text style={styles.currentStepText}> 'Take a Picture' </Text> 
+            <Text style={list_styles.list_item_header}>Take a Picture - {`Step ${currentStep} of ${totalSteps}`}</Text>
               <Icon style={styles.icon} name="camera" />
               <Text style={styles.currentStepText}> 'Upload from Google Drive' </Text> 
               <Icon style={styles.icon} name="folder" />

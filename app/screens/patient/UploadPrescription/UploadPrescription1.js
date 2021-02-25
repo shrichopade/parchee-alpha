@@ -3,6 +3,7 @@ import { Image, View, TouchableOpacity, TextInput, Text,StyleSheet,SafeAreaView 
 import pageStyles from '../../common/PageStyle.js';
 import PatientFooter from '../PatientFooter';
 import { Icon } from 'native-base';
+import list_styles from '../../../components/List/styles';
 
 // import styles from "./styles";
 
@@ -45,9 +46,7 @@ export default class UploadPrescription1 extends Component {
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-            <Text style={styles.currentStepText}>
-                {`Step ${currentStep} of ${totalSteps}`}
-            </Text>
+          <Text style={list_styles.list_item_header}>Upload Prescription - {`Step ${currentStep} of ${totalSteps}`}</Text>
             <Image
                           source={require("../../../../assets/images/prescription1.png")}
                           style={styles.btnImage1}
