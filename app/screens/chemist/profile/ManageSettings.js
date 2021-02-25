@@ -38,7 +38,6 @@ export default class ManageSettings extends React.Component {
                                     placeholder="Select"
                                     placeholderStyle={{ color: "#bfc6ea" }}
                                     placeholderIconColor="#007aff"
-                                    onValueChange={this.onValueChange2.bind(this)}
                                 >
                                     <Picker.Item label="Both" value="both" />
                                     <Picker.Item label="Mobile" value="mobile" />
@@ -56,7 +55,6 @@ export default class ManageSettings extends React.Component {
                                     placeholder="Select"
                                     placeholderStyle={{ color: "#bfc6ea" }}
                                     placeholderIconColor="#007aff"
-                                    onValueChange={this.onValueChange2.bind(this)}
                                 >
                                     <Picker.Item label="Both" value="both" />
                                     <Picker.Item label="Mobile" value="mobile" />
@@ -74,7 +72,6 @@ export default class ManageSettings extends React.Component {
                                     placeholder="Select"
                                     placeholderStyle={{ color: "#bfc6ea" }}
                                     placeholderIconColor="#007aff"
-                                    onValueChange={this.onValueChange2.bind(this)}
                                 >
                                     <Picker.Item label="Yes" value="yes" />
                                     <Picker.Item label="No" value="no" />
