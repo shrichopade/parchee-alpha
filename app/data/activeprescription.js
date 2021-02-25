@@ -2,35 +2,35 @@ export default [
     {
       key: 'a',
       name: 'Omeprezol 20 mg',
-      image: require("../../assets/images/tablet.png"),
+      image: require("../../assets/images/omez20.jpg"),
       dosage: '20 mg  1 tab a day (Morning)',
       doctor: "Dr R Joshi"     
     },
     {
       key: 'b',
       name: 'Ramipril',
-      image: require("../../assets/images/tablet.png"),
+      image: require("../../assets/images/ramipril.png"),
       dosage: '70 mg  1 tab a day (Morning)',
       doctor: "Dr R Joshi"     
     },
     {
       key: 'c',
       name: 'Insuline 20ml',
-      image: require("../../assets/images/insulin.png"),
+      image: require("../../assets/images/Insuline.jpg"),
       dosage: '32 ml (Morning)',
       doctor: "Dr R Joshi"     
     },   
     {
       key: 'd',
       name: 'Vitamin B12',
-      image: require("../../assets/images/tablet.png"),
+      image: require("../../assets/images/vitaminb12.jpg"),
       dosage: '1 tab a day (Night)',
       doctor: "Dr R Joshi"     
     },
     {
       key: 'e',
       name: 'Metformin 75 mg',
-      image: require("../../assets/images/tablet.png"),
+      image: require("../../assets/images/metformin.jpg"),
       dosage: '20 mg  1 tab a day (Morning)',
       doctor: "Dr R Joshi"     
     },

@@ -10,7 +10,7 @@ import order_data from '../../data/patientorders';
 import styles from '../../lib/styles';
 import IconButton from '../../components/IconButton';
 
-import { renderItem,renderItemAppointment,renderItemOrders,renderPrescriptionItem,renderItemTrial } from '../../lib/general';
+// import { renderItem,renderItemAppointment,renderItemOrders,renderPrescriptionItem,renderItemTrial } from '../../lib/general';
 
 export default class PatientHome extends React.Component {
 
@@ -41,6 +41,31 @@ export default class PatientHome extends React.Component {
                     </View>
                
         //   </TouchableHighlight>
+        );
+      }
+
+      renderItemOrders1({item}) {
+        return (
+            <TouchableHighlight underlayColor="#ccc" onPress={() => {
+                this.props.navigation.navigate('PatientOrderDetails')
+            }} style={styles.listItem}>           
+                    <View key={item.key} style={styles.itemContainer}>
+                        <View style={styles.nameContainer}>
+                            <Image source={item.status_image} resizeMode='contain'
+                                    style={styles.statusImage} />
+                            <Text style={styles.statusText}>{item.status}</Text>
+                        </View>
+                        <View style={styles.nameContainer}>
+                          <Text style={styles.patientText}>{item.patient}</Text>
+                          <Text style={styles.doctorText}>{item.doctor}</Text>
+                          <Text style={styles.dueDateText}>{item.due_date}</Text>
+                        </View>
+                        <View style={styles.nameContainer}>
+                            <Image source={require('../../../assets/images/show-more.png')} 
+                            style={styles.moreImage} />
+                        </View>
+                    </View>
+             </TouchableHighlight>
         );
       }
 
@@ -103,8 +128,10 @@ export default class PatientHome extends React.Component {
                         <FlatList data={appointment_data} renderItem={this.renderItemAppointment} /> 
                         <Text style={list_styles.list_item_header}>Orders</Text>
                         <TouchableHighlight underlayColor="#ccc" onPress={() => { 
-          console.log('new pressed!'); this.props.navigation.navigate('PatientOrderDetails')  }} style={styles.list_item}>
-                        <FlatList data={order_data} renderItem={this.renderItemOrders} navigation={this.props.navigation} /> 
+           console.log('new pressed!'); this.props.navigation.navigate('PatientOrderDetails')  }} style={styles.list_item}> 
+                        <FlatList data={order_data.filter(renderOrder => renderOrder !== null)} 
+                            renderItem={this.renderItemOrders}/>  
+                        {/* <FlatList data={order_data.filter(renderOrder => renderOrder !== null)} renderItem={this.renderItemOrders1}/>  */}
                         </TouchableHighlight>
                     </View>
                     <View style={pageStyles.footer}>

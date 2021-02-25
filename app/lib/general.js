@@ -142,29 +142,7 @@ function renderCapturedPrescriptionItem({item}) {
   );
 }
 
-function renderItemTrial({item}) {
-  return (
-    <TouchableHighlight underlayColor="#ccc" onPress={() => {
-          console.log('item trial pressed!');
-      }} style={styles.list_item}
-    >
-      {/* <Text key={item.key}> */}
-          {/* <View style={styles.itemContainer}> */}
-          <View key={item.key} style={{flex: 1, flexDirection: 'row',justifyContent: 'space-between',}}>
-            <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}}>
-              <Text style={styles.patientText}>{item.patient}</Text>
-             </View> 
-            <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}}>
-            <Text style={styles.statusText}>{item.status}</Text>
-            </View> 
-            <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}}>
-            <Text style={styles.doctorText}>{item.doctor}</Text>
-            </View> 
-          </View>
-          {/* </View> */}
-      {/* </Text> */}
-    </TouchableHighlight>
-  );
-}
 
-export { renderItem,renderCapturedPrescriptionItem, renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription,renderPrescriptionItem,renderItemTrial };
+
+
+export { renderItem,renderCapturedPrescriptionItem,renderPickerItems,renderItemAppointment,renderItemOrders,renderPrescription,renderPrescriptionItem };

@@ -14,7 +14,7 @@ import PatientHome from './app/screens/patient/PatientHome';
 import PatientProfileImage from './app/screens/patient/PatientProfileImage';
 import UploadPrescription from './app/screens/patient/UploadPrescription';
 import PatientOrderDetails from './app/screens/patient/PatientOrderDetails';
-
+import SendtoChemist from './app/screens/patient/SendtoChemist';
 //Doctor Pages
 import DoctorHome from './app/screens/doctor/DoctorHome';
 import DoctorProfileImage from './app/screens/doctor/profile/DoctorProfileImage';
@@ -76,6 +76,7 @@ export default class App extends React.Component {
           <Stack.Screen name="PatientHome" component={PatientHome} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{title: 'Upload Prescription', headerRight:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{title: 'Patient Order Details', headerRight:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="SendtoChemist" component={SendtoChemist} options={{title: 'Send to Chemist', headerRight:()=> <PatientProfileImage/>}} />
           
           
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerTitle:()=> <DoctorProfileImage/>}} />

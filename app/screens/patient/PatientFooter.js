@@ -9,8 +9,13 @@ export default class PatientFooter extends React.Component {
 		return (
       <View style={styles.tabs_container}>
       <View>
-        <IconButton icon="event-note" />
-        <Text style={styles.buttonText}>Note</Text> 
+        {/* <IconButton icon="send" /> */}
+                {/* <Text style={styles.buttonText}>Send to Chemist</Text>  */}
+         <Button  style={styles.buttonStyle} 
+                vertical onPress={() => this.props.navigation.navigate('SendtoChemist')}>
+                <Icon name="send" />
+              <Text style={styles.buttonText}>Send to Chemist</Text>
+         </Button>
       </View>
       <View>  
         <IconButton icon="qr-code-2" />
@@ -21,12 +26,13 @@ export default class PatientFooter extends React.Component {
         <Text style={styles.buttonText}>Upload</Text>*/}
         <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('UploadPrescription')}>
-              <Icon name="file-upload" />
+              <Icon name="ios-cloud-upload-outline" />
+              <Text style={styles.buttonText}>Upload Prescription</Text>
          </Button>
       </View>
       <View>
-        <IconButton icon="logout" />
-        <Text style={styles.buttonText}>Logout</Text>
+        <IconButton icon="calendar-today" />
+        <Text style={styles.buttonText}>Appointments</Text>
       </View>
     </View>
 		);
