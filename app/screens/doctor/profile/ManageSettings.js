@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import { Button, Picker, Item, Icon  } from 'native-base';
-import { LogBox } from 'react-native';
 
 import pageStyles from '../../common/PageStyle.js';
 import DoctorFooter from '../DoctorFooter';
@@ -15,10 +14,6 @@ export default class ManageSettings extends React.Component {
           passcode: '',
           selectedValue: 'java'
         }
-    }
-
-    componentDidMount() {
-        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
     }
     
     inputValueUpdate = (val, prop) => {
