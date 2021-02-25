@@ -22,6 +22,16 @@ export default class ManageProfile extends React.Component {
                             <Icon name='person' />
                             <Text style={styles.buttonText}>Manage Personal Info</Text>
                         </Button>
+                        <Button success iconLeft style={styles.buttonStyle}
+                            onPress={() => this.props.navigation.navigate('PatientManagePersonalInfo')}>
+                            <Icon name='medkit' />
+                            <Text style={styles.buttonText}>Manage Doctors</Text>
+                        </Button>
+                        <Button success iconLeft style={styles.buttonStyle}
+                            onPress={() => this.props.navigation.navigate('PatientManagePersonalInfo')}>
+                            <Icon name='paw' />
+                            <Text style={styles.buttonText}>Manage Chemist</Text>
+                        </Button>
                         <Button warning iconLeft style={styles.buttonStyle}
                             onPress={() => this.props.navigation.navigate('PatientChangePassword')}>
                             <Icon name='keypad' />
