@@ -15,6 +15,16 @@ export default class ManageSettings extends React.Component {
           selectedValue: 'java'
         }
     }
+
+    renderPickerItems(data) {
+        return data.map((item) => {
+          let val = item.name.toLowerCase();
+          return (
+            <Picker.Item key={item.key} label={item.name} value={val} />
+          );
+        });
+      }
+      
     
     inputValueUpdate = (val, prop) => {
         const state = this.state;

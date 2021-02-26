@@ -36,7 +36,7 @@ export default [
     },
     {
       key: 'f',
-      name: 'Ciplox D eye drops 1drop each eye',
+      name: 'Ciplox D eye - 1drop each eye',
       image: require("../../assets/images/drops.png"),
       dosage: '1 drop as needed',
       doctor: "Dr R Joshi"     

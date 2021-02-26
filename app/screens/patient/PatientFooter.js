@@ -9,8 +9,6 @@ export default class PatientFooter extends React.Component {
 		return (
       <View style={styles.tabs_container}>
       <View>
-        {/* <IconButton icon="send" /> */}
-                {/* <Text style={styles.buttonText}>Send to Chemist</Text>  */}
          <Button  style={styles.buttonStyle} 
                 vertical onPress={() => this.props.navigation.navigate('SendtoChemist')}>
                 <Icon name="send" />
@@ -18,20 +16,24 @@ export default class PatientFooter extends React.Component {
          </Button>
       </View>
       <View>  
-        <IconButton icon="qr-code-2" />
+        <Button  style={styles.buttonStyle} 
+          vertical onPress={() => this.props.navigation.navigate('PatientHome')}>
+          <Icon name="film" />
+        </Button>
         <Text style={styles.buttonText}>QR Code</Text>
       </View>
       <View>
-       {/*} <IconButton icon="file-upload" />
-        <Text style={styles.buttonText}>Upload</Text>*/}
         <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('UploadPrescription')}>
               <Icon name="ios-cloud-upload-outline" />
-              <Text style={styles.buttonText}>Upload Prescription</Text>
+              <Text style={styles.buttonText}>Load Parchee</Text>
          </Button>
       </View>
-      <View>
-        <IconButton icon="calendar-today" />
+      <View>  
+        <Button  style={styles.buttonStyle} 
+          vertical onPress={() => this.props.navigation.navigate('PatientHome')}>
+          <Icon name="film" />
+        </Button>
         <Text style={styles.buttonText}>Appointments</Text>
       </View>
     </View>

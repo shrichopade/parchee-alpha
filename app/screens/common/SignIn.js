@@ -24,7 +24,7 @@ export default class SignIn extends React.Component {
             } else if(this.state.username == "D" || this.state.username == "d" ) {
               this.props.navigation.navigate('DoctorHome')
             } else if(this.state.username == "C" || this.state.username == "c" ) {
-              this.props.navigation.navigate('ChemistHome', {orderStatus:'Open'})
+              this.props.navigation.navigate('ChemistHome')
             } else {
               this.props.navigation.navigate('PatientHome')
             }
