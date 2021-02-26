@@ -106,6 +106,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',    
     justifyContent: 'center',
     marginTop: 25,
+    marginLeft: 20,
+    marginRight: 20,
   },
   icon:{
     width: 40,

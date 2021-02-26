@@ -48,36 +48,38 @@ export default class SelectChemist extends Component {
             <View style={[styles.container, styles.step1]}>
               
               <Text style={list_styles.list_item_header}>Select Chemist - {`Step ${currentStep} of ${totalSteps}`}</Text>
-              <Item picker>
-                                <Picker style={styles.dropdownStyle}
-                                    mode="dropdown"
-                                    iosIcon={<Icon name="arrow-down" />}
-                                    style={{ width: undefined }}
-                                    placeholder="Select Chemist"
-                                    placeholderStyle={{ color: "#bfc6ea" }}
-                                    placeholderIconColor="#007aff"
-                                    // onValueChange={this.onValueChange2.bind(this)}
-                                >
-                                    <Picker.Item label="Mahalaxmi Medical" value="Mahalaxmi Medical" />
-                                    <Picker.Item label="Surendra Medical" value="Surendra Medical" />
-                                    <Picker.Item label="Surendra Medical" value="Surendra Medical" />
-                                </Picker>
-                            </Item>              
+              <View style={styles.btnContainer}>  
+                  <Text style={styles.labelText}>Select Chemist: </Text> 
+                  <Item picker>
+                      <Picker style={styles.dropdownStyle}
+                          mode="dropdown"
+                          iosIcon={<Icon name="arrow-down" />}
+                          style={{ width: undefined }}
+                          placeholder="Select Chemist"
+                          placeholderStyle={{ color: "#bfc6ea" }}
+                          placeholderIconColor="#007aff"
+                      >
+                          <Picker.Item label="Mahalaxmi Medical" value="Mahalaxmi Medical" />
+                          <Picker.Item label="Surendra Medical" value="Surendra Medical" />
+                          <Picker.Item label="Surendra Medical" value="Surendra Medical" />
+                      </Picker>
+                  </Item> 
+              </View>             
               <View style={styles.btnContainer1}>
-                <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
-                            <Image
-                            source={require("../../../../assets/images/leftarrow.png")}
-                            style={styles.btnImage}
-                            resizeMode="cover"
-                            />
-                </TouchableOpacity>
-                    <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
-                            <Image
-                                source={require("../../../../assets/images/rightarrow.png")}
-                                style={styles.btnImage}
-                                resizeMode="cover"
-                            />
-                    </TouchableOpacity>
+                  <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
+                              <Image
+                              source={require("../../../../assets/images/leftarrow.png")}
+                              style={styles.btnImage}
+                              resizeMode="cover"
+                              />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
+                          <Image
+                              source={require("../../../../assets/images/rightarrow.png")}
+                              style={styles.btnImage}
+                              resizeMode="cover"
+                          />
+                  </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -98,11 +100,17 @@ const styles = StyleSheet.create({
   btnContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'flex-start'
+      alignItems: 'flex-start',
+      alignItems: 'center',
+      marginTop: 30,
+      marginBottom: 10,
   },
   btnContainer1: {
     flexDirection: 'row',    
-    alignItems: 'center'
+    justifyContent: 'space-between',
+    marginTop: 20,
+    marginLeft: 20,
+    marginRight: 20,
 },
   icon:{
     width: 40,
@@ -140,14 +148,13 @@ const styles = StyleSheet.create({
   },
   labelText: {
     fontFamily: 'Arial',
-    fontSize: 14,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '400',
     marginLeft: 15,
-    marginRight: 10,
-    marginVertical: 10,
-    marginBottom: 10
-},
-dropdownStyle: {
+    marginRight: 5,
+    marginBottom: 2,
+  },
+  dropdownStyle: {
     height: 30, 
     width: '98%',
     alignSelf: 'center',
@@ -155,5 +162,7 @@ dropdownStyle: {
     marginBottom: 10,
     marginLeft: 15,
     marginRight: 10,
-}
+    marginTop: 30,
+    marginBottom: 30
+  }
 });

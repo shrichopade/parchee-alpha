@@ -79,8 +79,10 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start'
+      justifyContent: 'center',
+      marginTop: 10,
+      marginLeft: 20,
+      marginRight: 20,
   },
   icon:{
     width: 40,
