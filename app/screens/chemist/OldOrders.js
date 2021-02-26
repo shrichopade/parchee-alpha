@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 20,
         marginTop: 10,
-        marginBottom: 10,
+        marginBottom: 5,
         fontWeight: 'bold',
         backgroundColor: '#a1a1a1'
     },

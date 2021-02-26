@@ -127,7 +127,7 @@ function renderCapturedPrescriptionItem({item}) {
               <View style={styles.itemContainer}>
                   <View style={styles.nameContainer}>
                       <Image source={item.image} resizeMode='contain'
-                              style={styles.statusImage} />                      
+                              style={styles.statusImage1} />                      
                   </View>
                   <View style={styles.nameContainer1}>
                     <Text style={styles.patientText}>{item.name}</Text>
@@ -135,7 +135,7 @@ function renderCapturedPrescriptionItem({item}) {
                     <Text style={styles.doctorText}>{item.doctor}</Text>
                   </View>                  
               </View>
-              <CheckBox checked={true} color="green" />
+              <CheckBox style={styles.checkboxStyle} checked={true} color="green" />
           </View>
       {/* </Text> */}
     </TouchableHighlight>

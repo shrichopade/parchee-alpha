@@ -46,28 +46,28 @@ export default class UploadPrescription1 extends Component {
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-          <Text style={list_styles.list_item_header}>Upload Prescription - {`Step ${currentStep} of ${totalSteps}`}</Text>
-            <Image
-                          source={require("../../../../assets/images/prescription1.png")}
-                          style={styles.btnImage1}
-                          resizeMode="cover"
-                        />
-            <View style={styles.btnContainer}>
-              <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
-                        <Image
-                          source={require("../../../../assets/images/leftarrow.png")}
-                          style={styles.btnImage}
-                          resizeMode="cover"
-                        />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
-                        <Image
-                          source={require("../../../../assets/images/rightarrow.png")}
-                          style={styles.btnImage}
-                          resizeMode="cover"
-                        />
-              </TouchableOpacity>
-            </View>
+              <Text style={list_styles.list_item_header}>Upload Prescription - {`Step ${currentStep} of ${totalSteps}`}</Text>
+                <Image
+                    source={require("../../../../assets/images/prescription1.png")}
+                    style={styles.btnImage1}
+                    resizeMode="cover"
+                  />
+              <View style={styles.btnContainer}>
+                <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
+                          <Image
+                            source={require("../../../../assets/images/leftarrow.png")}
+                            style={styles.btnImage}
+                            resizeMode="cover"
+                          />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
+                          <Image
+                            source={require("../../../../assets/images/rightarrow.png")}
+                            style={styles.btnImage}
+                            resizeMode="cover"
+                          />
+                </TouchableOpacity>
+              </View>
           </View>
         </View>
       </View>
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 40 / 2,
     marginLeft: 15,
     marginRight: 5,
+    borderColor: '#a1a1a1',
     alignSelf: 'center'
 }
 });

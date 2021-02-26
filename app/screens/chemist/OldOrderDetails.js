@@ -96,7 +96,7 @@ export default class OrderDetails extends React.Component {
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
                                 renderItem={this.renderOrderDetails}/>     
                             <Button primary style={styles.buttonStyle} title="Submit" 
-                                onPress={() => this.props.navigation.navigate('ChemistHome')}>
+                                onPress={() => this.props.navigation.navigate('OldOrders')}>
                                 <Text style={styles.buttonText}>Back</Text>
                             </Button>
                         </View>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 20,
         marginTop: 10,
-        marginBottom: 10,
+        marginBottom: 5,
         fontWeight: 'bold',
         backgroundColor: '#a1a1a1'
     },

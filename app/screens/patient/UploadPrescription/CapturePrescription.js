@@ -47,16 +47,33 @@ export default class CapturePrescription extends Component {
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
             <Text style={list_styles.list_item_header}>Take a Picture - {`Step ${currentStep} of ${totalSteps}`}</Text>
-              <Icon style={styles.icon} name="camera" />
-              <Text style={styles.currentStepText}> 'Upload from Google Drive' </Text> 
-              <Icon style={styles.icon} name="folder" />
+              <View style={styles.btnContainer}>
+                <Text style={styles.labelText}> Take a Picture: </Text> 
+                <Image source={require('../../../../assets/images/mobile-camera.png')} 
+                      style={styles.moreImage} />
+              </View>
+              <View style={styles.btnContainer}>
+                <Text style={styles.labelText}> Upload from Google Drive: </Text> 
+                <Image source={require('../../../../assets/images/g-drive.png')} 
+                      style={styles.moreImage} />
+              </View>
+              <View style={styles.btnContainer}>
+                <Text style={styles.labelText}> Upload from i-Cloud: </Text> 
+                <Image source={require('../../../../assets/images/icloud.png')} 
+                      style={styles.moreImage} />
+              </View>
+              <View style={styles.btnContainer}>
+                <Text style={styles.labelText}> Upload from Dropbox: </Text> 
+                <Image source={require('../../../../assets/images/Dropbox.png')} 
+                      style={styles.moreImage} />
+              </View>
               <View style={styles.btnContainer1}>
                 <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
-                          <Image
-                            source={require("../../../../assets/images/rightarrow.png")}
-                            style={styles.btnImage}
-                            resizeMode="cover"
-                          />
+                    <Image
+                      source={require("../../../../assets/images/rightarrow.png")}
+                      style={styles.btnImage}
+                      resizeMode="cover"
+                    />
                 </TouchableOpacity>
               </View>
             </View>
@@ -77,13 +94,15 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start'
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      marginTop: 25,
   },
   btnContainer1: {
     flexDirection: 'row',    
-    alignItems: 'center'
-},
+    justifyContent: 'center',
+    marginTop: 25,
+  },
   icon:{
     width: 40,
     height: 40,
@@ -117,5 +136,21 @@ const styles = StyleSheet.create({
       marginLeft: 15,
       marginRight: 5,
       alignSelf: 'center'
-  }
+  },
+  labelText: {
+    fontFamily: 'Arial',
+    fontSize: 18,
+    fontWeight: '400',
+    marginLeft: 15,
+    marginRight: 5,
+    marginBottom: 2,
+  },
+  moreImage: {
+    width: 40,
+    height: 40,
+    borderRadius: 25 / 2,
+    marginLeft: 15,
+    marginRight: 5,
+    alignSelf: 'center'
+  },
 });

@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 20,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 5,
     fontWeight: 'bold',
     backgroundColor: '#93cf96'
   },
   list_item: {
-    padding: 20,
+    padding: 10,
     backgroundColor: '#C8E7C9',
     borderBottomWidth: 5,
     borderBottomColor: '#f3f3f3'
@@ -94,7 +94,10 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 5
   },
-
+  checkboxStyle: {
+    marginLeft: 5,
+    marginRight: 15
+  },
 });
 
 export default styles;
