@@ -94,9 +94,13 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
       flexDirection: 'row',
-      justifyContent: 'flex-start',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: 25,
+      marginTop: 10,
+      marginRight: 5,
+      marginLeft: 5,
+      padding: 10,
+      backgroundColor: '#C8E7C9',
   },
   btnContainer1: {
     flexDirection: 'row',    
@@ -150,7 +154,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 25 / 2,
     marginLeft: 15,
-    marginRight: 5,
+    marginRight: 25,
     alignSelf: 'center'
   },
 });
