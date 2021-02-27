@@ -15,13 +15,8 @@ export default class SignUp extends React.Component {
         this.state = {
             givenNames: '',
             surname: '',
-            gender: 'M',
-            dateOfBirth: '',
             mobileNumber: '',
-            aadharCard: '',
-            yourStatus: 'P',
-            registrationNumber: '',
-            checked: 'unchecked'
+            referalId: '',
         }
     }
 
@@ -54,22 +49,7 @@ export default class SignUp extends React.Component {
                             keyboardType="default"
                             textContentType="familyName"
                         />
-                        <RadioButton.Group onValueChange={(val) => this.inputValueUpdate(val, 'gender')} value={this.state.gender}>
-                            <View style={styles.buttonParallel}>
-                                <RadioButton value="M" />
-                                <Text style={styles.radioText}>Male</Text>
-                                <RadioButton value="F" />
-                                <Text style={styles.radioText}>Female</Text>
-                            </View>
-                        </RadioButton.Group>
-                        <AppDateTextMask
-                            type={'datetime'}
-                            leftIcon="file-code"
-                            options={{format: 'DD/MM/YYYY'}}
-                            value={this.state.dateOfBirth}
-                            placeholder="Enter Date of Birth (DD/MM/YYYY)"
-                            onChangeText={(val) => this.inputValueUpdate(val, 'dateOfBirth')}
-                        />                        
+                                            
                         <AppTextInput
                             value={this.state.mobileNumber}
                             onChangeText={(val) => this.inputValueUpdate(val, 'mobileNumber')}
@@ -80,42 +60,14 @@ export default class SignUp extends React.Component {
                             textContentType="telephoneNumber"
                         />
                         <AppTextInput
-                            value={this.state.aadharCard}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'aadharCard')}
+                            value={this.state.referalId}
+                            onChangeText={(val) => this.inputValueUpdate(val, 'referalId')}
                             leftIcon="file-code"
-                            placeholder="Enter Aadhar number"
+                            placeholder="Enter Referral ID"
                             autoCapitalize="none"
                             keyboardType="phone-pad"
                             textContentType="creditCardNumber"
                         />
-                        <RadioButton.Group onValueChange={(val) => this.inputValueUpdate(val, 'yourStatus')} value={this.state.yourStatus}>
-                            <View style={styles.buttonParallel}>
-                                <RadioButton value="P" />
-                                <Text style={styles.radioText}>Patient</Text>
-                                <RadioButton value="D" />
-                                <Text style={styles.radioText}>Doctor</Text>
-                                <RadioButton value="C" />
-                                <Text style={styles.radioText}>Chemist</Text>
-                            </View>
-                        </RadioButton.Group>
-                        <AppTextInput
-                            value={this.state.registrationNumber}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'registrationNumber')}
-                            leftIcon="file-code"
-                            placeholder="Enter Doctor/Chemist Reg No"
-                            autoCapitalize="none"
-                            keyboardType="phone-pad"
-                            textContentType="creditCardNumber"
-                        />
-                        <View style={styles.buttonParallel}>
-                            <Checkbox
-                                status={this.state.checked ? 'checked' : 'unchecked'}
-                                onPress={() => {
-                                    inputValueUpdate(!this.state.checked);
-                                }}
-                            />
-                            <Text style={styles.radioText}>Accept Terms and Conditions</Text>
-                        </View>
                         <View style={styles.buttonContainer}>    
                             <AppButton title="Confirm" 
                                 onPress={() => this.props.navigation.navigate('ConfirmSignUp')} />
