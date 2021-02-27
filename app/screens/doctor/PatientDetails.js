@@ -90,7 +90,6 @@ export default class OrderDetails extends React.Component {
                                         this.inputValueUpdate(!this.state.checked);
                                     }}
                                 />
-                                <Text style={styles.statusText}>Dispensed</Text>
                         </View>
                     </View>
                 </View>

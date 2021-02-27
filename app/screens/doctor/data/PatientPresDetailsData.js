@@ -5,7 +5,7 @@ export default [
         item_strength: '20 mg',
         item_image: require("../../../../assets/images/tablet.png"),
         item_type: 'Tablet',
-        item_quantity: '30',
+        item_quantity: '1-0-0',
     },
     {
         key: "ORD001-02",
@@ -13,7 +13,7 @@ export default [
         item_strength: '70 mg',
         item_image: require("../../../../assets/images/tablet.png"),
         item_type: 'Tablet',
-        item_quantity: '30',
+        item_quantity: '1-0-0',
     },
     {
         key: "ORD001-03",
@@ -21,7 +21,7 @@ export default [
         item_strength: '20 ml',
         item_image: require("../../../../assets/images/insulin.png"),
         item_type: 'Insulin',
-        item_quantity: '900 ml',
+        item_quantity: '0-1-1',
     },
     {
         key: "ORD001-04",
@@ -29,7 +29,7 @@ export default [
         item_strength: 'N/A',
         item_image: require("../../../../assets/images/tablet.png"),
         item_type: 'Tablet',
-        item_quantity: '30',
+        item_quantity: '0-0-1',
     },
     
 ]

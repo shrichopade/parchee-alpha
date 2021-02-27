@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View, Text, FlatList, Image,
-    TouchableHighlight, StyleSheet } from 'react-native';
+    TouchableHighlight, StyleSheet,swipeBtns } from 'react-native';
 import { Button } from 'native-base';
 import { Checkbox  } from 'react-native-paper';
 
@@ -8,8 +8,13 @@ import pageStyles from '../common/PageStyle.js';
 import DoctorFooter from './DoctorFooter';
 import order_metadata from './data/PatientMetaData';
 import order_details_data from './data/PatientPresDetailsData';
+import Swipeout from 'react-native-swipeout';
+
+
 
 export default class OrderDetails extends React.Component {
+      
+      
 
     constructor() {
         super();
@@ -25,7 +30,8 @@ export default class OrderDetails extends React.Component {
     }
 
     renderOrderMetadata = ({item}) => {
-        return (
+        return (          
+
             <TouchableHighlight underlayColor="#ccc" style={styles.metadataItems}>
                 <View key={item.key} style={styles.rootContainer}>
                     <View style={styles.itemContainer}>
@@ -65,7 +71,15 @@ export default class OrderDetails extends React.Component {
     }
 
     renderOrderDetails = ({item}) => {
+      let swipeBtns = [{
+        text: 'Delete',
+        backgroundColor: 'red',
+        underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
+        onPress: () => { this.deleteNote(rowData) }
+      }];
+
         return(
+          <Swipeout right={swipeBtns} autoClose='true' backgroundColor= 'transparent'>
             <TouchableHighlight underlayColor="#ccc" style={styles.orderDetailsItems}>
                 <View key={item.key} style={styles.rootContainerDetails}>
                     <View style={styles.itemContainer}>
@@ -90,11 +104,11 @@ export default class OrderDetails extends React.Component {
                                         this.inputValueUpdate(!this.state.checked);
                                     }}
                                 />
-                                <Text style={styles.statusText}>Dispensed</Text>
                         </View>
                     </View>
                 </View>
             </TouchableHighlight>
+          </Swipeout>
         )
     }
 
@@ -111,8 +125,8 @@ export default class OrderDetails extends React.Component {
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
                                 renderItem={this.renderOrderDetails}/>     
                             <View style={styles.buttonContainer}>    
-                                <Button danger style={styles.buttonStyle} title="Prescribe" 
-                                    onPress={() => this.props.navigation.navigate('Prescribe')}>
+                                <Button danger style={styles.buttonStyle} title="AddMedication" 
+                                    onPress={() => this.props.navigation.navigate('AddMedication')}>
                                     <Text style={styles.buttonText}>+</Text>
                                 </Button>
                                 
