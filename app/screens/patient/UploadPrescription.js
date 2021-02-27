@@ -7,13 +7,15 @@ import AnimatedMultistep from "react-native-animated-multistep";
 import CapturePrescription from "./UploadPrescription/CapturePrescription";
 import UploadPrescription1 from "./UploadPrescription/UploadPrescription1";
 import ConfirmPrescription from "./UploadPrescription/ConfirmPrescription";
+import PatientHome from "./PatientHome";
+
 // import Step4 from "./steps/step4";
 
 const allSteps = [
   { name: "Capture Prescription", component: CapturePrescription },
   { name: "Upload Prescription", component: UploadPrescription1 },
-//   { name: "step 3", component: Step3 },
-  { name: "Confirm Prescription", component: ConfirmPrescription }
+  { name: "Confirm Prescription", component: ConfirmPrescription },
+  { name: "Patient Home", component: PatientHome }
 ];
 
 /* Define your class */

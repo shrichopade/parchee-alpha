@@ -49,7 +49,7 @@ export default class ConfirmOrder extends Component {
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-            <Text style={list_styles.list_item_header}>Your Prescription Items - {`Step ${currentStep} of ${totalSteps}`}</Text>
+            <Text style={list_styles.list_item_header}>Your Prescription Items - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
             <FlatList data={medication_data} renderItem={renderCapturedPrescriptionItem} />
             <View style={styles.btnContainer}>
               <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>

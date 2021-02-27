@@ -69,14 +69,14 @@ export default class PatientHome extends React.Component {
                   <View style={styles.nameContainer}>
                       <Image source={require("../../../assets/images/calendar.png")} 
                             resizeMode='contain'
-                            style={styles.statusImage} />                      
+                            style={styles.aptImage} />                      
                   </View> 
                   <View style={styles.nameContainer}>
                     <Text style={styles.doctorText}>{item.date}</Text>
-                    <Text style={styles.doctorText}>{item.time}</Text>
+                    <Text style={styles.doctorText}>{item.doctor}</Text>
                   </View>
                   <View style={styles.nameContainer}>
-                    <Text style={styles.doctorText}>{item.doctor}</Text> 
+                    <Text style={styles.doctorText}>{item.time}</Text> 
                     <Text style={styles.doctorText}>{item.location}</Text> 
                   </View>
                 </View>
@@ -90,15 +90,15 @@ export default class PatientHome extends React.Component {
             <SafeAreaView  style={pageStyles.container}>
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
-                        <Text style={styles.listItemHeader}>Medication</Text>
+                        <Text style={styles.listItemHeader}>My Medication</Text>
                         <FlatList style={styles.flatListStyle} 
                           data={medication_data} renderItem={this.renderPrescriptionItem} />
 
-                        <Text style={styles.listItemHeader}>Appointments</Text>
+                        <Text style={styles.listItemHeader}>My Appointments</Text>
                         <FlatList  style={styles.flatListStyle} 
                           data={appointment_data} renderItem={this.renderItemAppointment} />
 
-                        <Text style={styles.listItemHeader}>Parchee Orders</Text>
+                        <Text style={styles.listItemHeader}>My Parchee Orders</Text>
                         <FlatList  style={styles.flatListStyle} 
                             data={order_data.filter(renderOrder => renderOrder !== null)} 
                             renderItem={this.renderItemOrders}/>  
@@ -199,5 +199,13 @@ const styles = StyleSheet.create({
       marginLeft: 15,
       marginRight: 5,
       alignSelf: 'center'
+  },
+  aptImage: {
+    width: 35,
+    height: 35,
+    borderRadius: 35 / 2,
+    marginLeft: 15,
+    marginRight: 5,
+    alignSelf: 'center'
   },
 });

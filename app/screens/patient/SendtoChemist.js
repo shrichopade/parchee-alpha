@@ -7,13 +7,14 @@ import AnimatedMultistep from "react-native-animated-multistep";
 import SelectMedication from "./SendToChemist/SelectMedication";
 import SelectChemist from "./SendToChemist/SelectChemist";
 import ConfirmOrder from "./SendToChemist/ConfirmOrder";
+import PatientHome from "./PatientHome";
 // import Step4 from "./steps/step4";
 
 const allSteps = [
   { name: "Select Medication", component: SelectMedication },
   { name: "Select  Chemist", component: SelectChemist },
-//   { name: "step 3", component: Step3 },
-  { name: "Confirm Order", component: ConfirmOrder }
+  { name: "Confirm Order", component: ConfirmOrder },
+  { name: "Patient Home", component: PatientHome }
 ];
 
 /* Define your class */

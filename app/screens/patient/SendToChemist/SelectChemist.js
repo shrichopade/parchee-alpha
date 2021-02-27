@@ -47,7 +47,7 @@ export default class SelectChemist extends Component {
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
               
-              <Text style={list_styles.list_item_header}>Select Chemist - {`Step ${currentStep} of ${totalSteps}`}</Text>
+              <Text style={list_styles.list_item_header}>Select Chemist - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
               <View style={styles.btnContainer}>  
                   <Text style={styles.labelText}>Select Chemist: </Text> 
                   <Item picker>

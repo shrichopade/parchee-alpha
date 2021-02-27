@@ -46,7 +46,7 @@ export default class CapturePrescription extends Component {
         <View style={pageStyles.screen}>
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
-            <Text style={list_styles.list_item_header}>Take a Picture - {`Step ${currentStep} of ${totalSteps}`}</Text>
+            <Text style={list_styles.list_item_header}>Take a Picture - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
               <View style={styles.btnContainer}>
                 <Text style={styles.labelText}> Take a Picture: </Text> 
                 <Image source={require('../../../../assets/images/mobile-camera.png')} 

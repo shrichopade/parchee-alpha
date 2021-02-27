@@ -46,7 +46,7 @@ export default class UploadPrescription1 extends Component {
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-              <Text style={list_styles.list_item_header}>Upload Prescription - {`Step ${currentStep} of ${totalSteps}`}</Text>
+              <Text style={list_styles.list_item_header}>Upload Prescription - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
                 <Image
                     source={require("../../../../assets/images/prescription1.png")}
                     style={styles.btnImage1}
