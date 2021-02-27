@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, View, TouchableOpacity, TextInput, Text,StyleSheet,SafeAreaView } from "react-native";
+import { Image, View, TouchableOpacity, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
 import PatientFooter from '../PatientFooter';
 import { Icon, Item,Picker } from 'native-base';
@@ -55,8 +55,8 @@ export default class SelectChemist extends Component {
                           mode="dropdown"
                           iosIcon={<Icon name="arrow-down" />}
                           style={{ width: undefined }}
-                          placeholder="Select Chemist"
-                          placeholderStyle={{ color: "#bfc6ea" }}
+                          placeholder="Suresh Medicals"
+                          placeholderStyle={{ color: "#007aff" }}
                           placeholderIconColor="#007aff"
                       >
                           <Picker.Item label="Mahalaxmi Medical" value="Mahalaxmi Medical" />
@@ -102,8 +102,10 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignItems: 'flex-start',
       alignItems: 'center',
-      marginTop: 30,
+      marginTop: 5,
       marginBottom: 10,
+      backgroundColor: '#C8E7C9',
+      padding: 15,
   },
   btnContainer1: {
     flexDirection: 'row',    

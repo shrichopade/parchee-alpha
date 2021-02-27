@@ -19,8 +19,8 @@ export default class PatientFooter extends React.Component {
         <Button  style={styles.buttonStyle} 
           vertical onPress={() => this.props.navigation.navigate('PatientHome')}>
           <Icon name="film" />
+          <Text style={styles.buttonText}>QR Code</Text>
         </Button>
-        <Text style={styles.buttonText}>QR Code</Text>
       </View>
       <View>
         <Button  style={styles.buttonStyle} 
@@ -33,8 +33,8 @@ export default class PatientFooter extends React.Component {
         <Button  style={styles.buttonStyle} 
           vertical onPress={() => this.props.navigation.navigate('PatientHome')}>
           <Icon name="film" />
+          <Text style={styles.buttonText}>Appointments</Text>
         </Button>
-        <Text style={styles.buttonText}>Appointments</Text>
       </View>
     </View>
 		);

@@ -28,7 +28,7 @@ export default class PatientHome extends React.Component {
                             <Text style={styles.statusText}>{item.status}</Text>
                         </View>
                         <View style={styles.nameContainer}>
-                          <Text style={styles.patientText}>{item.patient}</Text>
+                          <Text style={styles.patientText}>{item.chemist}</Text>
                           <Text style={styles.doctorText}>{item.doctor}</Text>
                           <Text style={styles.dueDateText}>{item.due_date}</Text>
                         </View>
@@ -98,7 +98,7 @@ export default class PatientHome extends React.Component {
                         <FlatList  style={styles.flatListStyle} 
                           data={appointment_data} renderItem={this.renderItemAppointment} />
 
-                        <Text style={styles.listItemHeader}>Orders</Text>
+                        <Text style={styles.listItemHeader}>Parchee Orders</Text>
                         <FlatList  style={styles.flatListStyle} 
                             data={order_data.filter(renderOrder => renderOrder !== null)} 
                             renderItem={this.renderItemOrders}/>  

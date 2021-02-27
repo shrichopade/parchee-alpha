@@ -12,29 +12,29 @@ export default class DoctorFooter extends React.Component {
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="medkit" />
+              <Text style={styles.buttonText}>Prescribe</Text>
             </Button>
-            <Text style={styles.buttonText}>Prescribe</Text>
           </View>
           <View>  
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="film" />
+              <Text style={styles.buttonText}>Scan QR</Text>
             </Button>
-            <Text style={styles.buttonText}>Scan QR</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="eye" />
+              <Text style={styles.buttonText}>Refer</Text>
             </Button>
-            <Text style={styles.buttonText}>Refer</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
               <Icon name="bookmarks" />
+              <Text style={styles.buttonText}>Sick Note</Text>
             </Button>            
-            <Text style={styles.buttonText}>Sick Note</Text>
           </View>
         </View>
 		);

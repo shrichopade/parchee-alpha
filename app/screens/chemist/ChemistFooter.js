@@ -12,29 +12,29 @@ export default class ChemistFooter extends React.Component {
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
               <Icon name="film" />
+              <Text style={styles.buttonText}>QR Code</Text>
             </Button>
-            <Text style={styles.buttonText}>QR Code</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
               <Icon name="flame" />
+              <Text style={styles.buttonText}>Current Orders</Text>
             </Button>
-            <Text style={styles.buttonText}>Current Orders</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('UpcomingOrders')}>
               <Icon name="grid" />
+              <Text style={styles.buttonText}>Repeat Orders</Text>
             </Button>            
-            <Text style={styles.buttonText}>Repeat Orders</Text>
           </View>
           <View>
             <Button  style={styles.buttonStyle} 
               vertical onPress={() => this.props.navigation.navigate('OldOrders')}>
               <Icon name="keypad" />
+              <Text style={styles.buttonText}>Archived Orders</Text>
             </Button>
-            <Text style={styles.buttonText}>Archived Orders</Text>
           </View>
         </View>
 		);

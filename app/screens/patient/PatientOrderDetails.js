@@ -9,7 +9,7 @@ import PatientFooter from './PatientFooter'
 import order_metadata from './data/OrderMetaData';
 import order_details_data from './data/OrderDetailsData';
 
-export default class OrderDetails extends React.Component {
+export default class PatientOrderDetails extends React.Component {
 
     constructor() {
         super();
@@ -95,7 +95,6 @@ export default class OrderDetails extends React.Component {
                                 renderItem={this.renderOrderMetadata}/>   
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
                                 renderItem={this.renderOrderDetails}/>    
-                            
                         </View>
                     </View>
                     <View style={pageStyles.footer}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import {Image, StyleSheet } from 'react-native';
 
 //Common Pages
 import SignIn from './app/screens/common/SignIn';
@@ -79,7 +80,8 @@ export default class App extends React.Component {
           <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Register/ Sign Up'}} />
           <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUp} options={{title: 'Confirm Sign Up'}} />
 
-          <Stack.Screen name="PatientHome" component={PatientHome} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientHome" component={PatientHome} options={{headerTitle:()=> <PatientProfileImage/>,
+                    headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
           <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="SendtoChemist" component={SendtoChemist} options={{headerTitle:()=> <PatientProfileImage/>}} />
@@ -90,14 +92,16 @@ export default class App extends React.Component {
           <Stack.Screen name="PatientConfirmChanges" component={PatientConfirmChanges} options={{headerTitle:()=> <PatientProfileImage/>}} />
           
           
-          <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerTitle:()=> <DoctorProfileImage/>}} />
+          <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerTitle:()=> <DoctorProfileImage/>,
+                  headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
           <Stack.Screen name="DoctorManageProfile" component={DoctorManageProfile} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorManagePersonalInfo" component={DoctorManagePersonalInfo} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorChangePassword" component={DoctorChangePassword} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorManageSettings" component={DoctorManageSettings} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorConfirmChanges" component={DoctorConfirmChanges} options={{headerTitle:()=> <DoctorProfileImage/>}} />  
 
-          <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerTitle:()=> <ChemistProfileImage />}} />
+          <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerTitle:()=> <ChemistProfileImage />, 
+                  headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
           <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OldOrders" component={OldOrders} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OldOrderDetails" component={OldOrderDetails} options={{headerTitle:()=> <ChemistProfileImage/>}} />
@@ -114,4 +118,14 @@ export default class App extends React.Component {
     );
   } 
 }
- 
+
+const styles = StyleSheet.create({
+  profileImage: {
+    width: 40,
+    height: 40,
+    borderRadius: 40 / 2,
+    marginLeft: 15,
+    marginRight: 10,
+    marginBottom: 20,
+  },
+});
