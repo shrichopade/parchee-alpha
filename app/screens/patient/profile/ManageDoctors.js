@@ -176,7 +176,7 @@ export default class ManageDoctors extends React.Component {
                             </Card>
                         </View>
                         <Button success style={styles.buttonStyle} title="Submit" 
-                            onPress={() => this.props.navigation.navigate('PatientConfirmChanges')}>
+                            onPress={() => this.props.navigation.navigate('AddNewDoctor')}>
                             <Text style={styles.buttonText}>Add New Doctor</Text>
                         </Button>
                     </View>

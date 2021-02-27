@@ -140,7 +140,7 @@ export default class ManageChemists extends React.Component {
                             </Card>
                         </View>
                         <Button success style={styles.buttonStyle} title="Submit" 
-                            onPress={() => this.props.navigation.navigate('PatientConfirmChanges')}>
+                            onPress={() => this.props.navigation.navigate('AddNewChemist')}>
                             <Text style={styles.buttonText}>Add New Chemist</Text>
                         </Button>
                     </View>
