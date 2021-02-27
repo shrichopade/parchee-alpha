@@ -60,8 +60,8 @@ export default class SelectChemist extends Component {
                           placeholderIconColor="#007aff"
                       >
                           <Picker.Item label="Mahalaxmi Medical" value="Mahalaxmi Medical" />
-                          <Picker.Item label="Surendra Medical" value="Surendra Medical" />
-                          <Picker.Item label="Surendra Medical" value="Surendra Medical" />
+                          <Picker.Item label="Suresh Medicals" value="Suresh Medicals" />
+                          <Picker.Item label="Solkar Pharmacy" value="Solkar Pharmacy" />
                       </Picker>
                   </Item> 
               </View>             

@@ -20,6 +20,8 @@ import PatientManageProfile from './app/screens/patient/profile/ManageProfile';
 import PatientManagePersonalInfo from './app/screens/patient/profile/ManagePersonalInfo';
 import PatientChangePassword from './app/screens/patient/profile/ChangePassword';
 import PatientManageSettings from './app/screens/patient/profile/ManageSettings';
+import ManageDoctors from './app/screens/patient/profile/ManageDoctors';
+import ManageChemists from './app/screens/patient/profile/ManageChemists';
 import PatientConfirmChanges from './app/screens/patient/profile/ConfirmChanges';
 
 //Doctor Pages
@@ -89,6 +91,8 @@ export default class App extends React.Component {
           <Stack.Screen name="PatientManagePersonalInfo" component={PatientManagePersonalInfo} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientChangePassword" component={PatientChangePassword} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientManageSettings" component={PatientManageSettings} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="ManageDoctors" component={ManageDoctors} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="ManageChemists" component={ManageChemists} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientConfirmChanges" component={PatientConfirmChanges} options={{headerTitle:()=> <PatientProfileImage/>}} />
           
           
