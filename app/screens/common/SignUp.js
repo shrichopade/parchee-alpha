@@ -17,6 +17,7 @@ export default class SignUp extends React.Component {
             surname: '',
             mobileNumber: '',
             referalId: '',
+            yourStatus: 'P',
         }
     }
 
@@ -59,6 +60,16 @@ export default class SignUp extends React.Component {
                             keyboardType="phone-pad"
                             textContentType="telephoneNumber"
                         />
+                        <RadioButton.Group onValueChange={(val) => this.inputValueUpdate(val, 'yourStatus')} value={this.state.yourStatus}>
+                            <View style={styles.buttonParallel}>
+                                <RadioButton value="P" />
+                                <Text style={styles.radioText}>Patient</Text>
+                                <RadioButton value="D" />
+                                <Text style={styles.radioText}>Doctor</Text>
+                                <RadioButton value="C" />
+                                <Text style={styles.radioText}>Chemist</Text>
+                            </View>
+                        </RadioButton.Group>
                         <AppTextInput
                             value={this.state.referalId}
                             onChangeText={(val) => this.inputValueUpdate(val, 'referalId')}

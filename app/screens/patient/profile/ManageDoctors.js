@@ -186,6 +186,8 @@ const styles = StyleSheet.create({
         marginLeft: 0,
         marginRight: 2,
         marginBottom: 5,
+        flexShrink: 1,
+        flexWrap: 'wrap',
     },
     level2Text: {
         fontFamily: 'Arial',
@@ -194,6 +196,8 @@ const styles = StyleSheet.create({
         marginLeft: 0,
         marginRight: 2,
         marginBottom: 5,
+        flexShrink: 1,
+        flexWrap: 'wrap',
     },
     buttonStyle: {
         borderRadius: 10,
