@@ -47,6 +47,22 @@ export default class ManageChemists extends React.Component {
                                         <Text style={styles.level2Text}>E - s.kute@gmail.com</Text>
                                     </View>
                                 </CardItem>
+                                <CardItem footer bordered style={styles.cardBody}>
+                                    <View style={styles.cardFooterContainer}>
+                                        <Image
+                                            source={
+                                                require('../../../../assets/images/remove-item.png')
+                                            }
+                                            style={styles.addRemoveImage}
+                                        />
+                                        <Image
+                                            source={
+                                                require('../../../../assets/images/fav-item.png')
+                                            }
+                                            style={styles.addRemoveImage}
+                                        />
+                                    </View>
+                                </CardItem>
                             </Card>
                             <Card style={styles.cardStyle}>
                                 <CardItem body bordered style={styles.cardHeader}>
@@ -64,7 +80,23 @@ export default class ManageChemists extends React.Component {
                                     <View style={styles.cardBodyContainer}>
                                         <Text style={styles.level1Text}>Kothrud Depot, Pune</Text>
                                         <Text style={styles.level2Text}>M - 8762345678</Text>
-                                        <Text style={styles.level2Text}>E - laxmimedical@gmail.com</Text>
+                                        <Text style={styles.level2Text}>E - s.sonune@gmail.com</Text>
+                                    </View>
+                                </CardItem>
+                                <CardItem footer bordered style={styles.cardBody}>
+                                    <View style={styles.cardFooterContainer}>
+                                        <Image
+                                            source={
+                                                require('../../../../assets/images/remove-item.png')
+                                            }
+                                            style={styles.addRemoveImage}
+                                        />
+                                        <Image
+                                            source={
+                                                require('../../../../assets/images/add-to-fav.png')
+                                            }
+                                            style={styles.addRemoveImage}
+                                        />
                                     </View>
                                 </CardItem>
                             </Card>
@@ -87,6 +119,22 @@ export default class ManageChemists extends React.Component {
                                         <Text style={styles.level1Text}>Deccan, Pune</Text>
                                         <Text style={styles.level2Text}>M - 9876545678</Text>
                                         <Text style={styles.level2Text}>E - sphrma@yahoo.com</Text>
+                                    </View>
+                                </CardItem>
+                                <CardItem footer bordered style={styles.cardBody}>
+                                    <View style={styles.cardFooterContainer}>
+                                        <Image
+                                            source={
+                                                require('../../../../assets/images/remove-item.png')
+                                            }
+                                            style={styles.addRemoveImage}
+                                        />
+                                        <Image
+                                            source={
+                                                require('../../../../assets/images/add-to-fav.png')
+                                            }
+                                            style={styles.addRemoveImage}
+                                        />
                                     </View>
                                 </CardItem>
                             </Card>
@@ -142,10 +190,22 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'flex-start',
     },
+    cardFooterContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+    },
     profileImage: {
         width: 40,
         height: 40,
         borderRadius: 40 / 2,
+        marginLeft: 0,
+    },
+    addRemoveImage: {
+        width: 25,
+        height: 25,
+        borderRadius: 25 / 2,
         marginLeft: 0,
     },
     level0Text: {
