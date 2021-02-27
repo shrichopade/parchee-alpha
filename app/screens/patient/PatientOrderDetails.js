@@ -94,7 +94,11 @@ export default class PatientOrderDetails extends React.Component {
                             <FlatList data={order_metadata.filter(renderOrderMetadata => renderOrderMetadata !== null)} 
                                 renderItem={this.renderOrderMetadata}/>   
                             <FlatList data={order_details_data.filter(renderOrderDetails => renderOrderDetails !== null)} 
-                                renderItem={this.renderOrderDetails}/>    
+                                renderItem={this.renderOrderDetails}/>   
+                            <Button primary style={styles.buttonStyle} title="Submit" 
+                                onPress={() => this.props.navigation.navigate('PatientHome')}>
+                                <Text style={styles.buttonText}>Back</Text>
+                            </Button>  
                         </View>
                     </View>
                     <View style={pageStyles.footer}>
@@ -132,7 +136,7 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 20,
         marginTop: 10,
-        marginBottom: 10,
+        marginBottom: 5,
         fontWeight: 'bold',
         backgroundColor: '#93cf96'
     },
@@ -201,12 +205,14 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
         padding: 5,
-        width: '25%',
+        width: '20%',
+        marginTop: 10,
     },
     buttonText: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '600',
         textTransform: 'uppercase'
     },

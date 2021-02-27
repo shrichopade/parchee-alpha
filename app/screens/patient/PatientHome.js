@@ -14,7 +14,7 @@ export default class PatientHome extends React.Component {
         super();
     }
 
-    renderItemOrders({item}) {
+    renderItemOrders= ({item}) => {
         return (
             <TouchableHighlight underlayColor="#ccc" onPress={() => {
                 this.props.navigation.navigate('PatientOrderDetails')
