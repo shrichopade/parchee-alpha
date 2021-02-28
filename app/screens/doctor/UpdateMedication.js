@@ -12,14 +12,18 @@ import DoctorFooter from './DoctorFooter';
 
 
 
-export default class AddMedication extends React.Component {
+export default class UpdateMedication extends React.Component {
       
       
 
     constructor() {
         super();
         this.state = {
-            checked: 'checked'
+            medication: 'Omeprezol',
+            strength: '20 mg',
+            dosage: '1-0-0',
+            note: '20 mins before food'
+            
         }
     }
 
@@ -37,31 +41,35 @@ export default class AddMedication extends React.Component {
                 <View style={pageStyles.screen}>
                     <View style={pageStyles.body}>
                         <View  style={pageStyles.rootContainer}>
-                            <Text style={styles.listItemHeader}>ADD MEDICATION</Text>
+                            <Text style={styles.listItemHeader}>UPDATE MEDICATION</Text>
                             <AppTextInput
-                            placeholder="Start typing medication"
+                            onChangeText={(val) => this.inputValueUpdate(val, 'medication')}
+                            placeholder = "Omeprezol"
                             autoCapitalize="none"
                             keyboardType="default"
                             textContentType="default"/>
                              <AppTextInput
-                            placeholder="Strength"
+                            onChangeText={(val) => this.inputValueUpdate(val, 'strength')}
+                            placeholder="20 mg"
                             autoCapitalize="none"
                             keyboardType="default"
                             textContentType="default"/>
                             <AppTextInput
-                            placeholder="Dosage"
+                            onChangeText={(val) => this.inputValueUpdate(val, 'dosage')}
+                            placeholder="1-0-0"
                             autoCapitalize="none"
                             keyboardType="default"
                             textContentType="default"/>
                              <AppTextInput
-                            placeholder="Note"
+                            onChangeText={(val) => this.inputValueUpdate(val, 'note')}
+                            placeholder="20 mins before any food"
                             autoCapitalize="none"
                             keyboardType="default"
                             textContentType="default"/>
                             <View style={styles.buttonContainer}>    
                                 <Button danger style={styles.buttonStyle} title="Add" 
                                     onPress={() => this.props.navigation.navigate('Prescribe')}>
-                                    <Text style={styles.buttonText}>+</Text>
+                                    <Text style={styles.buttonText}>Update</Text>
                                 </Button>
                             </View>
                         </View>

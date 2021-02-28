@@ -80,7 +80,9 @@ export default class OrderDetails extends React.Component {
 
         return(
           <Swipeout right={swipeBtns} autoClose='true' backgroundColor= 'transparent'>
-            <TouchableHighlight underlayColor="#ccc" style={styles.orderDetailsItems}>
+            <TouchableHighlight underlayColor="#ccc" onPress={() => {
+                this.props.navigation.navigate('UpdateMedication')
+            }} style={styles.orderDetailsItems}>
                 <View key={item.key} style={styles.rootContainerDetails}>
                     <View style={styles.itemContainer}>
                         <View style={styles.nameContainer}>

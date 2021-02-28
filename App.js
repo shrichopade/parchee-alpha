@@ -37,6 +37,8 @@ import DoctorConfirmChanges from './app/screens/doctor/profile/ConfirmChanges';
 import PatientDetails from './app/screens/doctor/PatientDetails';
 import Prescribe from './app/screens/doctor/Prescribe';
 import AddMedication from './app/screens/doctor/AddMedication';
+import UpdateMedication from './app/screens/doctor/UpdateMedication';
+
 //Chemist Pages
 import ChemistHome from './app/screens/chemist/ChemistHome';
 import ChemistProfileImage from './app/screens/chemist/profile/ChemistProfileImage';
@@ -112,6 +114,7 @@ export default class App extends React.Component {
           <Stack.Screen name="PatientDetails" component={PatientDetails} options={{headerTitle:()=> <DoctorProfileImage/>}} />  
           <Stack.Screen name="Prescribe" component={Prescribe} options={{headerTitle:()=> <DoctorProfileImage/>}} />  
           <Stack.Screen name="AddMedication" component={AddMedication} options={{headerTitle:()=> <DoctorProfileImage/>}} />  
+          <Stack.Screen name="UpdateMedication" component={UpdateMedication} options={{headerTitle:()=> <DoctorProfileImage/>}} />  
 
 
 
