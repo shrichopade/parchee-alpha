@@ -13,7 +13,9 @@ import ConfirmSignUp from './app/screens/common/ConfirmSignUp';
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';
 import PatientQRCode from './app/screens/patient/QRCode';
-import UploadPrescription from './app/screens/patient/UploadPrescription';
+import UploadPrescriptionStep1 from './app/screens/patient/UploadPrescription/CapturePrescription';
+import UploadPrescriptionStep2 from './app/screens/patient/UploadPrescription/UploadPrescription1';
+import UploadPrescriptionStep3 from './app/screens/patient/UploadPrescription/ConfirmPrescription';
 import PatientOrderDetails from './app/screens/patient/PatientOrderDetails';
 import SendtoChemistStep1 from './app/screens/patient/SendtoChemist/SelectMedication';
 import SendtoChemistStep2 from './app/screens/patient/SendtoChemist/SelectChemist';
@@ -95,7 +97,9 @@ export default class App extends React.Component {
 
           <Stack.Screen name="PatientHome" component={PatientHome} options={{headerTitle:()=> <PatientProfileImage/>,
                     headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
-          <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="UploadPrescriptionStep1" component={UploadPrescriptionStep1} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="UploadPrescriptionStep2" component={UploadPrescriptionStep2} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="UploadPrescriptionStep3" component={UploadPrescriptionStep3} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientQRCode" component={PatientQRCode} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="SendtoChemistStep1" component={SendtoChemistStep1} options={{headerTitle:()=> <PatientProfileImage/>}} />

@@ -1,52 +1,20 @@
 import React, { Component } from "react";
-import { Image, View, TouchableOpacity, TextInput, Text,StyleSheet,SafeAreaView } from "react-native";
+import { Image, View, TouchableOpacity, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
-import PatientFooter from '../PatientFooter';
-import { Icon } from 'native-base';
 import list_styles from '../../../components/List/styles';
-
-// import styles from "./styles";
 
 export default class CapturePrescription extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      totalSteps: "",
-      currentStep: ""
-    };
-  }
-
-  static getDerivedStateFromProps = props => {
-    const { getTotalSteps, getCurrentStep } = props;
-    return {
-      totalSteps: getTotalSteps(),
-      currentStep: getCurrentStep()
-    };
-  };
-
-  nextStep = () => {
-    const { next, saveState } = this.props;
-    // Save state for use in other steps
-    saveState({ name: "samad" });
-
-    // Go to next step
-    next();
-  };
-
-  goBack() {
-    const { back } = this.props;
-    // Go to previous step
-    back();
   }
 
   render() {
-    const { currentStep, totalSteps } = this.state;
     return (
       <SafeAreaView  style={pageStyles.container}>
         <View style={pageStyles.screen}>
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
-            <Text style={list_styles.list_item_header}>Take a Picture - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
+            <Text style={list_styles.list_item_header}>Take a Picture - Step 1 of 3</Text>
               <View style={styles.btnContainer}>
                 <Text style={styles.labelText}> Take a Picture: </Text> 
                 <Image source={require('../../../../assets/images/mobile-camera.png')} 
@@ -68,7 +36,8 @@ export default class CapturePrescription extends Component {
                       style={styles.moreImage} />
               </View>
               <View style={styles.btnContainer1}>
-                <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('UploadPrescriptionStep2')}
+                  style={styles.btnStyle}>
                     <Image
                       source={require("../../../../assets/images/rightarrow.png")}
                       style={styles.btnImage}

@@ -24,7 +24,7 @@ export default class PatientFooter extends React.Component {
       </View>
       <View>
         <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('UploadPrescription')}>
+              vertical onPress={() => this.props.navigation.navigate('UploadPrescriptionStep1')}>
               <Icon name="ios-cloud-upload-outline" />
               <Text style={styles.buttonText}>Load Parchee</Text>
          </Button>
