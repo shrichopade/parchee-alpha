@@ -12,6 +12,7 @@ import ConfirmSignUp from './app/screens/common/ConfirmSignUp';
 
 //Patient Pages
 import PatientHome from './app/screens/patient/PatientHome';
+import PatientQRCode from './app/screens/patient/QRCode';
 import UploadPrescription from './app/screens/patient/UploadPrescription';
 import PatientOrderDetails from './app/screens/patient/PatientOrderDetails';
 import SendtoChemist from './app/screens/patient/SendtoChemist';
@@ -28,6 +29,7 @@ import PatientConfirmChanges from './app/screens/patient/profile/ConfirmChanges'
 
 //Doctor Pages
 import DoctorHome from './app/screens/doctor/DoctorHome';
+import DoctorQRCode from './app/screens/doctor/QRCode';
 import DoctorProfileImage from './app/screens/doctor/profile/DoctorProfileImage';
 import DoctorManageProfile from './app/screens/doctor/profile/ManageProfile';
 import DoctorManagePersonalInfo from './app/screens/doctor/profile/ManagePersonalInfo';
@@ -41,6 +43,7 @@ import UpdateMedication from './app/screens/doctor/UpdateMedication';
 
 //Chemist Pages
 import ChemistHome from './app/screens/chemist/ChemistHome';
+import ChemistQRCode from './app/screens/chemist/QRCode';
 import ChemistProfileImage from './app/screens/chemist/profile/ChemistProfileImage';
 import OrderDetails from './app/screens/chemist/OrderDetails';
 import OldOrders from './app/screens/chemist/OldOrders';
@@ -91,6 +94,7 @@ export default class App extends React.Component {
           <Stack.Screen name="PatientHome" component={PatientHome} options={{headerTitle:()=> <PatientProfileImage/>,
                     headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
           <Stack.Screen name="UploadPrescription" component={UploadPrescription} options={{headerTitle:()=> <PatientProfileImage/>}} />
+          <Stack.Screen name="PatientQRCode" component={PatientQRCode} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientOrderDetails" component={PatientOrderDetails} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="SendtoChemist" component={SendtoChemist} options={{headerTitle:()=> <PatientProfileImage/>}} />
           <Stack.Screen name="PatientManageProfile" component={PatientManageProfile} options={{headerTitle:()=> <PatientProfileImage/>}} />
@@ -106,6 +110,7 @@ export default class App extends React.Component {
           
           <Stack.Screen name="DoctorHome" component={DoctorHome} options={{headerTitle:()=> <DoctorProfileImage/>,
                   headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
+          <Stack.Screen name="DoctorQRCode" component={DoctorQRCode} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorManageProfile" component={DoctorManageProfile} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorManagePersonalInfo" component={DoctorManagePersonalInfo} options={{headerTitle:()=> <DoctorProfileImage/>}} />
           <Stack.Screen name="DoctorChangePassword" component={DoctorChangePassword} options={{headerTitle:()=> <DoctorProfileImage/>}} />
@@ -120,6 +125,7 @@ export default class App extends React.Component {
 
           <Stack.Screen name="ChemistHome" component={ChemistHome} options={{headerTitle:()=> <ChemistProfileImage />, 
                   headerRight:()=> <Image source={require('./assets/images/notifications.png')} style={styles.profileImage} />}} />
+          <Stack.Screen name="ChemistQRCode" component={ChemistQRCode} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OrderDetails" component={OrderDetails} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OldOrders" component={OldOrders} options={{headerTitle:()=> <ChemistProfileImage/>}} />
           <Stack.Screen name="OldOrderDetails" component={OldOrderDetails} options={{headerTitle:()=> <ChemistProfileImage/>}} />

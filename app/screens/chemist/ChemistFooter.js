@@ -10,7 +10,7 @@ export default class ChemistFooter extends React.Component {
 			  <View style={styles.tabs_container}>
           <View>  
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('ChemistHome')}>
+              vertical onPress={() => this.props.navigation.navigate('ChemistQRCode')}>
               <Icon name="film" />
               <Text style={styles.buttonText}>QR Code</Text>
             </Button>

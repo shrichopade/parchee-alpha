@@ -17,7 +17,7 @@ export default class DoctorFooter extends React.Component {
           </View>
           <View>  
             <Button  style={styles.buttonStyle} 
-              vertical onPress={() => this.props.navigation.navigate('DoctorHome')}>
+              vertical onPress={() => this.props.navigation.navigate('DoctorQRCode')}>
               <Icon name="film" />
               <Text style={styles.buttonText}>Scan QR</Text>
             </Button>
