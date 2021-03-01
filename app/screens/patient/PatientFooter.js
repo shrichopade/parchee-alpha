@@ -10,7 +10,7 @@ export default class PatientFooter extends React.Component {
       <View style={styles.tabs_container}>
       <View>
          <Button  style={styles.buttonStyle} 
-                vertical onPress={() => this.props.navigation.navigate('SendtoChemist')}>
+                vertical onPress={() => this.props.navigation.navigate('SendtoChemistStep1')}>
                 <Icon name="send" />
               <Text style={styles.buttonText}>Send to Chemist</Text>
          </Button>

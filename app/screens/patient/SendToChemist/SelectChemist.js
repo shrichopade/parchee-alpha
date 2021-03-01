@@ -1,53 +1,22 @@
 import React, { Component } from "react";
 import { Image, View, TouchableOpacity, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
-import PatientFooter from '../PatientFooter';
 import { Icon, Item,Picker } from 'native-base';
 import list_styles from '../../../components/List/styles';
-
-// import styles from "./styles";
 
 export default class SelectChemist extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      totalSteps: "",
-      currentStep: ""
-    };
-  }
-
-  static getDerivedStateFromProps = props => {
-    const { getTotalSteps, getCurrentStep } = props;
-    return {
-      totalSteps: getTotalSteps(),
-      currentStep: getCurrentStep()
-    };
-  };
-
-  nextStep = () => {
-    const { next, saveState } = this.props;
-    // Save state for use in other steps
-    saveState({ name: "samad" });
-
-    // Go to next step
-    next();
-  };
-
-  goBack = () => {
-    const { back } = this.props;
-    // Go to previous step
-    back();
   }
 
   render() {
-    const { currentStep, totalSteps } = this.state;
     return (
       <SafeAreaView  style={pageStyles.container}>
         <View style={pageStyles.screen}>
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
               
-              <Text style={list_styles.list_item_header}>Select Chemist - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
+              <Text style={list_styles.list_item_header}>Select Chemist - Step 2 of 3</Text>
               <View style={styles.btnContainer}>  
                   <Text style={styles.labelText}>Select Chemist: </Text> 
                   <Item picker>
@@ -66,14 +35,14 @@ export default class SelectChemist extends Component {
                   </Item> 
               </View>             
               <View style={styles.btnContainer1}>
-                  <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('SendtoChemistStep1')}>
                               <Image
                               source={require("../../../../assets/images/leftarrow.png")}
                               style={styles.btnImage}
                               resizeMode="cover"
                               />
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('SendtoChemistStep3')}>
                           <Image
                               source={require("../../../../assets/images/rightarrow.png")}
                               style={styles.btnImage}
@@ -89,10 +58,7 @@ export default class SelectChemist extends Component {
   }
 }
 
-// export default CapturePrescription;
-
 const styles = StyleSheet.create({
-  
   container: {
       flexDirection: 'column',
       justifyContent: 'space-between',

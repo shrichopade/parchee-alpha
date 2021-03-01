@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Image, View, TouchableOpacity, FlatList, Text,StyleSheet,SafeAreaView,Body, ListItem } from "react-native";
+import { Image, View, TouchableOpacity, FlatList, Text,
+    StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
-import PatientFooter from '../PatientFooter';
-import { Icon,CheckBox } from 'native-base';
 import medication_data from '../../../data/capturedprescription';
 import list_styles from '../../../components/List/styles';
-import { renderPrescriptionItem,renderCapturedPrescriptionItem } from '../../../lib/general';
+import { renderCapturedPrescriptionItem } from '../../../lib/general';
 
 
 // import styles from "./styles";
@@ -13,53 +12,26 @@ import { renderPrescriptionItem,renderCapturedPrescriptionItem } from '../../../
 export default class ConfirmOrder extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      totalSteps: "",
-      currentStep: ""
-    };
   }
 
-  static getDerivedStateFromProps = props => {
-    const { getTotalSteps, getCurrentStep } = props;
-    return {
-      totalSteps: getTotalSteps(),
-      currentStep: getCurrentStep()
-    };
-  };
-
-  nextStep = () => {
-    const { next, saveState } = this.props;
-    // Save state for use in other steps
-    saveState({ name: "samad" });
-
-    // Go to next step
-    next();
-  };
-
-  goBack= ()=> {
-    const { back } = this.props;
-    // Go to previous step
-    back();
-  };
-
   render() {
-    const { currentStep, totalSteps } = this.state;
     return (
       <SafeAreaView  style={pageStyles.container}>
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-            <Text style={list_styles.list_item_header}>Your Prescription Items - {`Step ${currentStep} of ${totalSteps - 1}`}</Text>
+            <Text style={list_styles.list_item_header}>Your Prescription Items - Step 3 of 3</Text>
             <FlatList data={medication_data} renderItem={renderCapturedPrescriptionItem} />
             <View style={styles.btnContainer}>
-              <TouchableOpacity onPress={this.goBack} style={styles.btnStyle}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('SendtoChemistStep2')} 
+                style={styles.btnStyle}>
                         <Image
                           source={require("../../../../assets/images/leftarrow.png")}
                           style={styles.btnImage}
                           resizeMode="cover"
                         />
               </TouchableOpacity>
-              <TouchableOpacity onPress={this.nextStep} style={styles.btnStyle}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('PatientHome')}>
                         <Image
                           source={require("../../../../assets/images/rightarrow.png")}
                           style={styles.btnImage}
