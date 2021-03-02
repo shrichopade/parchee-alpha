@@ -17,9 +17,9 @@ import UploadPrescriptionStep1 from './app/screens/patient/UploadPrescription/Ca
 import UploadPrescriptionStep2 from './app/screens/patient/UploadPrescription/UploadPrescription1';
 import UploadPrescriptionStep3 from './app/screens/patient/UploadPrescription/ConfirmPrescription';
 import PatientOrderDetails from './app/screens/patient/PatientOrderDetails';
-import SendtoChemistStep1 from './app/screens/patient/SendtoChemist/SelectMedication';
-import SendtoChemistStep2 from './app/screens/patient/SendtoChemist/SelectChemist';
-import SendtoChemistStep3 from './app/screens/patient/SendtoChemist/ConfirmOrder';
+import SendtoChemistStep1 from './app/screens/patient/SendToChemist/SelectMedication';
+import SendtoChemistStep2 from './app/screens/patient/SendToChemist/SelectChemist';
+import SendtoChemistStep3 from './app/screens/patient/SendToChemist/ConfirmOrder';
 import PatientProfileImage from './app/screens/patient/profile/PatientProfileImage';
 import PatientManageProfile from './app/screens/patient/profile/ManageProfile';
 import PatientManagePersonalInfo from './app/screens/patient/profile/ManagePersonalInfo';
