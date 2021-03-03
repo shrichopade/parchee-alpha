@@ -1,16 +1,17 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Text } from 'native-base';
+import ValidationComponent from 'react-native-form-validator';
 
 import pageStyles from './PageStyle.js'
 import AppButton from '../../components/AppButton';
 import AppTextInput from '../../components/AppTextInput';
 import DefaultFooter from './DefaultFooter'
 
-export default class SignIn extends React.Component {
+export default class SignIn extends ValidationComponent {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
           username: '',
           password: ''
@@ -18,19 +19,23 @@ export default class SignIn extends React.Component {
       }
 
     signIn = () => {
-        try {
-            if(this.state.username == "P" || this.state.username == "p" ) {
-              this.props.navigation.navigate('PatientHome')
-            } else if(this.state.username == "D" || this.state.username == "d" ) {
-              this.props.navigation.navigate('DoctorHome')
-            } else if(this.state.username == "C" || this.state.username == "c" ) {
-              this.props.navigation.navigate('ChemistHome')
-            } else {
-              this.props.navigation.navigate('PatientHome')
+        this._validateInputs(); 
+
+        if(this.getErrorMessages().length == 0) {
+            try {
+                if(this.state.username == "P@gmail.com" || this.state.username == "p@gmail.com" ) {
+                this.props.navigation.navigate('PatientHome')
+                } else if(this.state.username == "D@gmail.com" || this.state.username == "d@gmail.com" ) {
+                this.props.navigation.navigate('DoctorHome')
+                } else if(this.state.username == "C@gmail.com" || this.state.username == "c@gmail.com" ) {
+                this.props.navigation.navigate('ChemistHome')
+                } else {
+                this.props.navigation.navigate('PatientHome')
+                }
+                console.log(' Success');
+            } catch (error) {
+                console.log(' Error signing in...', error);
             }
-            console.log(' Success');
-        } catch (error) {
-            console.log(' Error signing in...', error);
         }
     }
 
@@ -38,6 +43,14 @@ export default class SignIn extends React.Component {
         const state = this.state;
         state[prop] = val;
         this.setState(state);
+    }
+
+    _validateInputs() {
+        // Call ValidationComponent validate method
+        this.validate({
+          username: {required: true, email: true},
+          password: {minlength:3, maxlength:8, required: true},
+        });
     }
 
     render() {
@@ -56,6 +69,9 @@ export default class SignIn extends React.Component {
                             keyboardType="email-address"
                             textContentType="emailAddress"
                             />
+                         {this.isFieldInError('username') 
+                            && this.getErrorsInField('username').map(errorMessage => 
+                            <Text style={styles.errorMsgText}>{errorMessage}</Text>) }
                         <AppTextInput
                             value={this.state.password}
                             onChangeText={(val) => this.inputValueUpdate(val, 'password')}
@@ -66,6 +82,9 @@ export default class SignIn extends React.Component {
                             secureTextEntry
                             textContentType="password"
                             />
+                         {this.isFieldInError('password') 
+                            && this.getErrorsInField('password').map(errorMessage => 
+                            <Text style={styles.errorMsgText}>{errorMessage}</Text>) }
                         <View style={styles.buttonContainer}>    
                             <AppButton title="Sign In" onPress={() => this.signIn()} />
                         </View>
@@ -131,4 +150,12 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginVertical: 10
     },
+    errorMsgText: {
+        fontFamily: 'Arial',
+        color: 'red',
+        fontSize: 12,
+        fontWeight: 400,
+        marginLeft: 15,
+        marginBottom: 4,
+    }
 });
