@@ -71,7 +71,13 @@ export default class SignIn extends ValidationComponent {
                             />
                          {this.isFieldInError('username') 
                             && this.getErrorsInField('username').map(errorMessage => 
-                            <Text style={styles.errorMsgText}>{errorMessage}</Text>) }
+                            <Text style={styles.errorMsgText}>
+                                <Image source={require('../../../assets/images/error-icon.png')}  
+                                    resizeMode='contain'
+                                    style={styles.errorImage} />
+                                {errorMessage}
+                            </Text>) 
+                        }
                         <AppTextInput
                             value={this.state.password}
                             onChangeText={(val) => this.inputValueUpdate(val, 'password')}
@@ -84,7 +90,13 @@ export default class SignIn extends ValidationComponent {
                             />
                          {this.isFieldInError('password') 
                             && this.getErrorsInField('password').map(errorMessage => 
-                            <Text style={styles.errorMsgText}>{errorMessage}</Text>) }
+                            <Text style={styles.errorMsgText}>
+                                <Image source={require('../../../assets/images/error-icon.png')}  
+                                    resizeMode='contain'
+                                    style={styles.errorImage} />
+                                {errorMessage}
+                            </Text>) 
+                        }
                         <View style={styles.buttonContainer}>    
                             <AppButton title="Sign In" onPress={() => this.signIn()} />
                         </View>
@@ -153,8 +165,15 @@ const styles = StyleSheet.create({
     errorMsgText: {
         fontFamily: 'Arial',
         color: 'red',
-        fontSize: 12,
+        fontSize: 14,
         marginLeft: 15,
         marginBottom: 10,
-    }
+    },
+    errorImage: {
+        width: 14,
+        height: 14,
+        borderRadius: 14 / 2,
+        marginRight: 5,
+        alignSelf: 'center'
+    },
 });
