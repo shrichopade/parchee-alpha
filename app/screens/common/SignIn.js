@@ -154,8 +154,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         color: 'red',
         fontSize: 12,
-        fontWeight: 400,
         marginLeft: 15,
-        marginBottom: 4,
+        marginBottom: 10,
     }
 });
