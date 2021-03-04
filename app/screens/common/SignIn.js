@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 import { SafeAreaView, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Text } from 'native-base';
@@ -62,25 +63,40 @@ export default class SignIn extends ValidationComponent {
                             style={styles.imageTitle} />
                         <AppTextInput
                             value={this.state.username}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'username')}
+                            onChangeText={(username) => {
+                                    this.setState({ username },
+                                        () => {
+                                            this.validate({
+                                                username: { required: true, email: true },
+                                            })
+                                        }
+                                    )                                    
+                                }
+                            }
                             leftIcon="email-open"
                             placeholder="Enter email address"
                             autoCapitalize="none"
                             keyboardType="email-address"
                             textContentType="emailAddress"
                             />
-                         {this.isFieldInError('username') 
+                        {this.isFieldInError('username') 
                             && this.getErrorsInField('username').map(errorMessage => 
                             <Text style={styles.errorMsgText}>
-                                <Image source={require('../../../assets/images/error-icon.png')}  
-                                    resizeMode='contain'
-                                    style={styles.errorImage} />
                                 {errorMessage}
                             </Text>) 
                         }
                         <AppTextInput
                             value={this.state.password}
-                            onChangeText={(val) => this.inputValueUpdate(val, 'password')}
+                            onChangeText={(password) => {
+                                    this.setState({ password },
+                                        () => {
+                                            this.validate({
+                                                password: { required: true, minlength:3, maxlength:8 },
+                                            })
+                                        }
+                                    )                                    
+                                }
+                            }
                             leftIcon="lock"
                             placeholder="Enter password"
                             autoCapitalize="none"
@@ -91,9 +107,6 @@ export default class SignIn extends ValidationComponent {
                          {this.isFieldInError('password') 
                             && this.getErrorsInField('password').map(errorMessage => 
                             <Text style={styles.errorMsgText}>
-                                <Image source={require('../../../assets/images/error-icon.png')}  
-                                    resizeMode='contain'
-                                    style={styles.errorImage} />
                                 {errorMessage}
                             </Text>) 
                         }
@@ -173,6 +186,7 @@ const styles = StyleSheet.create({
         width: 14,
         height: 14,
         borderRadius: 14 / 2,
+        marginTop: 2,
         marginRight: 5,
         alignSelf: 'center'
     },
