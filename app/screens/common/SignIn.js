@@ -8,6 +8,7 @@ import pageStyles from './PageStyle.js'
 import AppButton from '../../components/AppButton';
 import AppTextInput from '../../components/AppTextInput';
 import DefaultFooter from './DefaultFooter'
+import * as Constants from '../config/ConstantsList'
 
 export default class SignIn extends ValidationComponent {
 
@@ -49,7 +50,7 @@ export default class SignIn extends ValidationComponent {
     _validateInputs() {
         // Call ValidationComponent validate method
         this.validate({
-          username: {required: true, email: true},
+          username: {required: true, email: true} ,
           password: {minlength:3, maxlength:8, required: true},
         });
     }

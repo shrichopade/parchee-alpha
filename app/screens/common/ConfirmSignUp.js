@@ -38,7 +38,7 @@ export default class ConfirmSignUp extends ValidationComponent {
     _validateInputs() {
         // Call ValidationComponent validate method
         this.validate({
-            passcord: {required: true, numbers: true, minlength: 6, maxlength: 6},
+            passcode: {required: true, numbers: true, minlength: 6, maxlength: 6},
             username: {required: true, email: true},
             password: {required: true, minlength: 3, maxlength: 8},
             confirmPassword: {equalPassword : this.state.password}
