@@ -8,9 +8,7 @@ import pageStyles from '../common/PageStyle.js';
 import DoctorFooter from './DoctorFooter';
 import order_metadata from './data/PatientMetaData';
 import order_details_data from './data/PatientPresDetailsData';
-import Swipeout from 'react-native-swipeout';
-
-
+//import Swipeout from 'react-native-swipeout';
 
 export default class OrderDetails extends React.Component {
       
@@ -79,7 +77,7 @@ export default class OrderDetails extends React.Component {
       }];
 
         return(
-          <Swipeout right={swipeBtns} autoClose='true' backgroundColor= 'transparent'>
+          /*<Swipeout right={swipeBtns} autoClose='true' backgroundColor= 'transparent'> */ 
             <TouchableHighlight underlayColor="#ccc" onPress={() => {
                 this.props.navigation.navigate('UpdateMedication')
             }} style={styles.orderDetailsItems}>
@@ -110,7 +108,7 @@ export default class OrderDetails extends React.Component {
                     </View>
                 </View>
             </TouchableHighlight>
-          </Swipeout>
+          /*</Swipeout>*/
         )
     }
 
