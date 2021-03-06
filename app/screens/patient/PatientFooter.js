@@ -1,6 +1,5 @@
 import React from 'react';
 import { TouchableHighlight,View, StyleSheet, Text } from 'react-native';
-import IconButton from '../../components/IconButton';
 import { Button, Icon } from 'native-base';
 
 export default class PatientFooter extends React.Component {

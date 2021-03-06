@@ -3,7 +3,6 @@ import { Text, Icon, View,TouchableHighlight, Image, Picker, } from 'react-nativ
 import {CheckBox} from 'native-base';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './styles';
-import IconButton from '../components/IconButton';
 
 
 function renderItem({item}) {
