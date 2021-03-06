@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Image, View, TouchableOpacity, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
 import { Icon, Item,Picker } from 'native-base';
-import list_styles from '../../../components/List/styles';
 
 export default class SelectChemist extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ export default class SelectChemist extends Component {
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
               
-              <Text style={list_styles.list_item_header}>Select Chemist - Step 2 of 3</Text>
+              <Text style={styles.listItemHeader}>Select Chemist - Step 2 of 3</Text>
               <View style={styles.btnContainer}>  
                   <Text style={styles.labelText}>Select Chemist: </Text> 
                   <Item picker>
@@ -62,6 +61,14 @@ const styles = StyleSheet.create({
   container: {
       flexDirection: 'column',
       justifyContent: 'space-between',
+  },
+  listItemHeader: {
+    padding: 10,
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: 'bold',
+    backgroundColor: '#93cf96'
   },
   btnContainer: {
       flexDirection: 'row',

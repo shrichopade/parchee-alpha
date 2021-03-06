@@ -4,7 +4,6 @@ import { Image, View, TouchableOpacity, FlatList,
 
 import pageStyles from '../../common/PageStyle.js';
 import medication_data from '../../../data/capturedprescription';
-import list_styles from '../../../components/List/styles';
 import { renderCapturedPrescriptionItem } from '../../../lib/general';
 
 export default class ConfirmPrescription extends Component {
@@ -18,7 +17,7 @@ export default class ConfirmPrescription extends Component {
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-          <Text style={list_styles.list_item_header}>Captured Prescription - Step 3 of 3</Text>
+          <Text style={styles.listItemHeader}>Captured Prescription - Step 3 of 3</Text>
             <FlatList data={medication_data} renderItem={renderCapturedPrescriptionItem} />
             <View style={styles.btnContainer}>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('UploadPrescriptionStep2')}
@@ -53,6 +52,14 @@ const styles = StyleSheet.create({
   container: {
       flexDirection: 'column',
       justifyContent: 'space-between',
+  },
+  listItemHeader: {
+    padding: 10,
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: 'bold',
+    backgroundColor: '#93cf96'
   },
   btnContainer: {
       flexDirection: 'row',

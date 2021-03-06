@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Image, View, TouchableOpacity, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
-import list_styles from '../../../components/List/styles';
 
 export default class UploadPrescription1 extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ export default class UploadPrescription1 extends Component {
       <View style={pageStyles.screen}>
         <View style={pageStyles.body}>
           <View style={[styles.container, styles.step1]}>
-              <Text style={list_styles.list_item_header}>Upload Prescription - Step 2 of 3</Text>
+              <Text style={styles.listItemHeader}>Upload Prescription - Step 2 of 3</Text>
                 <Image
                     source={require("../../../../assets/images/prescription1.png")}
                     style={styles.btnImage1}
@@ -51,6 +50,14 @@ const styles = StyleSheet.create({
   container: {
       flexDirection: 'column',
       justifyContent: 'space-between',
+  },
+  listItemHeader: {
+    padding: 10,
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: 'bold',
+    backgroundColor: '#93cf96'
   },
   btnContainer: {
       flexDirection: 'row',

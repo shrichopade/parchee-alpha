@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Image, View, TouchableOpacity, Text,StyleSheet,SafeAreaView } from "react-native";
 import pageStyles from '../../common/PageStyle.js';
-import list_styles from '../../../components/List/styles';
 
 export default class CapturePrescription extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ export default class CapturePrescription extends Component {
         <View style={pageStyles.screen}>
           <View style={pageStyles.body}>
             <View style={[styles.container, styles.step1]}>
-            <Text style={list_styles.list_item_header}>Take a Picture - Step 1 of 3</Text>
+            <Text style={styles.listItemHeader}>Take a Picture - Step 1 of 3</Text>
               <View style={styles.btnContainer}>
                 <Text style={styles.labelText}> Take a Picture: </Text> 
                 <Image source={require('../../../../assets/images/mobile-camera.png')} 
@@ -60,6 +59,14 @@ const styles = StyleSheet.create({
   container: {
       flexDirection: 'column',
       justifyContent: 'space-between',
+  },
+  listItemHeader: {
+    padding: 10,
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: 'bold',
+    backgroundColor: '#93cf96'
   },
   btnContainer: {
       flexDirection: 'row',
